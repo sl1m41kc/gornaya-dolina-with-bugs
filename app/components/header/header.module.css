@@ -1,0 +1,81 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 1.75rem;
+    background-color: #fff;
+    z-index: 9999999999;
+    transition: transform .25s, padding .25s;
+}
+
+.paddingCorrect {
+    padding: 1rem 1.75rem;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.25rem;
+}
+
+.phoneWrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    fill: var(--secondary-color);
+    color: #393939;
+}
+
+.button {
+    text-transform: uppercase;
+    padding: .75rem 2.25rem;
+    color: #fff;
+    background-color: var(--primary-color);
+    border-radius: 20px;
+}
+
+.logoWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {
+    height: 70px;
+    fill: var(--primary-color);
+    transition: height .5s, opacity .1s;
+}
+
+.logoCorrect {
+    height: 0px;
+    opacity: 0;
+}
+
+.title {
+    font-size: 24px;
+    font-family: 'Philosopher';
+    font-weight: 700;
+    color: var(--primary-color);
+    transform: scale(1);
+    transition: transform .5s;
+}
+
+.titleCorrect {
+    transform: scale(1.1);
+}
+
+.phone {
+    width: 40px;
+    height: 40px;
+    fill: #5F6368;
+}

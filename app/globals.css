@@ -3,31 +3,45 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+    --primary-color: #A88451;
+    --secondary-accent: #899254;
+    --secondary-color: #5F6368;
+    --text-color: #393939;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PTSans';
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 7rem;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.container {
+    width: min(100%, 1440px);
+    margin-inline: auto;
+}
+
+.containerText {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: min(100%, 800px);
+    margin-inline: auto;
+    font-size: 20px;
+    color: var(--text-color);
+    line-height: 1.4;
+}
+
+.title {
+    text-align: center;
+    font-family: 'Philosopher';
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--primary-color);
 }
