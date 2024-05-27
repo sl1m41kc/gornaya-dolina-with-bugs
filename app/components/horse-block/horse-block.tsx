@@ -22,7 +22,6 @@ const HorseBlock = () => {
           start: "30% bottom",
           end: "bottom center",
           scrub: true,
-          markers: true,
         },
       });
     },

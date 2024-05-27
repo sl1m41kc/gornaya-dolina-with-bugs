@@ -1,0 +1,10 @@
+.footer {
+    display: flex;
+    padding-inline: 1.25rem;
+    height: 75px;
+}
+
+.text {
+    font-size: 20px;
+    color: #5F6368;
+}

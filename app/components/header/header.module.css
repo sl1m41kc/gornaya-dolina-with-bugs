@@ -8,7 +8,7 @@
     justify-content: space-between;
     padding: 3rem 1.75rem;
     background-color: #fff;
-    z-index: 9999999999;
+    z-index: 9999;
     transition: transform .25s, padding .25s;
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import Gallery from "./gallery/gallery";
+import Swiper from './swiper/swiper'
 
 const PhotoGallery = () => {
   return (
@@ -8,7 +8,7 @@ const PhotoGallery = () => {
         <h2 className="title">Фотогалерея</h2>
       </div>
 
-      <Gallery />
+      <Swiper />
     </section>
   );
 };

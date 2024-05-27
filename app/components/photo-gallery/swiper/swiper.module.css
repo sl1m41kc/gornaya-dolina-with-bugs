@@ -1,0 +1,43 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.slide {
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.prevArrow, .nextArrow {
+    position: relative;
+    cursor: pointer;
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #505050;
+}
+
+.prevArrow > svg, .nextArrow > svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 1px;
+    fill: #fff;
+}
+
+.prevArrow {
+    transform: rotate(180deg);
+}
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    margin-top: 1rem;
+}

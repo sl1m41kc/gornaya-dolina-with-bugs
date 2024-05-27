@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import classes from "./footer.module.css";
 
 const Footer = () => {
   return (
-    <footer>
-      <p>&copy;&nbsp;2024, Горная долина</p>
+    <footer className={classes.footer}>
+      <div className="container">
+        <p className={classes.text}>&copy;&nbsp;2024, Горная долина</p>
+      </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
