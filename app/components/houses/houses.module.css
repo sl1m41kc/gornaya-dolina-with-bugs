@@ -4,3 +4,11 @@
     gap: 1rem;
     margin-top: 3rem;
 }
+
+@media (width <= 1024px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

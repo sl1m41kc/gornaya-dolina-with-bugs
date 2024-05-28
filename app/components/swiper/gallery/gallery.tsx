@@ -8,18 +8,23 @@ import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "./correct-yarl.css";
 
-import classes from "./gallery.module.css";
 import { useSwiper } from "swiper/react";
-import { data } from "@/data/data";
 
 interface IProps {
-    isOpenGallery: boolean;
-    setIsOpenGallery: React.Dispatch<React.SetStateAction<boolean>>;
-    activeSlideIDX: number;
-    setActiveSlideIDX: React.Dispatch<React.SetStateAction<number>>
+  data: any;
+  isOpenGallery: boolean;
+  setIsOpenGallery: React.Dispatch<React.SetStateAction<boolean>>;
+  activeSlideIDX: number;
+  setActiveSlideIDX: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const Gallery = ({isOpenGallery, setIsOpenGallery, activeSlideIDX, setActiveSlideIDX}: IProps) => {
+const Gallery = ({
+  data,
+  isOpenGallery,
+  setIsOpenGallery,
+  activeSlideIDX,
+  setActiveSlideIDX,
+}: IProps) => {
   const swiper = useSwiper();
 
   return (
@@ -27,7 +32,7 @@ const Gallery = ({isOpenGallery, setIsOpenGallery, activeSlideIDX, setActiveSlid
       index={activeSlideIDX}
       open={isOpenGallery}
       close={() => setIsOpenGallery(false)}
-      slides={data.gallery}
+      slides={data}
       on={{
         view: ({ index }: { index: number }) => {
           setActiveSlideIDX(index);

@@ -9,11 +9,10 @@ import WhatsAppSVG from "@/public/sprites/social/whatsapp.svg";
 import VKSVG from "@/public/sprites/social/vk.svg";
 import YandexSVG from "@/public/sprites/social/yandex_maps.svg";
 import GISSVG from "@/public/sprites/social/2gis.svg";
-import clsx from "clsx";
 
 const Contacts = () => {
   return (
-    <section className="container">
+    <section className="container" id="contacts">
       <h2 className="title">Контакты</h2>
 
         <div className={classes.contacts}>

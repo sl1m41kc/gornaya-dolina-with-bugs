@@ -1,3 +1,4 @@
+
 import React from "react";
 import classes from "./houses.module.css";
 import HouseItem from "./house-item/house-item";
@@ -5,9 +6,9 @@ import { data } from "@/data/data";
 
 const Houses = () => {
   return (
-    <section className="container">
+    <section className="container" id="houses">
       <div className="containerText">
-        <h2 className="title">Раземещение</h2>
+        <h2 className="title">Размещение</h2>
         <p>
           Каждый домик оборудован большими панорамными окнами, через которые
           открывается захватывающий вид на&nbsp;величественные горы. Представьте

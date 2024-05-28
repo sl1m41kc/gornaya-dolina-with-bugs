@@ -2,10 +2,8 @@
 
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { data } from "@/data/data";
-import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
-import Gallery from "../gallery/gallery";
+import Gallery from "./gallery/gallery";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -15,8 +13,23 @@ import "./correct-swiper.css";
 import ChevronRightSVG from "@/public/sprites/icons/chevron_right.svg";
 
 import classes from "./swiper.module.css";
+import clsx from "clsx";
 
-const MySwiper = () => {
+interface IProps {
+  data: any;
+  nameSwiper: string;
+  slide: (item: any, index: number) => JSX.Element;
+  isGallery?: boolean;
+  countSlide?: number;
+}
+
+const MySwiper = ({
+  data,
+  slide,
+  nameSwiper,
+  countSlide = 2,
+  isGallery = false,
+}: IProps) => {
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
@@ -35,7 +48,7 @@ const MySwiper = () => {
         <Swiper
           ref={swiperRef}
           spaceBetween={20}
-          slidesPerView={2}
+          slidesPerView={countSlide}
           loop={true}
           modules={[Navigation, Pagination]}
           onInit={(swiper) => {
@@ -48,33 +61,34 @@ const MySwiper = () => {
           }}
           pagination={{
             clickable: true,
-            el: `.${classes.pagination}`,
+            el: `.${classes.pagination}${nameSwiper}`,
+          }}
+          onSlideChange={(swiper) => {
+            setActiveSlideIDX(swiper.activeIndex);
           }}
         >
-          {data.gallery.map((item, index) => (
+          {data.map((item: any, index: number) => (
             <SwiperSlide
-              key={index + item.src}
+              key={index + Object.keys(item).join("")}
               className={classes.slide}
               onClick={() => {
                 setActiveSlideIDX(index);
                 setIsOpenGallery(true);
               }}
             >
-              <Image
-                src={item.src}
-                alt={`Картинка галереи ${index + 1}`}
-                width={1920}
-                height={1080}
-              />
+              {slide(item, index)}
             </SwiperSlide>
           ))}
 
-          <Gallery
-            isOpenGallery={isOpenGallery}
-            setIsOpenGallery={setIsOpenGallery}
-            activeSlideIDX={activeSlideIDX}
-            setActiveSlideIDX={setActiveSlideIDX}
-          />
+          {isGallery && (
+            <Gallery
+              data={data}
+              isOpenGallery={isOpenGallery}
+              setIsOpenGallery={setIsOpenGallery}
+              activeSlideIDX={activeSlideIDX}
+              setActiveSlideIDX={setActiveSlideIDX}
+            />
+          )}
         </Swiper>
 
         {/* стелка вперед */}
@@ -83,7 +97,9 @@ const MySwiper = () => {
         </div>
       </div>
 
-      <div className={classes.pagination}></div>
+      <div
+        className={clsx(classes.pagination, classes.pagination + nameSwiper)}
+      ></div>
     </div>
   );
 };

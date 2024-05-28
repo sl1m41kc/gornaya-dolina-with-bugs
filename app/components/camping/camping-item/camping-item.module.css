@@ -14,6 +14,11 @@
     aspect-ratio: 14/9;
     border-radius: 30px;
     overflow: hidden;
+    transition: transform .25s;
+}
+
+.item:hover {
+    transform: rotate(-3deg) scale(1.1);
 }
 
 .image {
@@ -34,9 +39,25 @@
     font-size: 32px;
 }
 
-.title > span {
+.title>span {
     color: #fff;
     font-family: 'Philosopher';
     font-weight: 700;
     font-size: 20px;
+}
+
+@media (width <= 1280px) {
+    .title {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (width <= 1024px) {
+    .item {
+        aspect-ratio: 16/9;
+    }
+    .item:hover {
+        transform: none;
+    }
 }

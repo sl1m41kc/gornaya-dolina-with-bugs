@@ -1,12 +1,8 @@
 .navigation {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
-}
-
-.slide {
-    border-radius: 30px;
-    overflow: hidden;
 }
 
 .prevArrow, .nextArrow {
@@ -33,11 +29,16 @@
     transform: rotate(180deg);
 }
 
-
 .pagination {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: .5rem;
     margin-top: 1rem;
+}
+
+@media (width <= 414px) {
+    .prevArrow, .nextArrow {
+        display: none;
+    }
 }

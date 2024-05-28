@@ -10,6 +10,7 @@ import Reviews from "./components/reviews/reviews";
 import Contacts from "./components/contacts/contacts";
 import Footer from "./components/footer/footer";
 import HorseBlock from "./components/horse-block/horse-block";
+import { data } from "@/data/data";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
@@ -20,7 +21,7 @@ export default function Home() {
       <Main />
       <Houses />
       <AboutUs />
-      <PhotoGallery />
+      <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
       <Camping />
       <Reviews />
       <HorseBlock />

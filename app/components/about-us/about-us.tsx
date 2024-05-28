@@ -3,7 +3,7 @@ import Advantages from "./advantages/advantages";
 
 const AboutUs = () => {
   return (
-    <section className="container">
+    <section className="container" id="about-us">
       <div className="containerText">
         <h2 className="title">О нашей базе</h2>
         <p>

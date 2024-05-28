@@ -2,10 +2,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1);
 }
 
 .mask {
     mask-image: url('/sprites/mask/horse.svg');
-    mask-size: contain;
+    mask-size: 100% 100%;
 }

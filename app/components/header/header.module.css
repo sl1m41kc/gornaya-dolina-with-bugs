@@ -2,7 +2,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,12 +31,25 @@
     color: #393939;
 }
 
+.phoneWrapper:hover {
+    text-decoration: underline;
+}
+
 .button {
     text-transform: uppercase;
     padding: .75rem 2.25rem;
     color: #fff;
     background-color: var(--primary-color);
     border-radius: 20px;
+    transition: transform .25s;
+}
+
+.button:hover {
+    transform: scale(1.02);
+}
+
+.button:active {
+    transform: scale(1);
 }
 
 .logoWrapper {
@@ -78,4 +91,22 @@
     width: 40px;
     height: 40px;
     fill: #5F6368;
+}
+
+@media (width <= 1024px) {
+    .header {
+        padding: 1rem 1.75rem;
+    }
+    .phoneWrapper {
+        display: none;
+    }
+    .logo {
+        display: none;
+    }
+}
+
+@media (width <= 768px) {
+    .logoWrapper {
+        display: none;
+    }
 }

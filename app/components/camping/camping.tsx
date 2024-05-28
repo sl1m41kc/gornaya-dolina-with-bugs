@@ -9,7 +9,7 @@ import CampingItem from "./camping-item/camping-item";
 
 const Camping = () => {
   return (
-    <section className="container">
+    <section className="container" id="camping">
       <div className="containerText">
         <h2 className="title">Активный отдых</h2>
         <p>

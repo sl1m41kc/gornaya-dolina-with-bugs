@@ -4,3 +4,13 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.5rem;
 }
+
+@media (width <= 1024px) {
+    .campingTypes {
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: min(800px, 100%);
+    }
+}
