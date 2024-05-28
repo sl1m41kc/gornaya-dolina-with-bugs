@@ -10,7 +10,6 @@ import Gallery from "../gallery/gallery";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import "./correct-swiper.css";
 
 import ChevronRightSVG from "@/public/sprites/icons/chevron_right.svg";
@@ -27,17 +26,17 @@ const MySwiper = () => {
   return (
     <div className={classes.container}>
       <div className={classes.navigation}>
+        {/* стелка назад */}
         <div className={classes.prevArrow} ref={prevRef}>
           <ChevronRightSVG />
         </div>
 
+        {/* swiper */}
         <Swiper
           ref={swiperRef}
           spaceBetween={20}
           slidesPerView={2}
           loop={true}
-          loopAddBlankSlides={true}
-          loopPreventsSliding={true}
           modules={[Navigation, Pagination]}
           onInit={(swiper) => {
             // @ts-ignore
@@ -50,15 +49,12 @@ const MySwiper = () => {
           pagination={{
             clickable: true,
             el: `.${classes.pagination}`,
-            renderBullet: (_, className) => {
-              return `<span class="${className}"></span>`;
-            },
           }}
         >
           {data.gallery.map((item, index) => (
             <SwiperSlide
-              className={classes.slide}
               key={index + item.src}
+              className={classes.slide}
               onClick={() => {
                 setActiveSlideIDX(index);
                 setIsOpenGallery(true);
@@ -81,10 +77,12 @@ const MySwiper = () => {
           />
         </Swiper>
 
+        {/* стелка вперед */}
         <div className={classes.nextArrow} ref={nextRef}>
           <ChevronRightSVG />
         </div>
       </div>
+
       <div className={classes.pagination}></div>
     </div>
   );
