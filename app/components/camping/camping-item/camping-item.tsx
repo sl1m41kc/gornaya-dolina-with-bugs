@@ -6,6 +6,7 @@ import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
 
 interface IProps {
   title: string | JSX.Element;
@@ -18,23 +19,9 @@ const CampingItem = ({ title, imageSrc, icon }: IProps) => {
   const itemRef = useRef(null);
   const imageRef = useRef(null);
 
-  useGSAP(
-    () => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.from(imageRef.current, {
-        scale: 1.15,
-        scrollTrigger: {
-          trigger: imageRef.current,
-          start: "30% bottom",
-          end: "30% center",
-          scrub: true,
-        },
-      });
-    },
-    { scope: itemRef }
-  );
-
+  // Анимация
+  useScaleAnimation(imageRef);
+  
   return (
     <div className={classes.item} ref={itemRef}>
       <div className={classes.icon}>{icon}</div>

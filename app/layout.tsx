@@ -4,6 +4,7 @@ import "./globals.css";
 
 import "@/fonts/philosopher/philosopher.css";
 import "@/fonts/PT-Sans/PT-sans.css";
+
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
 

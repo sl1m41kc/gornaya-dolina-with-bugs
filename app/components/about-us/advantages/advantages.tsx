@@ -1,25 +1,12 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import classes from "./advantages.module.css";
-import { data } from "@/data/data";
 import MySwiper from "../../swiper/swiper";
+import useScreenWidth from "@/app/useScreenWidth";
+import { data } from "@/data/data";
 
 const Advantages = () => {
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    setScreenWidth(window.innerWidth);
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const screenWidth = useScreenWidth();
 
   return (
     <>

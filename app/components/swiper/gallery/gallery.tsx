@@ -9,12 +9,13 @@ import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "./correct-yarl.css";
 
 import { useSwiper } from "swiper/react";
+import { StaticImageData } from "next/image";
 
 interface IProps {
-  data: any;
+  data: StaticImageData[];
   isOpenGallery: boolean;
-  setIsOpenGallery: React.Dispatch<React.SetStateAction<boolean>>;
   activeSlideIDX: number;
+  setIsOpenGallery: React.Dispatch<React.SetStateAction<boolean>>;
   setActiveSlideIDX: React.Dispatch<React.SetStateAction<number>>;
 }
 
@@ -35,6 +36,7 @@ const Gallery = ({
       slides={data}
       on={{
         view: ({ index }: { index: number }) => {
+          // Когда открыт новый слайд - меняем активный слайд у свайпера
           setActiveSlideIDX(index);
           swiper.slideTo(index);
         },

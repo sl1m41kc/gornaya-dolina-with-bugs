@@ -8,6 +8,8 @@ import Gallery from "./gallery/gallery";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+
+// В этом файле можно менять стили уже заданные в swiper
 import "./correct-swiper.css";
 
 import ChevronRightSVG from "@/public/sprites/icons/chevron_right.svg";
@@ -17,10 +19,18 @@ import clsx from "clsx";
 
 interface IProps {
   data: any;
-  nameSwiper: string;
-  slide: (item: any, index: number) => JSX.Element;
-  isGallery?: boolean;
   countSlide?: number;
+
+  // Переменная чтобы разделить слайдеры по условному id
+  // Без ее указания swiper pagination не будет работать и они все будут восприниматься как одина
+  nameSwiper: string;
+
+  // Для гибкой верстки слайда
+  slide: (item: any, index: number) => JSX.Element;
+
+  // Если да - то при клике на слайд будет открываться галерея
+  // Работает только с данными в формате [фото, фото, фото, ...]
+  isGallery?: boolean;
 }
 
 const MySwiper = ({
@@ -33,6 +43,7 @@ const MySwiper = ({
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
   const [isOpenGallery, setIsOpenGallery] = useState(false);
   const [activeSlideIDX, setActiveSlideIDX] = useState(0);
 

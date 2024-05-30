@@ -1,26 +1,13 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
 import MySwiper from "../swiper/swiper";
-import { data } from "@/data/data";
 import Review from "./review/review";
 import classes from "./reviews.module.css";
+import useScreenWidth from "@/app/useScreenWidth";
+import { data } from "@/data/data";
 
 const Reviews = () => {
-  const [screenWidth, setScreenWidth] = useState(0);
-
-  useEffect(() => {
-    setScreenWidth(window.innerWidth);
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  const screenWidth = useScreenWidth();
 
   return (
     <section className="container" id="reviews">
@@ -28,8 +15,8 @@ const Reviews = () => {
 
       <div className={classes.container}>
         <MySwiper
-          countSlide={screenWidth <= 1024 ? 1 : 2}
           nameSwiper="swiperReviews"
+          countSlide={screenWidth <= 1024 ? 1 : 2}
           data={data.reviews}
           slide={(item: any, index: number) => (
             <Review key={index + item.name} item={item} />

@@ -10,7 +10,12 @@ import VKSVG from "@/public/sprites/social/vk.svg";
 import YandexSVG from "@/public/sprites/social/yandex_maps.svg";
 import GISSVG from "@/public/sprites/social/2gis.svg";
 
+import { data } from "@/data/data";
+
 const Contacts = () => {
+  const social = data.social
+  const navigation = data.navigation
+
   return (
     <section className="container" id="contacts">
       <h2 className="title">Контакты</h2>
@@ -19,7 +24,7 @@ const Contacts = () => {
         <div className={classes.map}>
           <iframe
             className={classes.iframe}
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3Af465a56366a2737d2aa927cd9a6662fb9114eae63ceff539b7d4954188a611ec&amp;source=constructor"
+            src={navigation.map}
           />
         </div>
 
@@ -30,18 +35,18 @@ const Contacts = () => {
                 <PhoneSVG className={classes.iconHeader} />
                 <p>Телефон</p>
               </div>
-              <a className={classes.phoneLink} href="tel:+79130196279">
-                +7 (913) 019-62-79
+              <a className={classes.phoneLink} href={social.phone.link}>
+                {social.phone.number}
               </a>
             </div>
             <div className={classes.social}>
               <a
                 target="_blank"
-                href="https://wa.me/79130196279?text=%D0%9F%D1%80%D0%B8%D0%B2%D0%B5%D1%82!%20%D0%9C%D0%B5%D0%BD%D1%8F%20%D0%B8%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%83%D0%B5%D1%82..."
+                href={social.whatsapp}
               >
                 <WhatsAppSVG />
               </a>
-              <a target="_blank" href="https://vk.com/gornaya_dolina04">
+              <a target="_blank" href={social.vk}>
                 <VKSVG />
               </a>
             </div>
@@ -62,10 +67,10 @@ const Contacts = () => {
                 <p>Построить маршрут</p>
               </div>
               <div className={classes.mapLink}>
-                <a href="yandexnavi://build_route_on_map?lat_to=51.490958&lon_to=85.965114">
+                <a href={navigation.yandexnavi}>
                   <YandexSVG />
                 </a>
-                <a href='https://2gis.ru/routeSearch/to/85.965511,51.490357/go'>
+                <a href={navigation.twogis}>
                   <GISSVG />
                 </a>
               </div>

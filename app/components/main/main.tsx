@@ -4,6 +4,7 @@ import Image from "next/image";
 import Booking from "./booking/booking";
 
 interface IProps {
+  // Сделаны гибкие данные фото чтобы переиспользовать блок
   imageSrc: string;
   imageAlt: string;
 }

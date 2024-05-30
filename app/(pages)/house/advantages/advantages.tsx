@@ -9,9 +9,10 @@ interface IProps {
 }
 
 const Advantages = ({ advantages }: IProps) => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
+    setScreenWidth(window.innerWidth);
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };

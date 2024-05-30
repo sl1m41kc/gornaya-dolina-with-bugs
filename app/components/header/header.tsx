@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import BurgerMenu from "./burger-menu/burger-menu";
 import classes from "./header.module.css";
 import PhoneSVG from "@/public/sprites/icons/phone.svg";
@@ -8,10 +8,11 @@ import clsx from "clsx";
 import LogoSVG from "@/public/sprites/logo.svg";
 import { scroller } from "react-scroll";
 import { usePathname, useRouter } from "next/navigation";
+import useScreenWidth from "@/app/useScreenWidth";
 
 const Header = () => {
+  const screenWidth = useScreenWidth();
   const [scrollOnTop, setScrollOnTop] = useState(true);
-  const [screenWidth, setScreenWidth] = useState(0);
   const router = useRouter();
   const path = usePathname();
 
@@ -27,33 +28,27 @@ const Header = () => {
   };
 
   useEffect(() => {
-    setScreenWidth(window.innerWidth);
-
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setScrollOnTop(true);
+      } else {
+        setScrollOnTop(false);
+      }
     };
-
-    if (screenWidth >= 1024) {
-      window.addEventListener("scroll", handleScroll);
-    } else {
-      window.removeEventListener("scroll", handleScroll);
+  
+    if (typeof window !== "undefined") {
+      if (screenWidth >= 1024) {
+        window.addEventListener("scroll", handleScroll);
+      } else {
+        window.removeEventListener("scroll", handleScroll);
+      }
+  
+  
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
     }
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const handleScroll = useCallback(() => {
-    if (window.scrollY === 0) {
-      setScrollOnTop(true);
-    } else {
-      setScrollOnTop(false);
-    }
-  }, []);
+  }, [screenWidth]);
 
   return (
     <header
