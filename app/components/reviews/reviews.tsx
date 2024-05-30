@@ -7,9 +7,10 @@ import Review from "./review/review";
 import classes from "./reviews.module.css";
 
 const Reviews = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
+    setScreenWidth(window.innerWidth);
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };

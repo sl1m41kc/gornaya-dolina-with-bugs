@@ -6,9 +6,10 @@ import { data } from "@/data/data";
 import MySwiper from "../../swiper/swiper";
 
 const Advantages = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
+    setScreenWidth(window.innerWidth);
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };

@@ -16,15 +16,15 @@ const Header = () => {
   const path = usePathname();
 
   const onClick = () => {
-    if (path !== '/') {
-      router.push('/');
+    if (path !== "/") {
+      router.push("/");
     }
     scroller.scrollTo("main", {
       duration: 1000,
       delay: 0,
       smooth: "easeInOutCubic",
     });
-  }
+  };
 
   useEffect(() => {
     setScreenWidth(window.innerWidth);
@@ -33,9 +33,16 @@ const Header = () => {
       setScreenWidth(window.innerWidth);
     };
 
+    if (screenWidth >= 1024) {
+      window.addEventListener("scroll", handleScroll);
+    } else {
+      window.removeEventListener("scroll", handleScroll);
+    }
+
     window.addEventListener("resize", handleResize);
 
     return () => {
+      window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);
     };
   }, []);
@@ -47,18 +54,6 @@ const Header = () => {
       setScrollOnTop(false);
     }
   }, []);
-
-  useMemo(() => {
-    if (screenWidth >= 1024) {
-      window.addEventListener("scroll", handleScroll);
-    } else {
-      window.removeEventListener("scroll", handleScroll);
-    }
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [screenWidth]);
 
   return (
     <header
@@ -82,7 +77,7 @@ const Header = () => {
           <PhoneSVG className={classes.phone} />
           <p>+7 (913) 019-62-79</p>
         </a>
-        <button className={clsx('button', classes.button)} type="button">
+        <button className={clsx("button", classes.button)} type="button">
           Забронировать
         </button>
       </div>
