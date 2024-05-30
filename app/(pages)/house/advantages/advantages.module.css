@@ -1,0 +1,62 @@
+.advantages {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid var(--secondary-accent);
+    gap: 1px;
+    background-color: var(--secondary-accent);
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: .5rem;
+    text-align: center;
+    padding: 1rem;
+    line-height: 1.25;
+    background-color: #fff;
+    fill: var(--secondary-accent);
+    color: var(--secondary-accent);
+}
+
+.iconWrapper {
+    gap: .5rem;
+    height: 60px;
+}
+
+.iconWrapper > svg {
+    height: 100%;
+}
+
+.swiperWrapper {
+    margin-top: 3rem;
+}
+
+@media (width <= 1024px) {
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        justify-content: center;
+        border: 1px solid var(--secondary-accent);
+        border-radius: 30px;
+        aspect-ratio: 16/9;
+    }
+    .iconWrapper {
+        height: 100px;
+    }
+    .title {
+        font-size: 20px;
+    }
+}
+
+@media (width <= 768px) {
+    .iconWrapper {
+        height: 60px;
+    }
+    .title {
+        font-size: 16px;
+    }
+}

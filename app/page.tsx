@@ -1,6 +1,7 @@
+'use client'
+
 import AboutUs from "./components/about-us/about-us";
 import Camping from "./components/camping/camping";
-import Header from "./components/header/header";
 import Houses from "./components/houses/houses";
 import Main from "./components/main/main";
 import PhotoGallery from "./components/photo-gallery/photo-gallery";
@@ -8,17 +9,29 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Reviews from "./components/reviews/reviews";
 import Contacts from "./components/contacts/contacts";
-import Footer from "./components/footer/footer";
 import HorseBlock from "./components/horse-block/horse-block";
 import { data } from "@/data/data";
+import { useEffect } from "react";
+import { scroller } from "react-scroll";
 
 export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
 
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash) {
+      scroller.scrollTo(hash.slice(1), {
+        duration: 1000,
+        delay: 0,
+        smooth: 'easeInOutCubic',
+        offset: -100,
+      })
+    }
+  })
+
   return (
     <div className="wrapper">
-      <Header />
-      <Main />
+      <Main imageAlt="Горная Долина" imageSrc="/images/main.png" />
       <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
@@ -26,7 +39,6 @@ export default function Home() {
       <Reviews />
       <HorseBlock />
       <Contacts />
-      <Footer />
     </div>
   );
 }

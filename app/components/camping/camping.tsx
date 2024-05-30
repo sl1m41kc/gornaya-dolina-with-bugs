@@ -22,11 +22,12 @@ const Camping = () => {
       </div>
 
       <div className={classes.campingTypes}>
-        {data.camping.map((item) => (
-          <CampingItem 
-          icon={item.icon}
-          title={item.title}
-          imageSrc={item.imageSrc}
+        {data.camping.map((item, index) => (
+          <CampingItem
+            key={String(index) + item.title}
+            icon={item.icon}
+            title={item.title}
+            imageSrc={item.imageSrc}
           />
         ))}
       </div>

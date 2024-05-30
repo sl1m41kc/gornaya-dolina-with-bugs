@@ -10,9 +10,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 interface IProps {
   subtitle: string;
   imageSrc: string;
+  href: string;
 }
 
-const HouseItem = ({ subtitle, imageSrc }: IProps) => {
+const HouseItem = ({ subtitle, imageSrc, href }: IProps) => {
   const itemRef = useRef(null);
   const imageRef = useRef(null);
 
@@ -34,7 +35,7 @@ const HouseItem = ({ subtitle, imageSrc }: IProps) => {
   );
 
   return (
-    <div className={classes.item} ref={itemRef}>
+    <a className={classes.item} ref={itemRef} href={href}>
       <h3 className={classes.subtitle}>{subtitle}</h3>
       <Image
         ref={imageRef}
@@ -44,7 +45,7 @@ const HouseItem = ({ subtitle, imageSrc }: IProps) => {
         width={1920}
         height={1080}
       />
-    </div>
+    </a>
   );
 };
 

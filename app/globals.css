@@ -29,15 +29,21 @@
 }
 
 .containerText {
+    width: min(100%, 800px);
     padding-inline: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    width: min(100%, 800px);
     margin-inline: auto;
     font-size: 20px;
     color: var(--text-color);
     line-height: 1.4;
+}
+
+.containerInfo {
+    width: min(100%, 1000px);
+    margin-inline: auto;
+    padding-inline: 1.25rem;
 }
 
 .title {
@@ -46,6 +52,18 @@
     font-size: 48px;
     font-weight: 700;
     color: var(--primary-color);
+}
+
+.button {
+    transition: transform .25s;
+}
+
+.button:hover {
+    transform: scale(1.02);
+}
+
+.button:active {
+    transform: scale(1);
 }
 
 @media (width <= 1024px) {

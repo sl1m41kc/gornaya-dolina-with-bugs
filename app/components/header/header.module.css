@@ -41,18 +41,10 @@
     color: #fff;
     background-color: var(--primary-color);
     border-radius: 20px;
-    transition: transform .25s;
-}
-
-.button:hover {
-    transform: scale(1.02);
-}
-
-.button:active {
-    transform: scale(1);
 }
 
 .logoWrapper {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;

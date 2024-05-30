@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 
-import '@/fonts/philosopher/philosopher.css';
-import '@/fonts/PT-Sans/PT-sans.css';
+import "@/fonts/philosopher/philosopher.css";
+import "@/fonts/PT-Sans/PT-sans.css";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Горная Долина",
@@ -17,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

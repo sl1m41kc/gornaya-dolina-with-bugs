@@ -3,9 +3,12 @@
 import React, { useState } from "react";
 import classes from "./burger-menu.module.css";
 import clsx from "clsx";
-import { Link } from "react-scroll";
+import { Link, scroller } from "react-scroll";
+import { redirect, usePathname, useRouter } from "next/navigation";
 
 const BurgerMenu = () => {
+  const path = usePathname()
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
   const linkItem = [
@@ -43,8 +46,11 @@ const BurgerMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const onClickLink = () => {
+  const onClickLink = async (id: string) => {
     setIsOpen(false);
+    if (path !== '/') {
+      router.push(`/#${id}`)
+    }
   };
 
   return (
@@ -65,16 +71,15 @@ const BurgerMenu = () => {
             spy={true}
             smooth={true}
             offset={-100}
-            duration={500}
             activeClass={classes.active}
             className={classes.link}
             key={item.id}
-            onClick={onClickLink}
+            onClick={() => onClickLink(item.id)}
           >
             {item.name}
           </Link>
         ))}
-        <p className={classes.phone}>+7 (913) 019-62-79</p>
+        <a href="tel:+79130196279" className={classes.phone}>+7 (913) 019-62-79</a>
       </div>
     </div>
   );

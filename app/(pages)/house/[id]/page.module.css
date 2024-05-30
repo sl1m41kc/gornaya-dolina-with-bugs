@@ -1,0 +1,63 @@
+.house {
+    margin-top: 3rem;
+}
+
+.info {
+    margin-top: 1rem;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 1.25rem;
+}
+
+.price {
+    min-width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-block: 1px solid var(--secondary-accent);
+    color: var(--secondary-accent);
+    padding: 1rem;
+}
+
+.priceValue {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.priceCurrency {
+    font-size: 16px;
+}
+
+.description {
+    width: inherit;
+    padding: inherit;
+}
+
+.buttons {
+    display: flex;
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.button {
+    font-size: 20px;
+    border: 1px solid var(--secondary-accent);
+    border-radius: 30px;
+    color: var(--secondary-accent);
+    padding: .5rem 1.25rem;
+}
+
+.gallery {
+    margin-block: 3rem;
+}
+
+@media (width <= 1024px) {
+    .info {
+        flex-direction: column;
+    }
+    .price {
+        min-width: 100%;
+    }
+}

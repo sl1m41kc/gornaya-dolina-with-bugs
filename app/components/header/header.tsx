@@ -1,17 +1,34 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import BurgerMenu from "./burger-menu/burger-menu";
 import classes from "./header.module.css";
 import PhoneSVG from "@/public/sprites/icons/phone.svg";
 import clsx from "clsx";
 import LogoSVG from "@/public/sprites/logo.svg";
+import { scroller } from "react-scroll";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header = () => {
   const [scrollOnTop, setScrollOnTop] = useState(true);
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(0);
+  const router = useRouter();
+  const path = usePathname();
+
+  const onClick = () => {
+    if (path !== '/') {
+      router.push('/');
+    }
+    scroller.scrollTo("main", {
+      duration: 1000,
+      delay: 0,
+      smooth: "easeInOutCubic",
+    });
+  }
 
   useEffect(() => {
+    setScreenWidth(window.innerWidth);
+
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
@@ -23,25 +40,25 @@ const Header = () => {
     };
   }, []);
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (window.scrollY === 0) {
       setScrollOnTop(true);
     } else {
       setScrollOnTop(false);
     }
-  };
+  }, []);
 
-  useEffect(() => {
-    if (screenWidth > 1024) {
+  useMemo(() => {
+    if (screenWidth >= 1024) {
       window.addEventListener("scroll", handleScroll);
+    } else {
+      window.removeEventListener("scroll", handleScroll);
     }
 
     return () => {
-      if (screenWidth > 1024) {
-        window.removeEventListener("scroll", handleScroll);
-      }
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [screenWidth]);
 
   return (
     <header
@@ -49,7 +66,7 @@ const Header = () => {
     >
       <BurgerMenu />
 
-      <a href="/" className={classes.logoWrapper}>
+      <div className={classes.logoWrapper} onClick={onClick}>
         <LogoSVG
           className={clsx(classes.logo, !scrollOnTop && classes.logoCorrect)}
         />
@@ -58,14 +75,14 @@ const Header = () => {
         >
           Горная Долина
         </h1>
-      </a>
+      </div>
 
       <div className={classes.actions}>
         <a href="tel:+79130196279" className={classes.phoneWrapper}>
           <PhoneSVG className={classes.phone} />
           <p>+7 (913) 019-62-79</p>
         </a>
-        <button className={classes.button} type="button">
+        <button className={clsx('button', classes.button)} type="button">
           Забронировать
         </button>
       </div>

@@ -47,9 +47,9 @@ const MySwiper = ({
         {/* swiper */}
         <Swiper
           ref={swiperRef}
+          loop={!isGallery}
           spaceBetween={20}
           slidesPerView={countSlide}
-          loop={true}
           modules={[Navigation, Pagination]}
           onInit={(swiper) => {
             // @ts-ignore

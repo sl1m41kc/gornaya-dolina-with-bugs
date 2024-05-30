@@ -31,6 +31,7 @@ const Houses = () => {
             key={index + house.subtitle + house.imageSrc}
             subtitle={house.subtitle}
             imageSrc={house.imageSrc}
+            href={house.href}
           />
         ))}
       </div>
