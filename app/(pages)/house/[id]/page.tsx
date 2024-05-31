@@ -3,10 +3,9 @@ import classes from "./page.module.css";
 import Main from "@/app/components/main/main";
 import { data } from "@/data/data";
 import Advantages from "../advantages/advantages";
-import Gallery from "@/app/components/swiper/gallery/gallery";
-import MySwiper from "@/app/components/swiper/swiper";
 import PhotoGallery from "@/app/components/photo-gallery/photo-gallery";
 import clsx from "clsx";
+import Actions from "../../actions/actions";
 
 const Page = ({ params: { id } }: { params: { id: string } }) => {
   const houseData = data.housesPage[Number(id)];
@@ -27,14 +26,7 @@ const Page = ({ params: { id } }: { params: { id: string } }) => {
             <p className={classes.priceCurrency}>рублей в сутки</p>
           </div>
         </div>
-        <div className={classes.buttons}>
-          <button type="button" className={clsx('button', classes.button)}>
-            Условия бронирования
-          </button>
-          <button type="button" className={clsx('button', classes.button)}>
-            Правила проживания
-          </button>
-        </div>
+        <Actions />
       </div>
 
       <div className={classes.advantages}>
