@@ -18,7 +18,7 @@ const Comfort = () => {
       </div>
 
       <div className={classes.campingTypes}>
-        {data.camping.map((item, index) => (
+        {data.comfortPage.map((item, index) => (
           <ComfortItem
             type={item.type}
             key={String(index) + item.title}

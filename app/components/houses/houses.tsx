@@ -26,11 +26,11 @@ const Houses = () => {
       </div>
 
       <div className={classes.wrapper}>
-        {data.houses.map((house, index) => (
+        {data.housesPage.map((house, index) => (
           <HouseItem
-            key={index + house.subtitle + house.imageSrc}
-            subtitle={house.subtitle}
-            imageSrc={house.imageSrc}
+            key={index + house.title + house.mainImage.alt}
+            subtitle={house.title}
+            imageSrc={house.mainImage.src}
             href={house.href}
           />
         ))}

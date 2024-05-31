@@ -7,9 +7,9 @@ import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
 
 interface IProps {
   type: string;
-  title: string | JSX.Element;
+  title: string | React.ReactNode;
   imageSrc: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
 }
 
 const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {

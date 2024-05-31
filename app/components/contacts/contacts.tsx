@@ -13,7 +13,7 @@ import GISSVG from "@/public/sprites/social/2gis.svg";
 import { data } from "@/data/data";
 
 const Contacts = () => {
-  const social = data.social
+  const social = data.socialMedia
   const navigation = data.navigation
 
   return (

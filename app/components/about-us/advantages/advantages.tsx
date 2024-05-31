@@ -13,7 +13,7 @@ const Advantages = () => {
       {screenWidth <= 1024 ? (
         <div className={classes.swiperWrapper}>
           <MySwiper
-            data={data.advantages}
+            data={data.listAdvantages}
             countSlide={1}
             nameSwiper="swiperAdvantages"
             slide={(item: any, index: number) => (
@@ -32,7 +32,7 @@ const Advantages = () => {
         </div>
       ) : (
         <div className={classes.advantages}>
-          {data.advantages.map((item, index) => (
+          {data.listAdvantages.map((item, index) => (
             <div
               className={classes.item}
               key={index + item.title + item.description}
