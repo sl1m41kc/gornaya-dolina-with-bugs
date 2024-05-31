@@ -1,9 +1,9 @@
 import React from "react";
-import classes from "./camping.module.css";
+import classes from "./comfort.module.css";
 import { data } from "@/data/data";
-import CampingItem from "./camping-item/camping-item";
+import ComfortItem from "./comfort-item/comfort-item";
 
-const Camping = () => {
+const Comfort = () => {
   return (
     <section className="container" id="camping">
       <div className="containerText">
@@ -19,7 +19,8 @@ const Camping = () => {
 
       <div className={classes.campingTypes}>
         {data.camping.map((item, index) => (
-          <CampingItem
+          <ComfortItem
+            type={item.type}
             key={String(index) + item.title}
             icon={item.icon}
             title={item.title}
@@ -31,4 +32,4 @@ const Camping = () => {
   );
 };
 
-export default Camping;
+export default Comfort;

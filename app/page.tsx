@@ -1,7 +1,7 @@
 'use client'
 
 import AboutUs from "./components/about-us/about-us";
-import Camping from "./components/camping/camping";
+import Camping from "./components/comfort/comfort";
 import Houses from "./components/houses/houses";
 import Main from "./components/main/main";
 import PhotoGallery from "./components/photo-gallery/photo-gallery";

@@ -1,20 +1,18 @@
 'use client'
 
 import React, { useRef } from "react";
-import classes from "./camping-item.module.css";
+import classes from "./comfort-item.module.css";
 import Image from "next/image";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
 
 interface IProps {
+  type: string;
   title: string | JSX.Element;
   imageSrc: string;
   icon: JSX.Element;
 }
 
-const CampingItem = ({ title, imageSrc, icon }: IProps) => {
+const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
   const alt = title as string;
   const itemRef = useRef(null);
   const imageRef = useRef(null);
@@ -23,7 +21,7 @@ const CampingItem = ({ title, imageSrc, icon }: IProps) => {
   useScaleAnimation(imageRef);
   
   return (
-    <div className={classes.item} ref={itemRef}>
+    <a className={classes.item} href={`/comfort/${type}`} ref={itemRef}>
       <div className={classes.icon}>{icon}</div>
       <h3 className={classes.title}>{title}</h3>
       <Image
@@ -34,8 +32,8 @@ const CampingItem = ({ title, imageSrc, icon }: IProps) => {
         width={1920}
         height={1080}
       />
-    </div>
+    </a>
   );
 };
 
-export default CampingItem;
+export default ComfortItem;

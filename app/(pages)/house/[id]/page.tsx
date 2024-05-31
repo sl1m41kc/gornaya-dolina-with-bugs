@@ -5,7 +5,7 @@ import { data } from "@/data/data";
 import Advantages from "../advantages/advantages";
 import PhotoGallery from "@/app/components/photo-gallery/photo-gallery";
 import clsx from "clsx";
-import Actions from "../../actions/actions";
+import Actions from "../actions/actions";
 
 const Page = ({ params: { id } }: { params: { id: string } }) => {
   const houseData = data.housesPage[Number(id)];
