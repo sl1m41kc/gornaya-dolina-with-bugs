@@ -27,7 +27,7 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  });
 
   if (!isOpen) return null;
 

@@ -1,24 +1,27 @@
-"use client";
-
+'use client'
+import { useEffect } from "react";
+import { redirect } from "next/navigation";
 import Main from "@/app/components/main/main";
 import classes from "./page.module.css";
 import { data } from "@/data/data";
 import clsx from "clsx";
 import PhotoGallery from "@/app/components/photo-gallery/photo-gallery";
 import { comfortPageItemName } from "@/data/comfort-page/types";
-import { useEffect } from "react";
-import { redirect } from "next/navigation";
 
-const page = ({
+const Page = ({
   params: { type },
 }: {
   params: { type: comfortPageItemName };
 }) => {
   const pageData = data.comfortPage.find((item) => item.type === type);
-  if (!pageData) {
-    useEffect(() => {
+  
+  useEffect(() => {
+    if (!pageData) {
       redirect("/");
-    }, []);
+    }
+  }, [pageData]);
+
+  if (!pageData) {
     return null;
   }
 
@@ -40,4 +43,5 @@ const page = ({
   );
 };
 
-export default page;
+export default Page;
+
