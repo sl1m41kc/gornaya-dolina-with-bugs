@@ -1,14 +1,9 @@
-.booking {
-    position: absolute;
-    bottom: 1rem;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 800px;
-    height: 90px;
+.container {
     border-radius: 30px;
-    background-color: #dfdfdf;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
+    position: absolute;
+    bottom: 70px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    left: 0;
+    right: 0;
+    margin-inline: auto;
 }

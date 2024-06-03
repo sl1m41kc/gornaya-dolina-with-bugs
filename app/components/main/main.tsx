@@ -1,7 +1,9 @@
+'use client';
+
 import React from "react";
 import classes from "./main.module.css";
 import Image from "next/image";
-import Booking from "./booking/booking";
+import BnovoWidget from "./booking/booking";
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
@@ -21,7 +23,7 @@ const Main = ({imageSrc, imageAlt}: IProps) => {
           height={1080}
         />
       </div>
-      <Booking />
+      <BnovoWidget />
     </main>
   );
 };

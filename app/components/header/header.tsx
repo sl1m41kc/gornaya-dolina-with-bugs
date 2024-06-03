@@ -72,9 +72,9 @@ const Header = () => {
           <PhoneSVG className={classes.phone} />
           <p>+7 (913) 019-62-79</p>
         </a>
-        <button className={clsx("button", classes.button)} type="button">
+        <a className={clsx("button", classes.button)} href="/booking">
           Забронировать
-        </button>
+        </a>
       </div>
     </header>
   );
