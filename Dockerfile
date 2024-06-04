@@ -2,6 +2,8 @@
 FROM node:20.14.0-alpine3.20
 
 # Устанавливаем рабочий каталог
+# WORKDIR /app
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 # Install PM2 globally
