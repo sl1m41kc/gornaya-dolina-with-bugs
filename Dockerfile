@@ -2,7 +2,7 @@
 FROM node:20.14.0-alpine3.20
 
 # Устанавливаем рабочий каталог
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Install PM2 globally
 RUN npm install --global pm2
