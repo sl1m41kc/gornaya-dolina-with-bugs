@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from "react";
 import classes from "./page.module.css";
 import clsx from "clsx";
 
-const page = () => {
+const Page = () => {
   const script1Ref = useRef<HTMLScriptElement | null>(null);
 
   useEffect(() => {
@@ -55,4 +55,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
