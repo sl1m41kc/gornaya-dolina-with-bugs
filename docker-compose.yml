@@ -8,25 +8,25 @@ services:
     ports:
       - "3000:3000"
   
-  # nginx:
-  #   image: nginx:1.19.8-alpine
-  #   depends_on:
-  #     - app
-  #   ports:
-  #     - "80:80"
-  #     - "443:443"
-  #   volumes:
-  #     - ./nginx/nginx-conf.d:/etc/nginx/conf.d
-  #     - ./nginx/etc/letsencrypt:/etc/letsencrypt
-  #     - ./nginx/www:/var/www/html
-  #   restart: always
+  nginx:
+    image: nginx:1.19.8-alpine
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx-conf.d:/etc/nginx/conf.d
+      - ./nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/www:/var/www/html
+    restart: always
   
-  # certbot:
-  #   image: certbot/certbot
-  #   depends_on:
-  #     - nginx
-  #   container_name: certbot
-  #   volumes:
-  #     - ./nginx/etc/letsencrypt:/etc/letsencrypt
-  #     - ./nginx/www:/var/www/html
-  #   command: certonly --webroot --webroot-path=/var/www/html --email andrey2455@gmail.com --agree-tos --no-eff-email -d ncopit.ru
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    container_name: certbot
+    volumes:
+      - ./nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/www:/var/www/html
+    command: certonly --webroot --webroot-path=/var/www/html --email andrey2455@gmail.com --agree-tos --no-eff-email -d ncopit.ru
