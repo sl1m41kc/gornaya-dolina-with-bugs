@@ -1,10 +1,10 @@
 Dockerfile
 .dockerignore
-node_modules/         # Installed inside container
+node_modules         # Installed inside container
 npm-debug.log
-.next/                # Existing Next.js builds
-.git/
+.next                # Existing Next.js builds
+.git
 .gitignore
-nginx/
+nginx
 README.md
 out
