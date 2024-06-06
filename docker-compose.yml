@@ -34,4 +34,4 @@ services:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
       - ./certbot/renew_and_reload.sh:/renew_and_reload.sh
-    entrypoint: certbot renew
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew && docker compose exec nginx nginx -s reload; sleep 12h; done'"
