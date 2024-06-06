@@ -21,12 +21,12 @@ services:
       - ./nginx/www:/var/www/html
     restart: always
   
-  # certbot:
-  #   image: certbot/certbot
-  #   depends_on:
-  #     - nginx
-  #   container_name: certbot
-  #   volumes:
-  #     - ./nginx/etc/letsencrypt:/etc/letsencrypt
-  #     - ./nginx/www:/var/www/html
-  #   command: certonly --webroot --webroot-path=/var/www/html --email andrey2455@gmail.com --agree-tos --no-eff-email -d www.ncopit.ru
+  certbot:
+    image: certbot/certbot
+    depends_on:
+      - nginx
+    container_name: certbot
+    volumes:
+      - ./nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./nginx/www:/var/www/html
+    command: certonly --webroot --webroot-path=/var/www/html --email andrey2455@gmail.com --agree-tos --no-eff-email -d www.ncopit.ru -d ncopit.ru
