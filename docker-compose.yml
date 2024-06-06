@@ -29,4 +29,4 @@ services:
     volumes:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
-    command: certonly --webroot --webroot-path=/var/www/html --email andrey2455@gmail.com --agree-tos --no-eff-email -d www.ncopit.ru -d ncopit.ru
+    command: certonly --webroot --webroot-path=/var/www/html --email andrey2455@gmail.com --agree-tos --no-eff-email -d www.dolina.axonix.ru -d dolina.axonix.ru
