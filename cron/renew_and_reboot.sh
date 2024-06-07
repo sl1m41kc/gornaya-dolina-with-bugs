@@ -1,27 +1,25 @@
-#!/bin/sh
-
 COMPOSE="docker compose -f /root/gornaya-dolina/docker-compose.yml"
 
-#!/bin/bash
+# # Обновление сертификатов с помощью certbot
+# $COMPOSE exec certbot certbot renew
 
-# Перезапуск контейнера certbot
-$COMPOSE restart certbot
+# # Проверка статуса команды
+# if [ $? -eq 0 ]; then
+#     echo "Certificates renewed successfully."
+# else
+#     echo "Failed to renew certificates."
+#     exit 1
+# fi
 
-# Проверка статуса команды
-if [ $? -eq 0 ]; then
-    echo "Certbot container restarted successfully."
-else
-    echo "Failed to restart Certbot container."
-    exit 1
-fi
+# # Перезагрузка Nginx для применения новых сертификатов
+# $COMPOSE exec nginx nginx -s reload
 
-# Перезапуск контейнера nginx
-$COMPOSE restart nginx
+# # Проверка статуса команды
+# if [ $? -eq 0 ]; then
+#     echo "Nginx reloaded successfully."
+# else
+#     echo "Failed to reload Nginx."
+#     exit 1
+# fi
 
-# Проверка статуса команды
-if [ $? -eq 0 ]; then
-    echo "Nginx container restarted successfully."
-else
-    echo "Failed to restart Nginx container."
-    exit 1
-fi
+$COMPOSE exec certbot certbot renew && $COMPOSE exec nginx nginx -s reload
