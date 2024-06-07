@@ -10,6 +10,7 @@ services:
   
   nginx:
     image: nginx:1.19.8-alpine
+    container_name: nginx
     depends_on:
       - app
     ports:
@@ -24,9 +25,9 @@ services:
   # certbot запускается для получения сертификатов
   certbot:
     image: certbot/certbot
+    container_name: certbot
     depends_on:
       - nginx
-    container_name: certbot
     volumes:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
