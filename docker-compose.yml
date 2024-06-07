@@ -33,5 +33,4 @@ services:
     volumes:
       - ./nginx/etc/letsencrypt:/etc/letsencrypt
       - ./nginx/www:/var/www/html
-      - /var/run/docker.sock:/var/run/docker.sock
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew && docker compose exec nginx nginx -s reload; sleep 12h; done'"
+    entrypoint: "certbot renew"
