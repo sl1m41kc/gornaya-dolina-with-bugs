@@ -19,10 +19,6 @@ services:
       - ./nginx/www:/var/www/html
     restart: always
   
-  # certbot запускается для мониторинга сертификатов.
-  # Каждые 12 часов выполняется команда certbot renew.
-  # Если сертификаты скоро закончатся, то запрашивается выпуск новых.
-  # После этого перезагружается nginx.
   certbot:
     image: certbot/certbot
     depends_on:
