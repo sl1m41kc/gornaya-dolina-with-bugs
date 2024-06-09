@@ -1,4 +1,5 @@
 #!/bin/bash
+ . ~/.bash_profile
 
 COMPOSE="docker compose -f /root/gornaya-dolina/docker-compose.yml"
 
