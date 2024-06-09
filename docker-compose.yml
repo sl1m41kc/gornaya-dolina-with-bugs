@@ -14,9 +14,9 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/nginx-conf.d/:/etc/nginx/conf.d
-      - ./nginx/etc/letsencrypt:/etc/letsencrypt
-      - ./nginx/www:/var/www/html
+      - ./docker/nginx/nginx-conf.d/:/etc/nginx/conf.d
+      - ./docker/nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./docker/nginx/www:/var/www/html
     restart: always
   
   certbot:
@@ -25,7 +25,7 @@ services:
       - nginx
     container_name: certbot
     volumes:
-      - ./nginx/etc/letsencrypt:/etc/letsencrypt
-      - ./nginx/www:/var/www/html
+      - ./docker/nginx/etc/letsencrypt:/etc/letsencrypt
+      - ./docker/nginx/www:/var/www/html
     # Чтобы контейнер не выключался после завершения ставим команду sleep
     entrypoint: /bin/sh -c "sleep infinity"
