@@ -9,6 +9,7 @@ import LogoSVG from "@/public/sprites/logo.svg";
 import { scroller } from "react-scroll";
 import { usePathname, useRouter } from "next/navigation";
 import useScreenWidth from "@/app/useScreenWidth";
+import { data } from "@/data/data";
 
 const Header = () => {
   const screenWidth = useScreenWidth();
@@ -68,9 +69,9 @@ const Header = () => {
       </div>
 
       <div className={classes.actions}>
-        <a href="tel:+79130196279" className={classes.phoneWrapper}>
+        <a href={data.socialMedia.phone.link} className={classes.phoneWrapper}>
           <PhoneSVG className={classes.phone} />
-          <p>+7 (913) 019-62-79</p>
+          <p className="link">{data.socialMedia.phone.number}</p>
         </a>
         <a className={clsx("button", classes.button)} href="/booking">
           Забронировать

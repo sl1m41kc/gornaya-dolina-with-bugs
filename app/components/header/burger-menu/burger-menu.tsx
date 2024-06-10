@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import classes from "./burger-menu.module.css";
 import clsx from "clsx";
-import { Link, scroller } from "react-scroll";
-import { redirect, usePathname, useRouter } from "next/navigation";
+import { Link } from "react-scroll";
+import { usePathname, useRouter } from "next/navigation";
+import { data } from "@/data/data";
 
 const BurgerMenu = () => {
   const path = usePathname()
@@ -79,7 +80,9 @@ const BurgerMenu = () => {
             {item.name}
           </Link>
         ))}
-        <a href="tel:+79130196279" className={classes.phone}>+7 (913) 019-62-79</a>
+        <div className={classes.phoneWrapper}>
+        <a href={data.socialMedia.phone.link} className={clsx(classes.phone, 'link', 'linkReverse')}>{data.socialMedia.phone.number}</a>
+        </div>
       </div>
     </div>
   );

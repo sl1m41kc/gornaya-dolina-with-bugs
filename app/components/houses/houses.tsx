@@ -3,10 +3,11 @@ import React from "react";
 import classes from "./houses.module.css";
 import HouseItem from "./house-item/house-item";
 import { data } from "@/data/data";
+import clsx from "clsx";
 
 const Houses = () => {
   return (
-    <section className="container" id="houses">
+    <section className={clsx("container", classes.container)} id="houses">
       <div className="containerText">
         <h2 className="title">Размещение</h2>
         <p>
@@ -26,9 +27,9 @@ const Houses = () => {
       </div>
 
       <div className={classes.wrapper}>
-        {data.housesPage.map((house, index) => (
+        {Object.entries(data.housesPage).map(([key, house]) => (
           <HouseItem
-            key={index + house.title + house.mainImage.alt}
+            key={house.title + house.mainImage.alt}
             subtitle={house.title}
             imageSrc={house.mainImage.src}
             href={house.href}

@@ -26,7 +26,7 @@ export const comfortPageData: comfortPageType = [
     slider: [KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO],
   },
   {
-    title: "Прогулки",
+    title: <>Прогулки <span>(пешие, вело, конные)</span></>,
     icon: <HikingSVG />,
     type: "hiking",
     description: (

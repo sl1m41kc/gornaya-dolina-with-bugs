@@ -21,6 +21,8 @@ const Main = ({imageSrc, imageAlt}: IProps) => {
           alt={imageAlt}
           width={1920}
           height={1080}
+          priority
+          sizes="100vw"
         />
       </div>
       <BnovoWidget />

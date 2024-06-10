@@ -11,6 +11,7 @@ import YandexSVG from "@/public/sprites/social/yandex_maps.svg";
 import GISSVG from "@/public/sprites/social/2gis.svg";
 
 import { data } from "@/data/data";
+import clsx from "clsx";
 
 const Contacts = () => {
   const social = data.socialMedia
@@ -35,7 +36,7 @@ const Contacts = () => {
                 <PhoneSVG className={classes.iconHeader} />
                 <p>Телефон</p>
               </div>
-              <a className={classes.phoneLink} href={social.phone.link}>
+              <a className={clsx(classes.phoneLink, 'link')} href={social.phone.link}>
                 {social.phone.number}
               </a>
             </div>

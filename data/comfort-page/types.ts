@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 
 export interface comfortPageItemType {
-  title: string;
+  title: string | React.ReactNode;
   icon: React.ReactNode;
   type: comfortPageItemName;
   description: React.ReactNode;

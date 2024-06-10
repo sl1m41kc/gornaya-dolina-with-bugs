@@ -9,10 +9,15 @@ export interface IHome {
         alt: string;
     };
     description: React.ReactNode;
-    price: number;
+    price: string | React.ReactNode;
     advantages: {
         title: React.ReactNode;
         icon: React.ReactNode;
     }[];
     slider: StaticImageData[];
 }
+
+
+export type homeItemName = 'double' | 'triple';
+
+export type homesType = Record<homeItemName, IHome>

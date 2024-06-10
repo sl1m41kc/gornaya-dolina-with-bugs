@@ -36,6 +36,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
                 alt={`Картинка галереи ${index + 1}`}
                 width={1920}
                 height={1080}
+                sizes="(max-width: 1024px) 90vw, 40vw"
               />
             );
           }}

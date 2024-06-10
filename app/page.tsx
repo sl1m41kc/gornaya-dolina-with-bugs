@@ -7,11 +7,11 @@ import Main from "./components/main/main";
 import PhotoGallery from "./components/photo-gallery/photo-gallery";
 import Reviews from "./components/reviews/reviews";
 import Contacts from "./components/contacts/contacts";
-import HorseBlock from "./components/horse-block/horse-block";
 
 import { data } from "@/data/data";
 import { useEffect } from "react";
 import { scroller } from "react-scroll";
+import Separator from "./components/sepatator/separator";
 
 export default function Home() {
 
@@ -30,13 +30,13 @@ export default function Home() {
 
   return (
     <div className="wrapper">
-      <Main imageAlt="Горная Долина" imageSrc="/images/main.png" />
+      <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" />
       <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
       <Camping />
       <Reviews />
-      <HorseBlock />
+      <Separator />
       <Contacts />
     </div>
   );

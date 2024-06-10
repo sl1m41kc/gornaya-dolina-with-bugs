@@ -5,7 +5,7 @@ import NextJsImage from "../../nextJsImage/nextJsImage";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 
 import "yet-another-react-lightbox/styles.css";
-import "yet-another-react-lightbox/plugins/thumbnails.css";
+// import "yet-another-react-lightbox/plugins/thumbnails.css";
 import "./correct-yarl.css";
 
 import { useSwiper } from "swiper/react";
@@ -41,8 +41,17 @@ const Gallery = ({
           swiper.slideTo(index);
         },
       }}
+      thumbnails={{
+        vignette: false,
+        showToggle: true,
+      }}
       render={{ slide: NextJsImage, thumbnail: NextJsImage }}
       plugins={[Thumbnails]}
+      animation={{
+        fade: 0,
+        swipe: 0,
+        navigation: 0,
+      }}
     />
   );
 };

@@ -27,9 +27,9 @@ const Page = ({
 
   return (
     <div className={classes.page}>
-      <Main imageSrc={pageData.imageSrc} imageAlt={pageData.title} />
+      <Main imageSrc={pageData.imageSrc} imageAlt={pageData.title as string} />
       <div className={clsx("containerInfo", classes.info)}>
-        <h3 className="title">{pageData.title}</h3>
+        <h2 className="title">{pageData.title}</h2>
         <p className={classes.description}>{pageData.description}</p>
       </div>
       <div className={clsx("container", classes.gallery)}>

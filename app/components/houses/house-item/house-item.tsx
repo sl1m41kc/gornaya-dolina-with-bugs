@@ -28,6 +28,7 @@ const HouseItem = ({ subtitle, imageSrc, href }: IProps) => {
         alt={subtitle}
         width={1920}
         height={1080}
+        sizes="(max-width: 1024px) 90vw, 40vw"
       />
     </a>
   );

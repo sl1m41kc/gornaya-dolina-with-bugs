@@ -62,13 +62,9 @@ const MySwiper = ({
           spaceBetween={20}
           slidesPerView={countSlide}
           modules={[Navigation, Pagination]}
-          onInit={(swiper) => {
-            // @ts-ignore
-            swiper.params.navigation.prevEl = prevRef.current;
-            // @ts-ignore
-            swiper.params.navigation.nextEl = nextRef.current;
-            swiper.navigation.init();
-            swiper.navigation.update();
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
           }}
           pagination={{
             clickable: true,

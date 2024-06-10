@@ -15,26 +15,27 @@ import houseShampooPhoto from "@/public/images/houses/shampoo.jpg";
 import houseTowelsPhoto from "@/public/images/houses/towels.jpg";
 import houseRobesPhoto from "@/public/images/houses/robes.jpg";
 
-import house0PhotoGallery1 from "@/public/images/houses/0/1.jpg";
-import house0PhotoGallery2 from "@/public/images/houses/0/2.jpg";
-import house0PhotoGallery3 from "@/public/images/houses/0/3.jpg";
-import house0PhotoGallery4 from "@/public/images/houses/0/4.jpg";
-import house0PhotoGallery5 from "@/public/images/houses/0/5.jpg";
-import house0PhotoGallery6 from "@/public/images/houses/0/6.jpg";
-import house0PhotoGallery7 from "@/public/images/houses/0/7.jpg";
+import houseDoublePhotoGallery1 from "@/public/images/houses/double/1.jpg";
+import houseDoublePhotoGallery2 from "@/public/images/houses/double/2.jpg";
+import houseDoublePhotoGallery3 from "@/public/images/houses/double/3.jpg";
+import houseDoublePhotoGallery4 from "@/public/images/houses/double/4.jpg";
 
-import house1PhotoGallery1 from "@/public/images/houses/1/1.jpg";
-import house1PhotoGallery2 from "@/public/images/houses/1/2.jpg";
-import house1PhotoGallery3 from "@/public/images/houses/1/3.jpg";
-import house1PhotoGallery4 from "@/public/images/houses/1/4.jpg";
-import { IHome } from "./types";
+import houseTriplePhotoGallery1 from "@/public/images/houses/triple/1.jpg";
+import houseTriplePhotoGallery2 from "@/public/images/houses/triple/2.jpg";
+import houseTriplePhotoGallery3 from "@/public/images/houses/triple/3.jpg";
+import houseTriplePhotoGallery4 from "@/public/images/houses/triple/4.jpg";
+import houseTriplePhotoGallery5 from "@/public/images/houses/triple/5.jpg";
+import houseTriplePhotoGallery6 from "@/public/images/houses/triple/6.jpg";
+import houseTriplePhotoGallery7 from "@/public/images/houses/triple/7.jpg";
 
-export const homesPageData: IHome[] = [
-  {
+import { homesType } from "./types";
+
+export const homesPageData: homesType = {
+  double: {
     title: "2-местный номер",
-    href: "/house/0",
+    href: "/house/double",
     mainImage: {
-      src: "/images/houses/0/1.jpg",
+      src: "/images/houses/double/1.jpg",
       alt: "2-местный номер основное фото",
     },
     description: (
@@ -46,7 +47,7 @@ export const homesPageData: IHome[] = [
         мистическое очарование.
       </>
     ),
-    price: 4000,
+    price: <>4&nbsp;000</>,
     advantages: [
       {
         title: <>Площадь номера&nbsp;&mdash; 18&nbsp;м2</>,
@@ -90,24 +91,21 @@ export const homesPageData: IHome[] = [
       },
     ],
     slider: [
-      house0PhotoGallery1,
-      house0PhotoGallery2,
-      house0PhotoGallery3,
-      house0PhotoGallery4,
+      houseDoublePhotoGallery1,
+      houseDoublePhotoGallery2,
       houseTerracePhoto,
-      house0PhotoGallery5,
-      house0PhotoGallery6,
-      house0PhotoGallery7,
+      houseDoublePhotoGallery3,
+      houseDoublePhotoGallery4,
       houseShampooPhoto,
       houseTowelsPhoto,
       houseRobesPhoto,
     ],
   },
-  {
+  triple: {
     title: "3-местный номер",
-    href: "/house/1",
+    href: "/house/triple",
     mainImage: {
-      src: "/images/houses/1/1.jpg",
+      src: "/images/houses/triple/1.jpg",
       alt: "3-местный номер основное фото",
     },
     description: (
@@ -119,7 +117,7 @@ export const homesPageData: IHome[] = [
         мистическое очарование.
       </>
     ),
-    price: 5000,
+    price: <>5&nbsp;000</>,
     advantages: [
       {
         title: <>Площадь номера&nbsp;&mdash; 20&nbsp;м2</>,
@@ -163,14 +161,17 @@ export const homesPageData: IHome[] = [
       },
     ],
     slider: [
-      house1PhotoGallery1,
-      house1PhotoGallery2,
+      houseTriplePhotoGallery1,
+      houseTriplePhotoGallery2,
+      houseTriplePhotoGallery3,
+      houseTriplePhotoGallery4,
       houseTerracePhoto,
-      house1PhotoGallery3,
-      house1PhotoGallery4,
+      houseTriplePhotoGallery5,
+      houseTriplePhotoGallery6,
+      houseTriplePhotoGallery7,
       houseShampooPhoto,
       houseTowelsPhoto,
       houseRobesPhoto,
     ],
   },
-];
+};

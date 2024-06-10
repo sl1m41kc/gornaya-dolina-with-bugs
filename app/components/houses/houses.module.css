@@ -5,6 +5,10 @@
     margin-top: 3rem;
 }
 
+.container {
+    margin-top: -2rem;
+}
+
 @media (width <= 1024px) {
     .wrapper {
         display: flex;

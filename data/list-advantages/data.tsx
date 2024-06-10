@@ -24,7 +24,7 @@ export const listAdvantagesData: IAdvantages[] = [
       icon: <PoolSVG />,
     },
     {
-      title: "Можно с животными",
+      title: <>Можно с&nbsp;животными</>,
       description: <>Мы&nbsp;всегда рады нашим четвероногим постояльцам.</>,
       icon: <PetsSVG />,
     },

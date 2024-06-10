@@ -72,12 +72,10 @@
 
 .phone {
     color: #fff;
-    padding: 1rem 1rem 1rem 3rem;
 }
 
-.phone:hover {
-    text-decoration: underline;
-    cursor: pointer;
+.phoneWrapper {
+    padding: 1rem 1rem 1rem 3rem;
 }
 
 @media (width <= 1024px) {
@@ -86,7 +84,7 @@
     }
 }
 
-@media (width <= 414px) {
+@media (width <= 768px) {
     .menu {
         width: 100vw;
     }   

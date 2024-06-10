@@ -1,9 +1,22 @@
 .container {
     border-radius: 30px;
     position: absolute;
-    bottom: 70px;
+    background-color: rgba(0, 0, 0, 0.1);
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    bottom: 70px;
     left: 0;
     right: 0;
     margin-inline: auto;
+    height: 96px;
+}
+
+.container iframe {
+    position: absolute;
+}
+
+@media (width <= 1024px) {
+    .container {
+        bottom: 250px;
+        height: 288px;
+    }
 }

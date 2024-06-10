@@ -31,6 +31,7 @@ const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
         alt={alt}
         width={1920}
         height={1080}
+        sizes="(max-width: 1024px) 90vw, 33vw"
       />
     </a>
   );
