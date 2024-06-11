@@ -35,7 +35,7 @@ const Advantages = () => {
           {data.listAdvantages.map((item, index) => (
             <div
               className={classes.item}
-              key={index + item.title + item.description}
+              key={`${index}-${String(item.title)}-${String(item.description)}`}
             >
               <div className={classes.iconWrapper}>{item.icon}</div>
               <div className={classes.textWrapper}>
