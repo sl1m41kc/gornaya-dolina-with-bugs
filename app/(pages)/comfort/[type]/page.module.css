@@ -20,3 +20,14 @@
 .gallery {
     margin-block: 3rem;
 }
+
+.title {
+    display: flex;
+    flex-direction: column;
+}
+
+.title > span {
+    margin-top: -.5rem;
+    font-size: 20px;
+    font-weight: normal;
+}

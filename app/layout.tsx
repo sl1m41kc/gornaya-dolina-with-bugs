@@ -7,6 +7,7 @@ import "@/fonts/PT-Sans/PT-sans.css";
 
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
 
 export const metadata: Metadata = {
   title: "Горная Долина",
@@ -28,6 +29,9 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+
+        {/* Кнопка для скролла вверх */}
+        <ScrollToTop />
       </body>
       
     </html>
