@@ -90,7 +90,7 @@ const BnovoWidget = () => {
       if (benovoJsRef.current) document.body.removeChild(benovoJsRef.current);
       if (benovoWidgetRef.current) document.body.removeChild(benovoWidgetRef.current);
     };
-  }, []);
+  }, [typeBooking]);
 
   useEffect(() => {
     const script2 = document.createElement("script");
