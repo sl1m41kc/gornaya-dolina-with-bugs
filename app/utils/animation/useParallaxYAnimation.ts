@@ -2,13 +2,13 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const useParallaxYAnimation = (ref: any) => {
+const useParallaxYAnimation = (ref: any, offset: number = -400) => {
   useGSAP(
     () => {
       gsap.registerPlugin(ScrollTrigger);
 
       gsap.from(ref.current, {
-        y: -400,
+        y: offset,
         scrollTrigger: {
           trigger: ref.current,
           start: "30% bottom",

@@ -9,7 +9,7 @@ const Separator = () => {
   const imageRef = useRef(null);
 
   // Анимация
-  useParallaxYAnimation(imageRef);
+  useParallaxYAnimation(imageRef, -500);
 
   return (
     <div className={classes.mask}>
@@ -20,7 +20,6 @@ const Separator = () => {
         alt="Лошади в поле"
         width={1920}
         height={1080}
-        sizes="100vw"
       />
     </div>
   );

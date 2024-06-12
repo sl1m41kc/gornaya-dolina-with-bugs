@@ -10,8 +10,8 @@ import Footer from "./components/footer/footer";
 import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
 
 export const metadata: Metadata = {
-  title: "Горная Долина",
-  description: "База отдыха горная долина",
+  title: "Горная долина",
+  description: "База отдыха Горная долина",
 };
 
 export default function RootLayout({

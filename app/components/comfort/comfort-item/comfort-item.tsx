@@ -18,7 +18,7 @@ const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
   const imageRef = useRef(null);
 
   // Анимация
-  useScaleAnimation(imageRef);
+  useScaleAnimation(imageRef, 1.30);
   
   return (
     <a className={classes.item} href={`/comfort/${type}`} ref={itemRef}>
@@ -31,7 +31,6 @@ const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
         alt={alt}
         width={1920}
         height={1080}
-        sizes="(max-width: 1024px) 90vw, 33vw"
       />
     </a>
   );

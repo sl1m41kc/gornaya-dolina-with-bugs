@@ -64,7 +64,7 @@ const Header = () => {
         <h1
           className={clsx(classes.title, !scrollOnTop && classes.titleCorrect)}
         >
-          Горная Долина
+          Горная долина
         </h1>
       </div>
 
