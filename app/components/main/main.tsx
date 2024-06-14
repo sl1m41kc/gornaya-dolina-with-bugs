@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import React from "react";
 import classes from "./main.module.css";
@@ -9,9 +9,10 @@ interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
   imageSrc: string;
   imageAlt: string;
+  isMain?: boolean;
 }
 
-const Main = ({imageSrc, imageAlt}: IProps) => {
+const Main = ({ imageSrc, imageAlt}: IProps) => {
   return (
     <main className={classes.main} id="main">
       <div className={classes.mask}>

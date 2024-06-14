@@ -33,6 +33,7 @@
 
 .button {
     text-transform: uppercase;
+    letter-spacing: 1px;
     padding: .75rem 2.25rem;
     color: #fff;
     background-color: var(--primary-color);

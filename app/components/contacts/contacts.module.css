@@ -1,3 +1,7 @@
+.container {
+    margin-top: -4rem;
+}
+
 .contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -87,5 +91,15 @@
 
     .map {
         height: 300px;
+    }
+}
+
+@media (width <= 450px) {
+    .phoneLink {
+        font-size: 24px;
+    }
+    
+    .addressText {
+        font-size: 20px;
     }
 }

@@ -5,6 +5,7 @@
     border: 1px solid var(--secondary-accent);
     gap: 1px;
     background-color: var(--secondary-accent);
+    overflow: hidden;
 }
 
 .item {

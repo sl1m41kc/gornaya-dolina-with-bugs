@@ -1,5 +1,6 @@
 import React from "react";
-import Advantages from "./advantages/advantages";
+import Advantages from "../advantages/advantages";
+import { data } from "@/data/data";
 
 const AboutUs = () => {
   return (

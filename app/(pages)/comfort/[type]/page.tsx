@@ -32,7 +32,7 @@ const Page = ({
         <h2 className={clsx("title", classes.title)}>{pageData.title}</h2>
         <p className={classes.description}>{pageData.description}</p>
       </div>
-      <div className={clsx("container", classes.gallery)}>
+      <div className={classes.gallery}>
         <PhotoGallery
           title={"Фото"}
           data={pageData.slider}

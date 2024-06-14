@@ -1,5 +1,5 @@
 .house {
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 
 .info {
@@ -45,5 +45,8 @@
     }
     .price {
         min-width: 100%;
+    }
+    .house {
+        margin-top: 12rem;
     }
 }

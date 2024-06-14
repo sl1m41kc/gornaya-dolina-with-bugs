@@ -3,7 +3,7 @@
 import MySwiper from "../swiper/swiper";
 import Review from "./review/review";
 import classes from "./reviews.module.css";
-import useScreenWidth from "@/app/useScreenWidth";
+import useScreenWidth from "@/app/utils/useScreenWidth";
 import { data } from "@/data/data";
 
 const Reviews = () => {
@@ -15,9 +15,9 @@ const Reviews = () => {
 
       <div className={classes.container}>
         <MySwiper
-          nameSwiper="swiperReviews"
-          countSlide={screenWidth <= 1024 ? 1 : 2}
           data={data.reviews}
+          nameSwiper="swiperReviews"
+          slidesPewView={screenWidth <= 1024 && screenWidth !== 0 ? 1.2 : 2.2}
           slide={(item: any, index: number) => (
             <Review key={index + item.name} item={item} />
           )}

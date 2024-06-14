@@ -10,7 +10,6 @@ import { homeItemName } from "@/data/homes-page/types";
 
 const Page = ({ params: { house } }: { params: { house: string } }) => {
   const houseData = data.housesPage[house as homeItemName];
-  console.log(houseData)
 
   return (
     <div className={classes.page}>

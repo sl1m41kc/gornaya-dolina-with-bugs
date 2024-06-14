@@ -1,22 +1,37 @@
-.navigation {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+.container {
+    position: relative;
 }
 
-.prevArrow, .nextArrow {
+.prevArrowWrapper,
+.nextArrowWrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.prevArrowWrapper {
+    right: calc(100% + 30px);
+}
+
+.nextArrowWrapper {
+    left: calc(100% + 30px);
+}
+
+.prevArrow,
+.nextArrow {
     position: relative;
     cursor: pointer;
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     overflow: hidden;
     background-color: #505050;
 }
 
-.prevArrow > svg, .nextArrow > svg {
+.prevArrow>svg,
+.nextArrow>svg {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -34,11 +49,83 @@
     align-items: center;
     justify-content: center;
     gap: .5rem;
-    margin-top: 1rem;
+    margin-block: 1.5rem;
 }
 
-@media (width <= 768px) {
-    .prevArrow, .nextArrow {
+.paginationGallery>span {
+    background-color: #fff;
+}
+
+.prevArrowWrapper,
+.nextArrowWrapper {
+    top: 0;
+    bottom: 0;
+    transform: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.prevArrowWrapper {
+    left: 10px;
+    right: inherit;
+    padding-right: 2rem;
+}
+
+.nextArrowWrapper {
+    right: 10px;
+    left: inherit;
+    padding-left: 2rem;
+}
+
+.slide {
+    user-select: none;
+}
+
+.transparentLeft {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8%;
+    height: 100%;
+    background-color: red;
+    z-index: 10;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, transparent 95%);
+}
+
+.transparentRight {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 8%;
+    height: 100%;
+    background-color: red;
+    z-index: 10;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,1) 95%);
+}
+
+.transparentLeft.gallery {
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, transparent 95%);
+}
+
+.transparentRight.gallery {
+    background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.9) 95%);
+}
+
+@media (width <=768px) {
+
+    .prevArrow,
+    .nextArrow {
+        display: none;
+    }
+
+    .pagination {
+        gap: inherit;
+    }
+
+    .prevArrowWrapperGallery,
+    .nextArrowWrapperGallery {
         display: none;
     }
 }

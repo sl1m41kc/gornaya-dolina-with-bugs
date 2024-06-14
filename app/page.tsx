@@ -12,6 +12,7 @@ import { data } from "@/data/data";
 import { useEffect } from "react";
 import { scroller } from "react-scroll";
 import Separator from "./components/sepatator/separator";
+import Scrollto from "./components/scrollto/scrollto";
 
 export default function Home() {
 
@@ -30,7 +31,7 @@ export default function Home() {
 
   return (
     <div className="wrapper">
-      <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" />
+      <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" isMain />
       <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
@@ -38,6 +39,8 @@ export default function Home() {
       <Reviews />
       <Separator />
       <Contacts />
+
+      <Scrollto />
     </div>
   );
 }

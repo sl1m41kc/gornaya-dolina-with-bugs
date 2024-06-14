@@ -1,25 +1,35 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-import Gallery from "./gallery/gallery";
+import { Controller, Navigation, Pagination, Thumbs } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/pagination";   
 
 // В этом файле можно менять стили уже заданные в swiper
 import "./correct-swiper.css";
 
 import ChevronRightSVG from "@/public/sprites/icons/chevron_right.svg";
-
 import classes from "./swiper.module.css";
+
 import clsx from "clsx";
 
 interface IProps {
   data: any;
   countSlide?: number;
+  onSwiper?: (swiper: any) => void;
+  controller?: {
+    control: any;
+  };
+  isGallery?: boolean;
+
+  // Кол-во слайдов на экране
+  slidesPewView?: number;
+
+  // Активный слайд
+  activeSlide?: number;
 
   // Переменная чтобы разделить слайдеры по условному id
   // Без ее указания swiper pagination не будет работать и они все будут восприниматься как одина
@@ -27,85 +37,69 @@ interface IProps {
 
   // Для гибкой верстки слайда
   slide: (item: any, index: number) => JSX.Element;
-
-  // Если да - то при клике на слайд будет открываться галерея
-  // Работает только с данными в формате [фото, фото, фото, ...]
-  isGallery?: boolean;
 }
 
 const MySwiper = ({
   data,
   slide,
   nameSwiper,
-  countSlide = 2,
   isGallery = false,
+  onSwiper = () => {},
+  controller = { control: null },
+  slidesPewView = 1.2,
 }: IProps) => {
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  const [isOpenGallery, setIsOpenGallery] = useState(false);
-  const [activeSlideIDX, setActiveSlideIDX] = useState(0);
-
   return (
     <div className={classes.container}>
-      <div className={classes.navigation}>
-        {/* стелка назад */}
-        <div className={classes.prevArrow} ref={prevRef}>
+      {/* swiper */}
+      <Swiper
+        modules={[Navigation, Pagination, Controller]}
+        ref={swiperRef}
+        onSwiper={onSwiper}
+        controller={controller}
+        spaceBetween={20}
+        slidesPerView={slidesPewView}
+        centeredSlides={true}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        pagination={{
+          clickable: true,
+          el: `.${classes.pagination}${nameSwiper}`,
+        }}
+      >
+        <div className={clsx(classes.transparentLeft, isGallery && classes.gallery)} />
+        <div className={clsx(classes.transparentRight, isGallery && classes.gallery)} />
+
+        {data.map((item: any, index: number) => (
+          <SwiperSlide
+            key={index + Object.keys(item).join("")}
+            className={classes.slide}
+          >
+            {slide(item, index)}
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* стелка назад */}
+      <div className={clsx(classes.prevArrowWrapper, isGallery && classes.prevArrowWrapperGallery)} ref={prevRef}>
+        <div className={classes.prevArrow}>
           <ChevronRightSVG />
         </div>
-
-        {/* swiper */}
-        <Swiper
-          ref={swiperRef}
-          loop={!isGallery}
-          spaceBetween={20}
-          slidesPerView={countSlide}
-          modules={[Navigation, Pagination]}
-          navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
-          }}
-          pagination={{
-            clickable: true,
-            el: `.${classes.pagination}${nameSwiper}`,
-          }}
-          onSlideChange={(swiper) => {
-            setActiveSlideIDX(swiper.activeIndex);
-          }}
-        >
-          {data.map((item: any, index: number) => (
-            <SwiperSlide
-              key={index + Object.keys(item).join("")}
-              className={classes.slide}
-              onClick={() => {
-                setActiveSlideIDX(index);
-                setIsOpenGallery(true);
-              }}
-            >
-              {slide(item, index)}
-            </SwiperSlide>
-          ))}
-
-          {isGallery && (
-            <Gallery
-              data={data}
-              isOpenGallery={isOpenGallery}
-              setIsOpenGallery={setIsOpenGallery}
-              activeSlideIDX={activeSlideIDX}
-              setActiveSlideIDX={setActiveSlideIDX}
-            />
-          )}
-        </Swiper>
-
-        {/* стелка вперед */}
-        <div className={classes.nextArrow} ref={nextRef}>
+      </div>
+      {/* стелка вперед */}
+      <div className={clsx(classes.nextArrowWrapper, isGallery && classes.nextArrowWrapperGallery)} ref={nextRef}>
+        <div className={classes.nextArrow}>
           <ChevronRightSVG />
         </div>
       </div>
 
       <div
-        className={clsx(classes.pagination, classes.pagination + nameSwiper)}
+        className={clsx(classes.pagination, classes.pagination + nameSwiper, isGallery && classes.paginationGallery)}
       ></div>
     </div>
   );
