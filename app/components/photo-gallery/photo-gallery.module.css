@@ -63,6 +63,12 @@
     aspect-ratio: 16/9;
 }
 
+@media (orientation: portrait) {
+    .image {
+      aspect-ratio: 2/3;
+    }
+  }
+
 .pointer {
     cursor: pointer;
 }
