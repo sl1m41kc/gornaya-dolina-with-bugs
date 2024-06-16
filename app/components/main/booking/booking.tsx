@@ -13,7 +13,7 @@ const BnovoWidget = () => {
   const screenWidth = useScreenWidth();
 
   const widgetType = useMemo(() => {
-    if (screenWidth >= 1024) {
+    if (screenWidth > 1024) {
       return "horizontal";
     } else {
       return "vertical";

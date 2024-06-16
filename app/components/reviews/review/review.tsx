@@ -1,5 +1,9 @@
 import { useState } from "react";
-import Modal from "@/app/components/modal/modal";
+
+// import Modal from "@/app/components/modal/modal";
+import dynamic from 'next/dynamic'
+const Modal = dynamic(() => import('@/app/components/modal/modal'), { ssr: false })
+
 import { useRef } from 'react';
 import clsx from "clsx";
 
@@ -15,7 +19,6 @@ type Content = any;
 
 const Review = ({ item }: IProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const modal = useRef(document.getElementById("modal"));
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -46,19 +49,21 @@ const Review = ({ item }: IProps) => {
       </div>
 
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
-        <h4 className={classes.title}>{item.name}</h4>
-        <div className={classes.review}>
-          <div className={classes.stars}>
-            {/* Генерируем пять звезд */}
-            {[1, 2, 3, 4, 5].map((_, index) => (
-              <StarSVG className={classes.star} key={index} />
-            ))}
+        <div className={classes.modalWrapper}>
+          <h4 className={classes.title}>{item.name}</h4>
+          <div className={classes.review}>
+            <div className={classes.stars}>
+              {/* Генерируем пять звезд */}
+              {[1, 2, 3, 4, 5].map((_, index) => (
+                <StarSVG className={classes.star} key={index} />
+              ))}
+            </div>
+            <p className={classes.date}>{item.date}</p>
           </div>
-          <p className={classes.date}>{item.date}</p>
+          <p className={clsx(classes.description)}>
+            {item.description}
+          </p>
         </div>
-        <p className={clsx(classes.description)}>
-          {item.description}
-        </p>
       </Modal>
     </>
   );

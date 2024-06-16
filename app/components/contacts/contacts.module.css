@@ -94,12 +94,12 @@
     }
 }
 
-@media (width <= 450px) {
+@media (width <= 600px) {
     .phoneLink {
         font-size: 24px;
     }
     
     .addressText {
-        font-size: 20px;
+        font-size: 16px;
     }
 }

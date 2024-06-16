@@ -11,6 +11,12 @@
     padding: 2rem;
 }
 
+.modalWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
 .title {
     font-weight: bold;
     font-size: 24px;

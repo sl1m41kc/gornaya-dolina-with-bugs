@@ -43,7 +43,6 @@ input {
 
 .containerText {
     width: min(100%, 800px);
-    padding-inline: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -106,6 +105,16 @@ input {
     }
 
     .wrapper > section {
-        padding-top: 5rem;
+        padding-top: 3.5rem;
+    }
+}
+
+@media (width <=600px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .containerText {
+        font-size: 16px;
     }
 }

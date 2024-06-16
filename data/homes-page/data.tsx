@@ -50,7 +50,7 @@ export const homesPageData: homesType = {
     price: <>4&nbsp;000</>,
     advantages: [
       {
-        title: <>Площадь номера&nbsp;&mdash; 18&nbsp;м2</>,
+        title: <>Площадь номера&nbsp;&mdash; 18&nbsp;м<sup>2</sup></>,
         icon: <FullScreenSVG />,
       },
       {
@@ -123,11 +123,11 @@ export const homesPageData: homesType = {
     price: <>5&nbsp;000</>,
     advantages: [
       {
-        title: <>Площадь номера&nbsp;&mdash; 20&nbsp;м2</>,
+        title: <>Площадь номера&nbsp;&mdash; 20&nbsp;м<sup>2</sup></>,
         icon: <FullScreenSVG />,
       },
       {
-        title: <>Двуспальная кровать и&nbsp;раскладной диван</>,
+        title: <>Двуспальная кровать + раскладной диван</>,
         icon: <BedPlusChairSVG />,
       },
       {

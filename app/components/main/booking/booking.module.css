@@ -1,7 +1,7 @@
 .container {
     border-radius: 8px;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.1);
     bottom: 70px;
     left: 0;

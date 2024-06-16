@@ -36,7 +36,8 @@
     color: #fff;
     font-family: 'Philosopher';
     font-weight: 700;
-    font-size: 32px;
+    font-size: 24px;
+    line-height: 1;
 }
 
 .title>span {
@@ -56,6 +57,21 @@
 @media (width <= 1024px) {
     .item {
         aspect-ratio: 16/9;
+    }
+    .item:hover {
+        transform: none;
+    }
+}
+
+@media (orientation: portrait) and (width <=600px) {
+    .item {
+        aspect-ratio: 4/3;
+    }
+}
+
+@media (width <= 600px) {
+    .title {
+        font-size: 24px;
     }
     .item:hover {
         transform: none;

@@ -3,6 +3,7 @@
 import classes from "./advantages.module.css";
 import MySwiper from "../swiper/swiper";
 import useScreenWidth from "@/app/utils/useScreenWidth";
+import clsx from "clsx";
 import { data } from "@/data/data";
 
 const Advantages = () => {
@@ -10,8 +11,8 @@ const Advantages = () => {
 
   return (
     <>
-      {screenWidth <= 1024 && screenWidth !== 0 ? (
-        <div className={classes.swiperWrapper}>
+      {screenWidth < 850 && screenWidth !== 0 ? (
+        <div className={clsx(classes.swiperWrapper)}>
           <MySwiper
             data={data.listAdvantages}
             countSlide={1}

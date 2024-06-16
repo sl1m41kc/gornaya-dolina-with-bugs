@@ -17,7 +17,6 @@
     background-color: inherit;
     box-shadow: inherit;
     border-radius: 0;
-    /* width: 80%; */
 }
 
 .modalWrapper {
@@ -71,7 +70,7 @@
     .image {
       aspect-ratio: 2/3;
     }
-  }
+}
 
 .pointer {
     cursor: pointer;
