@@ -21,7 +21,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
   const [secondSwiper, setSecondSwiper] = useState(null);
 
   return (
-    <section className={clsx("container", classes.container)} id={nameGallery}>
+    <section className={clsx("container fullW", classes.container)} id={nameGallery}>
       <div className="containerText">
         <h2 className="title">{title}</h2>
       </div>
@@ -45,7 +45,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
         )}
       />
 
-      <dialog id={nameGallery + "gallery"} className={clsx("modal", classes.modal)}>
+      <dialog id={nameGallery + "gallery"} className={clsx("modal",  classes.modal)}>
         <div className={clsx("modal-box", classes.modalBox)}>
           <MySwiper
             data={data}

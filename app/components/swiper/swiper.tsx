@@ -46,7 +46,7 @@ const MySwiper = ({
   isGallery = false,
   onSwiper = () => {},
   controller = { control: null },
-  slidesPewView = 1.2,
+  slidesPewView = 1.5,
 }: IProps) => {
   const swiperRef = useRef(null);
   const prevRef = useRef(null);

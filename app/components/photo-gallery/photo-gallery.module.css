@@ -4,6 +4,10 @@
     gap: 2rem;
 }
 
+.modal {
+    background-color: #000;
+}
+
 .modalBox {
     max-width: inherit;
     max-height: inherit;
@@ -13,7 +17,7 @@
     background-color: inherit;
     box-shadow: inherit;
     border-radius: 0;
-    width: 80%;
+    /* width: 80%; */
 }
 
 .modalWrapper {

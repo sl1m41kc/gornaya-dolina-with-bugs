@@ -52,7 +52,7 @@
 
 .social {
     display: flex;
-    gap: 2.25rem;
+    gap: 1rem;
     fill: #393939;
 }
 
@@ -75,13 +75,13 @@
 
 .mapLink {
     display: flex;
-    gap: 2.25rem;
+    gap: 1rem;
 }
 
 @media (width <= 1024px) {
     .contacts {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 1rem;
     }
 

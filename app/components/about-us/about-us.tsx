@@ -4,7 +4,7 @@ import { data } from "@/data/data";
 
 const AboutUs = () => {
   return (
-    <section className="container" id="about-us">
+    <section className="container fullW" id="about-us">
       <div className="containerText">
         <h2 className="title">О нашей базе</h2>
         <p>

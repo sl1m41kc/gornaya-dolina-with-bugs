@@ -36,6 +36,11 @@ input {
     padding-inline: 1.25rem;
 }
 
+.fullW {
+    padding-inline: 0;
+    width: min(100%, 1440px);
+}
+
 .containerText {
     width: min(100%, 800px);
     padding-inline: 1.25rem;

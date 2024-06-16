@@ -114,16 +114,7 @@ const BnovoWidget = () => {
   }, [widgetType]);
 
   return (
-    <div className={classes.container} ref={containerRef} id="_bn_widget_">
-      {true && screenWidth <= 768 && screenWidth !== 0 && (
-        <div className={classes.logoContainer}>
-          <div className={classes.logoWrapper}>
-            <LogoSVG className={classes.logo} />
-            <h1 className={classes.title}>Горная&nbsp;долина</h1>
-          </div>
-        </div>
-      )}
-    </div>
+    <div className={classes.container} ref={containerRef} id="_bn_widget_"></div>
   );
 };
 

@@ -4,6 +4,12 @@ import React from "react";
 import classes from "./main.module.css";
 import Image from "next/image";
 import BnovoWidget from "./booking/booking";
+import useScreenWidth from "@/app/utils/useScreenWidth";
+import { useEffect, useMemo, useRef } from "react";
+
+import LogoSVG from "@/public/sprites/logo.svg";
+
+
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
@@ -13,8 +19,21 @@ interface IProps {
 }
 
 const Main = ({ imageSrc, imageAlt}: IProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const screenWidth = useScreenWidth();
+
   return (
     <main className={classes.main} id="main">
+      
+        {true && screenWidth <= 768 && screenWidth !== 0 && (
+          <div className={classes.logoContainer}>
+            <div className={classes.logoWrapper}>
+              <LogoSVG className={classes.logo} />
+              <h1 className={classes.title}>Горная&nbsp;долина</h1>
+            </div>
+          </div>
+        )}
+      
       <div className={classes.mask}>
         <Image
           className={classes.image}
@@ -25,6 +44,8 @@ const Main = ({ imageSrc, imageAlt}: IProps) => {
           priority
         />
       </div>
+
+
       <BnovoWidget />
     </main>
   );
