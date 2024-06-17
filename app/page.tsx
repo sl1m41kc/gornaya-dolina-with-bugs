@@ -31,14 +31,14 @@ export default function Home() {
 
   return (
     <div className="wrapper">
-      <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" isMain />
-      <Houses />
+      <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" isMain id="main" />
+      {/* <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
       <Camping />
       <Reviews />
       <Separator />
-      <Contacts />
+      <Contacts /> */}
 
       <Scrollto />
     </div>

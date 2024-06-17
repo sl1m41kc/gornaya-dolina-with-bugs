@@ -82,21 +82,23 @@ const BurgerMenu = () => {
       </div>
 
       <div className={clsx(classes.menu, isOpen && classes.active)}>
-        {linkItem.map((item) => (
-          <ScrollLink
-            key={item.id}
-            className={classes.link}
-            to={item.id}
-            spy={true}
-            smooth={true}
-            hashSpy={true}
-            spyThrottle={1000}
-            activeClass={classes.active}
-            onClick={() => onClickLink(item.id)}
-          >
-            {item.name}
-          </ScrollLink>
-        ))}
+        <div className={classes.links}>
+          {linkItem.map((item) => (
+            <ScrollLink
+              key={item.id}
+              className={classes.link}
+              to={item.id}
+              spy={true}
+              smooth={true}
+              hashSpy={true}
+              spyThrottle={1000}
+              activeClass={classes.active}
+              onClick={() => onClickLink(item.id)}
+            >
+              {item.name}
+            </ScrollLink>
+          ))}
+        </div>
         <div className={classes.phoneWrapper}>
           <a
             href={data.socialMedia.phone.link}

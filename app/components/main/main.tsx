@@ -5,25 +5,22 @@ import classes from "./main.module.css";
 import Image from "next/image";
 import BnovoWidget from "./booking/booking";
 import useScreenWidth from "@/app/utils/useScreenWidth";
-import { useEffect, useMemo, useRef } from "react";
 
 import LogoSVG from "@/public/sprites/logo.svg";
-
-
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
   imageSrc: string;
   imageAlt: string;
   isMain?: boolean;
+  id?: string;
 }
 
-const Main = ({ imageSrc, imageAlt}: IProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const Main = ({ imageSrc, imageAlt, id}: IProps) => {
   const screenWidth = useScreenWidth();
 
   return (
-    <main className={classes.main} id="main">
+    <main className={classes.main} id={id}>
       
         {true && screenWidth <= 768 && screenWidth !== 0 && (
           <div className={classes.logoContainer}>

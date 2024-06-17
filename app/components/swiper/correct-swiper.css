@@ -2,6 +2,10 @@
     background-color: #000;
 }
 
-/* .swiper {
-    mask-image: linear-gradient(90deg, transparent 0%, rgba(0,0,0,1) 5%, rgba(0,0,0,1) 95%, transparent 100%);
-} */
+@media (width <=768px) {
+    .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin-inline: 2px;
+        width: 6px;
+        height: 6px;
+    }
+}

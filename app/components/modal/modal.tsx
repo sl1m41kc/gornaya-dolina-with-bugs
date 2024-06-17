@@ -44,7 +44,7 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
             <span className={classes.closeAfter}></span>
           </span>
         </button>
-        <div>{children}</div>
+        <div className={classes.content}>{children}</div>
       </div>
     </div>,
     document.body

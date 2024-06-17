@@ -60,7 +60,7 @@ const Review = ({ item }: IProps) => {
             </div>
             <p className={classes.date}>{item.date}</p>
           </div>
-          <p className={clsx(classes.description)}>
+          <p className={classes.description}>
             {item.description}
           </p>
         </div>
