@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <div className="wrapper">
-      <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" isMain id="main" />
+      {/* <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" isMain id="main" /> */}
       {/* <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
