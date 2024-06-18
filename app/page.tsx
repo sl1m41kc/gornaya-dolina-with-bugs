@@ -35,10 +35,10 @@ export default function Home() {
       <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
-      <Camping />
-      <Reviews />
-      <Separator />
-      <Contacts />
+      {/* <Camping /> */}
+      {/* <Reviews /> */}
+      {/* <Separator /> */}
+      {/* <Contacts /> */}
 
       <Scrollto />
     </div>

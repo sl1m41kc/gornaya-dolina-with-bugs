@@ -45,7 +45,8 @@
     line-height: 1.2;
 }
 
-@media (width <= 1350px) {
+/* Если это свойство отрубить, то кнопки на свайпере опять работают */
+@media (max-width: 1350px) {
     .advantages {
         grid-template-columns: 1fr 1fr 1fr;
         width: 70%;
@@ -53,19 +54,19 @@
     }
 }
 
-@media (width < 1280px) {
+@media (max-width: 1280px) {
     .advantages {
         width: 80%;
     }
 }
 
-@media (width < 1024px) {
+@media (max-width: 1024px) {
     .advantages {
         width: 100%;
     }
 }
 
-@media (width < 850px) {
+@media (max-width: 850px) {
     .swiperWrapper {
         margin-top: 2rem;
         width: 70%;
@@ -81,13 +82,13 @@
     }
 }
 
-@media (width < 768px) {
+@media (max-width: 768px) {
     .swiperWrapper {
         width: 100%;
     }
 }
 
-@media (width < 520px) {
+@media (max-width: 520px) {
     .item {
         aspect-ratio: 1/1;
     }

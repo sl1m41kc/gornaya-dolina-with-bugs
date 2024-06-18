@@ -33,7 +33,8 @@ input {
 .container {
     width: min(100%, 1440px);
     margin-inline: auto;
-    padding-inline: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
 
 .fullW {
@@ -99,7 +100,7 @@ input {
     transform: scale(1);
 }
 
-@media (width <=1024px) {
+@media (max-width: 1024px) {
     .title {
         font-size: 36px;
     }
@@ -109,7 +110,7 @@ input {
     }
 }
 
-@media (width <=600px) {
+@media (max-width: 600px) {
     .title {
         font-size: 32px;
     }

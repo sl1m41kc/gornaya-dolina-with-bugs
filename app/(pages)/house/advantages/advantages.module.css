@@ -36,7 +36,7 @@
     margin-top: 3rem;
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .advantages {
         grid-template-columns: 1fr 1fr;
         margin-inline: auto;
@@ -55,26 +55,26 @@
     }
 }
 
-@media (width <= 550px) {
+@media (max-width: 550px) {
     .advantages {
         max-width: 80%;
     }
 }
 
-@media (width <= 450px) {
+@media (max-width: 450px) {
     .advantages {
         max-width: 100%;
     }
 }
 
-@media (width <= 450px) {
+@media (max-width: 450px) {
     .iconWrapper > svg {
         height: 100%;
         max-width: 100px;
     }
 }
 
-@media (width <= 350px) {
+@media (max-width: 350px) {
     .title {
         font-size: 14px;
     }
