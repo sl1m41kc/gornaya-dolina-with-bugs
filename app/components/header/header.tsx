@@ -6,7 +6,6 @@ import classes from "./header.module.css";
 import PhoneSVG from "@/public/sprites/icons/phone.svg";
 import clsx from "clsx";
 import LogoSVG from "@/public/sprites/logo.svg";
-import { scroller } from "react-scroll";
 import { usePathname, useRouter } from "next/navigation";
 import useScreenWidth from "@/app/utils/useScreenWidth";
 import { data } from "@/data/data";

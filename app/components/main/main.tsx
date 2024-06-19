@@ -5,7 +5,7 @@ import classes from "./main.module.css";
 import Image from "next/image";
 import BnovoWidget from "./booking/booking";
 import useScreenWidth from "@/app/utils/useScreenWidth";
-import { useEffect, useMemo, useRef } from "react";
+import { useRef } from "react";
 
 import LogoSVG from "@/public/sprites/logo.svg";
 

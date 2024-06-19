@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./burger-menu.module.css";
 import clsx from "clsx";
 import { Link as ScrollLink } from "react-scroll";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { data } from "@/data/data";
 import { scroller } from "react-scroll";
@@ -87,10 +86,7 @@ const BurgerMenu = () => {
             key={item.id}
             className={classes.link}
             to={item.id}
-            spy={true}
             smooth={true}
-            hashSpy={true}
-            spyThrottle={1000}
             activeClass={classes.active}
             onClick={() => onClickLink(item.id)}
           >

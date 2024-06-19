@@ -4,7 +4,6 @@ import { useState } from "react";
 import dynamic from 'next/dynamic'
 const Modal = dynamic(() => import('@/app/components/modal/modal'), { ssr: false })
 
-import { useRef } from 'react';
 import clsx from "clsx";
 
 import classes from "./review.module.css";
@@ -14,8 +13,6 @@ import StarSVG from "@/public/sprites/icons/star.svg";
 interface IProps {
   item: any;
 }
-
-type Content = any;
 
 const Review = ({ item }: IProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
