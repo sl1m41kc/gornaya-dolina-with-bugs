@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import AboutUs from "./components/about-us/about-us";
 import Camping from "./components/comfort/comfort";
@@ -13,21 +13,21 @@ import { useEffect } from "react";
 import { scroller } from "react-scroll";
 import Separator from "./components/sepatator/separator";
 import Scrollto from "./components/scrollto/scrollto";
+import Testversion from "./components/testversion";
 
 export default function Home() {
-
   useEffect(() => {
     // Если в пути есть #{idBlock}, то сделать плавный, правильный скролл до блока
-    const hash = window.location.hash
+    const hash = window.location.hash;
     if (hash) {
       scroller.scrollTo(hash.slice(1), {
         duration: 1000,
         delay: 0,
-        smooth: 'easeInOutCubic',
+        smooth: "easeInOutCubic",
         offset: -100,
-      })
+      });
     }
-  })
+  });
 
   return (
     <div className="wrapper">
@@ -39,6 +39,12 @@ export default function Home() {
       <Reviews />
       <Separator />
       <Contacts /> */}
+
+      <div style={{
+        marginTop: '300px',
+      }}>
+        <Testversion />
+      </div>
 
       <Scrollto />
     </div>
