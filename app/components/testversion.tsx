@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import platform from "platform";
 
 const Testversion = () => {
-  var platform = require("platform");
   const [state, setState] = useState([""]);
   useEffect(() => {
     setState(
