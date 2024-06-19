@@ -71,12 +71,14 @@
     left: 10px;
     right: inherit;
     padding-right: 2rem;
+    z-index: 100;
 }
 
 .nextArrowWrapper {
     right: 10px;
     left: inherit;
     padding-left: 2rem;
+    z-index: 100;
 }
 
 .slide {
@@ -113,17 +115,17 @@
 
 @media (width <= 768px) {
 
-    .prevArrow,
+    /* .prevArrow,
     .nextArrow {
         display: none;
-    }
+    } */
 
     .pagination {
         gap: inherit;
     }
 
-    .prevArrowWrapperGallery,
+    /* .prevArrowWrapperGallery,
     .nextArrowWrapperGallery {
         display: none;
-    }
+    } */
 }

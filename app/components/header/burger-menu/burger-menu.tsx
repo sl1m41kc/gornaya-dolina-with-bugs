@@ -87,6 +87,7 @@ const BurgerMenu = () => {
             className={classes.link}
             to={item.id}
             smooth={true}
+            offset={-50}
             activeClass={classes.active}
             onClick={() => onClickLink(item.id)}
           >
