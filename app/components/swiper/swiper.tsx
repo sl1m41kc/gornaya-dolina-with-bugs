@@ -1,12 +1,12 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Controller, Navigation, Pagination, Thumbs } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";   
+import "swiper/css/pagination";
 
 // В этом файле можно менять стили уже заданные в swiper
 import "./correct-swiper.css";
@@ -64,8 +64,8 @@ const MySwiper = ({
         slidesPerView={slidesPewView}
         centeredSlides={true}
         navigation={{
-          prevEl: prevRef.current,
-          nextEl: nextRef.current,
+          prevEl: `.${classes.navigationPrev}${nameSwiper}`,
+          nextEl: `.${classes.navigationNext}${nameSwiper}`,
         }}
         pagination={{
           clickable: true,
@@ -86,21 +86,39 @@ const MySwiper = ({
       </Swiper>
 
       {/* стелка назад */}
-      <div className={clsx(classes.prevArrowWrapper, isGallery && classes.prevArrowWrapperGallery)} ref={prevRef}>
+      <div
+        className={clsx(
+          classes.navigationPrev + nameSwiper,
+          classes.prevArrowWrapper,
+          isGallery && classes.prevArrowWrapperGallery
+        )}
+        ref={prevRef}
+      >
         <div className={classes.prevArrow}>
           <ChevronRightSVG />
         </div>
       </div>
       {/* стелка вперед */}
-      <div className={clsx(classes.nextArrowWrapper, isGallery && classes.nextArrowWrapperGallery)} ref={nextRef}>
+      <div
+        className={clsx(
+          classes.navigationNext + nameSwiper,
+          classes.nextArrowWrapper,
+          isGallery && classes.nextArrowWrapperGallery
+        )}
+        ref={nextRef}
+      >
         <div className={classes.nextArrow}>
           <ChevronRightSVG />
         </div>
       </div>
 
       <div
-        className={clsx(classes.pagination, classes.pagination + nameSwiper, isGallery && classes.paginationGallery)}
-      ></div>
+        className={clsx(
+          classes.pagination,
+          classes.pagination + nameSwiper,
+          isGallery && classes.paginationGallery
+        )}
+      />
     </div>
   );
 };

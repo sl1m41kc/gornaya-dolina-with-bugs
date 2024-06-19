@@ -81,6 +81,9 @@
     z-index: 100;
 }
 
+.navigationPrev {}
+.navigationNext {}
+
 .slide {
     user-select: none;
 }

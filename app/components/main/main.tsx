@@ -8,8 +8,7 @@ import useScreenWidth from "@/app/utils/useScreenWidth";
 import { useRef } from "react";
 
 import LogoSVG from "@/public/sprites/logo.svg";
-
-
+import platform from "platform";
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
@@ -18,22 +17,21 @@ interface IProps {
   isMain?: boolean;
 }
 
-const Main = ({ imageSrc, imageAlt}: IProps) => {
+const Main = ({ imageSrc, imageAlt }: IProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const screenWidth = useScreenWidth();
 
   return (
     <main className={classes.main} id="main">
-      
-        {true && screenWidth <= 768 && screenWidth !== 0 && (
-          <div className={classes.logoContainer}>
-            <div className={classes.logoWrapper}>
-              <LogoSVG className={classes.logo} />
-              <h1 className={classes.title}>Горная&nbsp;долина</h1>
-            </div>
+      {true && screenWidth <= 768 && screenWidth !== 0 && (
+        <div className={classes.logoContainer}>
+          <div className={classes.logoWrapper}>
+            <LogoSVG className={classes.logo} />
+            <h1 className={classes.title}>Горная&nbsp;долина</h1>
           </div>
-        )}
-      
+        </div>
+      )}
+
       <div className={classes.mask}>
         <Image
           className={classes.image}
@@ -45,8 +43,13 @@ const Main = ({ imageSrc, imageAlt}: IProps) => {
         />
       </div>
 
-
-      <BnovoWidget />
+      {platform.os?.family === "iOS" &&
+      Number(platform.os.version?.split(".")[0]) < 15 ? (
+        <></>
+      ) : (
+        // <BnovoWidget />
+        <></>
+      )}
     </main>
   );
 };

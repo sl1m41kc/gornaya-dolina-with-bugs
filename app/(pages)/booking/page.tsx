@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 
 import classes from "./page.module.css";
 import clsx from "clsx";
+import platform from "platform";
 
 const Page = () => {
   const script1Ref = useRef<HTMLScriptElement | null>(null);
@@ -45,14 +46,14 @@ const Page = () => {
     };
   }, []);
 
-  return (
-    <div className={clsx(classes.container, 'container')}>
-      <div
-        id="booking_iframe"
-        style={{ position: "relative", paddingBottom: "30px" }}
-      />
-    </div>
-  );
+  if (
+    platform.os?.family === "iOS" &&
+    Number(platform.os.version?.split(".")[0]) < 15
+  ) {
+    return <div className={classes.notWork}>Версия браузера устарела {':('}</div>;
+  } else {
+    return <div className={classes.notWork}>Версия браузера устарела {':('}</div>;
+  }
 };
 
 export default Page;
