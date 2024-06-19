@@ -82,7 +82,7 @@
     fill: #5F6368;
 }
 
-@media (width <= 1080px) {
+@media (max-width: 1080px) {
     .header {
         padding: 1rem 1.75rem;
     }
@@ -94,7 +94,7 @@
     }
 }
 
-@media (width <= 768px) {
+@media (max-width: 768px) {
     .logoWrapper {
         display: none;
     }

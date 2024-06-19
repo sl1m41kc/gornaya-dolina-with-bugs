@@ -25,13 +25,14 @@
     font-size: 32px;
 }
 
-@media (orientation: portrait) and (width<=600px) {
+@media (orientation: portrait) and (max-width: 600px) {
     .item {
         aspect-ratio: 2/3;
+        min-height: 400px;
     }
 }
 
-@media (width <= 600px) {
+@media (max-width: 600px) {
     .subtitle {
         font-size: 24px;
     }
