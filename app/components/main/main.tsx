@@ -5,7 +5,6 @@ import classes from "./main.module.css";
 import Image from "next/image";
 import BnovoWidget from "./booking/booking";
 import useScreenWidth from "@/app/utils/useScreenWidth";
-import { useRef } from "react";
 
 import LogoSVG from "@/public/sprites/logo.svg";
 import platform from "platform";
@@ -18,7 +17,6 @@ interface IProps {
 }
 
 const Main = ({ imageSrc, imageAlt }: IProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
   const screenWidth = useScreenWidth();
 
   return (
@@ -47,8 +45,7 @@ const Main = ({ imageSrc, imageAlt }: IProps) => {
       Number(platform.os.version?.split(".")[0]) < 15 ? (
         <></>
       ) : (
-        // <BnovoWidget />
-        <></>
+        <BnovoWidget />
       )}
     </main>
   );
