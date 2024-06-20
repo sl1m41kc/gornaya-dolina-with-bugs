@@ -50,9 +50,18 @@ const Page = () => {
     platform.os?.family === "iOS" &&
     Number(platform.os.version?.split(".")[0]) < 15
   ) {
-    return <div className={classes.notWork}>Версия браузера устарела {':('}</div>;
+    return (
+      <div className={classes.notWork}>Версия браузера устарела {":("}</div>
+    );
   } else {
-    return <div className={classes.notWork}>Версия браузера устарела {':('}</div>;
+    return (
+      <div className={clsx(classes.container, "container")}>
+        <div
+          id="booking_iframe"
+          style={{ position: "relative", paddingBottom: "30px" }}
+        />
+      </div>
+    );
   }
 };
 

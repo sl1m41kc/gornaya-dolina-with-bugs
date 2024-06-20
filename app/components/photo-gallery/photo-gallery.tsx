@@ -33,7 +33,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
         nameSwiper={nameGallery + "_mainSwiper"}
         onSwiper={setFirstSwiper}
         controller={{ control: secondSwiper }}
-        slide={(item: any, index: number) => (
+        slide={(item: any, _: number) => (
           <Image
             className={clsx(classes.image, classes.pointer)}
             src={item}
@@ -48,43 +48,41 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
       />
 
       {platform.os?.family === "iOS" &&
-        Number(platform.os.version?.split(".")[0]) < 15 && (
-          <dialog
-            id={nameGallery + "gallery"}
-            className={clsx("modal", classes.modal)}
+      Number(platform.os.version?.split(".")[0]) < 15 ? (
+        <></>
+      ) : (
+        <dialog
+          id={nameGallery + "gallery"}
+          className={clsx("modal", classes.modal)}
+        >
+          <div className={clsx("modal-box", classes.modalBox)}>
+            <MySwiper
+              data={data}
+              isGallery
+              nameSwiper={nameGallery + "_gallerySwiper"}
+              onSwiper={setSecondSwiper}
+              controller={{ control: firstSwiper }}
+              slide={(item: any, index: number) => (
+                <Image className={classes.image} src={item} alt="Фотогалерея" />
+              )}
+            />
+          </div>
+          <form method="dialog" className={classes.closeWrapper}>
+            <button className={classes.closeBtn}>
+              <div className={classes.close}>
+                <span />
+                <span />
+              </div>
+            </button>
+          </form>
+          <form
+            method="dialog"
+            className={clsx(classes.backdrop, "modal-backdrop")}
           >
-            <div className={clsx("modal-box", classes.modalBox)}>
-              <MySwiper
-                data={data}
-                isGallery
-                nameSwiper={nameGallery + "_gallerySwiper"}
-                onSwiper={setSecondSwiper}
-                controller={{ control: firstSwiper }}
-                slide={(item: any, index: number) => (
-                  <Image
-                    className={classes.image}
-                    src={item}
-                    alt="Фотогалерея"
-                  />
-                )}
-              />
-            </div>
-            <form method="dialog" className={classes.closeWrapper}>
-              <button className={classes.closeBtn}>
-                <div className={classes.close}>
-                  <span />
-                  <span />
-                </div>
-              </button>
-            </form>
-            <form
-              method="dialog"
-              className={clsx(classes.backdrop, "modal-backdrop")}
-            >
-              <button />
-            </form>
-          </dialog>
-        )}
+            <button />
+          </form>
+        </dialog>
+      )}
     </section>
   );
 };
