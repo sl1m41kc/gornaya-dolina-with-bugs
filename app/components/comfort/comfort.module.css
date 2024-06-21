@@ -5,12 +5,12 @@
     gap: 1.5rem;
 }
 
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
     .campingTypes {
         margin-inline: auto;
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: inherit;
         width: min(800px, 100%);
     }
 }

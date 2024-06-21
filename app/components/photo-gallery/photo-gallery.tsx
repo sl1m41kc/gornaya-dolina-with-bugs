@@ -5,8 +5,8 @@ import Image from "next/image";
 import classes from "./photo-gallery.module.css";
 import MySwiper from "../swiper/swiper";
 import { useState } from "react";
-import { clsx } from "yet-another-react-lightbox";
 import platform from "platform";
+import clsx from "clsx";
 
 interface IProps {
   // Сделаны гибкие данные для переиспользования компонента

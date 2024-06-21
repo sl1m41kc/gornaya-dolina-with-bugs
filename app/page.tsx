@@ -11,7 +11,7 @@ import Contacts from "./components/contacts/contacts";
 import { data } from "@/data/data";
 import { useEffect } from "react";
 import { scroller } from "react-scroll";
-import Separator from "./components/sepatator/separator";
+import Separator from "./components/separator/separator";
 import Scrollto from "./components/scrollto/scrollto";
 
 export default function Home() {
@@ -35,7 +35,7 @@ export default function Home() {
       <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
-      {/* <Camping /> */}
+      <Camping />
       {/* <Reviews /> */}
       {/* <Separator /> */}
       {/* <Contacts /> */}
