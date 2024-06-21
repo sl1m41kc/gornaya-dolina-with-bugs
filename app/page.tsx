@@ -36,7 +36,7 @@ export default function Home() {
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />
       <Camping />
-      {/* <Reviews /> */}
+      <Reviews />
       {/* <Separator /> */}
       {/* <Contacts /> */}
 

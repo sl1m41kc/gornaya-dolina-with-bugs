@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// import Modal from "@/app/components/modal/modal";
 import dynamic from 'next/dynamic'
 const Modal = dynamic(() => import('@/app/components/modal/modal'), { ssr: false })
 
