@@ -4,15 +4,12 @@ import Image from "next/image";
 import React, { useRef } from "react";
 import classes from "./separator.module.css";
 import useParallaxYAnimation from "@/app/utils/animation/useParallaxYAnimation";
-import platform from "platform";
 
 const Separator = () => {
   const imageRef = useRef(null);
 
-  const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
-
   // Анимация
-  if (!legacy) useParallaxYAnimation(imageRef, -500);
+  useParallaxYAnimation(imageRef, -500);
 
   return (
     <div className={classes.mask}>

@@ -4,7 +4,6 @@ import React, { useRef } from "react";
 import classes from "./comfort-item.module.css";
 import Image from "next/image";
 import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
-import platform from "platform";
 
 interface IProps {
   type: string;
@@ -18,10 +17,8 @@ const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
   const itemRef = useRef(null);
   const imageRef = useRef(null);
 
-  const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
-
   // Анимация
-  if (!legacy) useScaleAnimation(imageRef, 1.3);
+  useScaleAnimation(imageRef, 1.3);
   
   return (
     <a className={classes.item} href={`/comfort/${type}`} ref={itemRef}>
