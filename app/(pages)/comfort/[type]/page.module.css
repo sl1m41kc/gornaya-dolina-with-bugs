@@ -1,11 +1,11 @@
+.info {
+    padding-top: 2rem;
+}
+
 .description {
     font-size: 20px;
     line-height: 1.4;
     margin-top: 1rem;
-}
-
-.info {
-    margin-top: 3rem;
 }
 
 .imageWrapper {
@@ -18,7 +18,8 @@
 }
 
 .gallery {
-    margin-block: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .title {
@@ -30,10 +31,4 @@
     margin-top: -.5rem;
     font-size: 20px;
     font-weight: normal;
-}
-
-@media (width <= 1024px) {
-    .info {
-        margin-top: 12rem;
-    }
 }

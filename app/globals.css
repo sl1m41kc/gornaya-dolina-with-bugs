@@ -37,6 +37,7 @@ input {
     padding-right: 1.25rem;
 }
 
+
 .fullW {
     padding-inline: 0;
     width: min(100%, 1440px);
@@ -46,11 +47,20 @@ input {
     width: min(100%, 800px);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     margin-inline: auto;
     font-size: 20px;
     color: var(--text-color);
     line-height: 1.4;
+}
+
+.containerText > h2 {
+    margin-bottom: 1.5rem;
+}
+.containerText > p {
+    margin-bottom: 1.5rem;
+}
+.containerText > p:last-child {
+    margin-bottom: 0;
 }
 
 .containerInfo {

@@ -20,8 +20,7 @@ interface IProps {
 const Main = ({ imageSrc, imageAlt }: IProps) => {
   const screenWidth = useScreenWidth();
 
-  // const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
-  const legacy = false;
+  const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
 
   return (
     <main className={clsx(classes.main, legacy && classes.legacy)} id="main">

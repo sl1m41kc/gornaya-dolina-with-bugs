@@ -54,4 +54,7 @@
     .main {
         margin-bottom: 9rem;
     }
+    .legacy {
+        margin-bottom: inherit;
+    }
 }

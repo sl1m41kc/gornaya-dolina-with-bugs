@@ -93,10 +93,12 @@
     .contacts {
         display: flex;
         flex-direction: column-reverse;
+        gap: inherit;
     }
 
     .map {
         height: 350px;
+        margin-top: 1.5rem;
     }
 }
 

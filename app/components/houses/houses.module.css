@@ -9,6 +9,13 @@
     .wrapper {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+    }
+
+    .wrapper > a {
+        margin-bottom: 1.5rem;
+    }
+
+    .wrapper > a:last-child {
+        margin-bottom: 0;
     }
 }
