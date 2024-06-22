@@ -7,5 +7,6 @@
 .mask {
     mask-image: url('/sprites/mask/horse.svg');
     mask-size: 100% 100%;
-    margin-block: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }

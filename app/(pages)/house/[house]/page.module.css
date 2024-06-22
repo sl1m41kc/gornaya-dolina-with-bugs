@@ -32,7 +32,8 @@
 }
 
 .gallery {
-    margin-block: 3rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 @media (max-width: 1024px) {

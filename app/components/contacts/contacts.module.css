@@ -1,12 +1,18 @@
 .container {
     margin-top: -4rem;
+    margin-bottom: 4rem;
+}
+
+.container > h2 {
+    margin-bottom: 2rem;
 }
 
 .contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    margin-block: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .map, .info {

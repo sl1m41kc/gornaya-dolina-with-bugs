@@ -46,6 +46,8 @@ input {
 .containerText {
     width: min(100%, 800px);
     display: flex;
+    padding-left: .5rem;
+    padding-right: .5rem;
     flex-direction: column;
     margin-inline: auto;
     font-size: 20px;
