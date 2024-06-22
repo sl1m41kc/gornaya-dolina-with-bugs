@@ -7,6 +7,8 @@ import "@/fonts/PT-Sans/PT-sans.css";
 
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
+import { YandexMetrika } from "./components/yandex-metrika/yandex-metrika";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
   title: "Горная долина",
@@ -25,12 +27,14 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body>
+        <Suspense>
+          <YandexMetrika />
+        </Suspense>
+
         <Header />
         {children}
         <Footer />
-
       </body>
-      
     </html>
   );
 }

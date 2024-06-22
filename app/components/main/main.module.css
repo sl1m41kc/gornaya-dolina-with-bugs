@@ -45,3 +45,13 @@
     font-family: 'Philosopher';
     font-size: 24px;
 }
+
+.legacy {
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        margin-bottom: 9rem;
+    }
+}

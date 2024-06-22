@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { clsx } from "yet-another-react-lightbox";
 import classes from "./actions.module.css";
 import Modal from "@/app/components/modal/modal";
+import clsx from "clsx";
 
 type Action = "booking" | "living";
 

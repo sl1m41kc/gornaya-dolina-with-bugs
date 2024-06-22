@@ -8,6 +8,7 @@ import useScreenWidth from "@/app/utils/useScreenWidth";
 
 import LogoSVG from "@/public/sprites/logo.svg";
 import platform from "platform";
+import clsx from "clsx";
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
@@ -19,8 +20,11 @@ interface IProps {
 const Main = ({ imageSrc, imageAlt }: IProps) => {
   const screenWidth = useScreenWidth();
 
+  // const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
+  const legacy = false;
+
   return (
-    <main className={classes.main} id="main">
+    <main className={clsx(classes.main, legacy && classes.legacy)} id="main">
       {true && screenWidth <= 768 && screenWidth !== 0 && (
         <div className={classes.logoContainer}>
           <div className={classes.logoWrapper}>
@@ -41,12 +45,7 @@ const Main = ({ imageSrc, imageAlt }: IProps) => {
         />
       </div>
 
-      {platform.os?.family === "iOS" &&
-      Number(platform.os.version?.split(".")[0]) < 15 ? (
-        <></>
-      ) : (
-        <BnovoWidget />
-      )}
+      {!legacy && <BnovoWidget />}
     </main>
   );
 };
