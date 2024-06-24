@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { scroller } from "react-scroll";
 import Separator from "./components/separator/separator";
 import Scrollto from "./components/scrollto/scrollto";
+import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
 
 export default function Home() {
 
@@ -41,6 +42,7 @@ export default function Home() {
       <Contacts />
 
       <Scrollto />
+      <ScrollToTop />
     </div>
   );
 }

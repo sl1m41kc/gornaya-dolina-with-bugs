@@ -14,9 +14,7 @@
     position: absolute;
 }
 
-
-
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
     .container {
         bottom: 115px;
         height: 288px;
