@@ -3,8 +3,6 @@
 import { useEffect, useMemo, useRef } from "react";
 import classes from "./booking.module.css";
 import useScreenWidth from "@/app/utils/useScreenWidth";
-import LogoSVG from "@/public/sprites/logo.svg";
-
 
 const BnovoWidget = () => {
   const benovoJsRef = useRef<HTMLScriptElement | null>(null);

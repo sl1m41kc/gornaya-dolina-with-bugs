@@ -16,11 +16,11 @@ const Advantages = () => {
           <MySwiper
             data={data.listAdvantages}
             countSlide={1}
-            nameSwiper="swiperAdvantages"
+            nameSwiper="swiperAdvantagesMain"
             slide={(item: any, index: number) => (
               <div
                 className={classes.item}
-                key={`${index}-${String(item.title)}-${String(item.description)}`}
+                key={`${index}-${String(item.title)}-${String(item.description)}-advantages`}
               >
                 <div className={classes.iconWrapper}>{item.icon}</div>
                 <div className={classes.textWrapper}>

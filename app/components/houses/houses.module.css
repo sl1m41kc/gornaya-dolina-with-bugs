@@ -5,17 +5,17 @@
     margin-top: 3rem;
 }
 
-.container {
-    margin-top: -2rem;
-}
-
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
     .wrapper {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
     }
-    .container {
-        margin-top: 9rem;
+
+    .wrapper > a {
+        margin-bottom: 1.5rem;
+    }
+
+    .wrapper > a:last-child {
+        margin-bottom: 0;
     }
 }

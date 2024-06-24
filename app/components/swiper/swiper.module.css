@@ -48,7 +48,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
     margin-block: 1.5rem;
 }
 
@@ -71,13 +70,18 @@
     left: 10px;
     right: inherit;
     padding-right: 2rem;
+    z-index: 100;
 }
 
 .nextArrowWrapper {
     right: 10px;
     left: inherit;
     padding-left: 2rem;
+    z-index: 100;
 }
+
+.navigationPrev {}
+.navigationNext {}
 
 .slide {
     user-select: none;
@@ -109,21 +113,4 @@
 
 .transparentRight.gallery {
     background: linear-gradient(-90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-}
-
-@media (width <=768px) {
-
-    .prevArrow,
-    .nextArrow {
-        display: none;
-    }
-
-    .pagination {
-        gap: inherit;
-    }
-
-    .prevArrowWrapperGallery,
-    .nextArrowWrapperGallery {
-        display: none;
-    }
 }

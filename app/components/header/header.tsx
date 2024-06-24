@@ -6,16 +6,20 @@ import classes from "./header.module.css";
 import PhoneSVG from "@/public/sprites/icons/phone.svg";
 import clsx from "clsx";
 import LogoSVG from "@/public/sprites/logo.svg";
-import { scroller } from "react-scroll";
 import { usePathname, useRouter } from "next/navigation";
 import useScreenWidth from "@/app/utils/useScreenWidth";
 import { data } from "@/data/data";
+import platform from "platform";
 
 const Header = () => {
   const screenWidth = useScreenWidth();
   const [scrollOnTop, setScrollOnTop] = useState(true);
   const router = useRouter();
   const path = usePathname();
+
+  const legacy =
+    platform.os?.family === "iOS" &&
+    Number(platform.os.version?.split(".")[0]) < 13;
 
   const onClick = () => {
     if (path !== "/") {
@@ -31,15 +35,14 @@ const Header = () => {
         setScrollOnTop(false);
       }
     };
-  
+
     if (typeof window !== "undefined") {
       if (screenWidth >= 1024) {
         window.addEventListener("scroll", handleScroll);
       } else {
         window.removeEventListener("scroll", handleScroll);
       }
-  
-  
+
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
@@ -68,9 +71,11 @@ const Header = () => {
           <PhoneSVG className={classes.phone} />
           <p className="mylink">{data.socialMedia.phone.number}</p>
         </a>
-        <a className={clsx("button", classes.button)} href="/booking">
-          Забронировать
-        </a>
+        {!legacy && (
+          <a className={clsx("button", classes.button)} href="/booking">
+            Забронировать
+          </a>
+        )}
       </div>
     </header>
   );

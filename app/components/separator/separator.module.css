@@ -1,0 +1,13 @@
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mask {
+    -webkit-mask-image: url('/sprites/mask/horse.svg');
+    -webkit-mask-size: 100% 100%;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}

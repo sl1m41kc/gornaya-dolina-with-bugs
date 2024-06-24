@@ -7,7 +7,7 @@
     overflow: hidden;
     width: 100%;
     height: 95vh;
-    mask: url('/sprites/mask/main.svg') center center / cover repeat;
+    -webkit-mask: url('/sprites/mask/main.svg') center center / cover repeat;
 }
 
 .image {
@@ -28,6 +28,7 @@
 }
 
 .logoWrapper {
+    width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,4 +44,17 @@
 .title {
     font-family: 'Philosopher';
     font-size: 24px;
+}
+
+.legacy {
+    margin-bottom: 4rem;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        margin-bottom: 9rem;
+    }
+    .legacy {
+        margin-bottom: inherit;
+    }
 }

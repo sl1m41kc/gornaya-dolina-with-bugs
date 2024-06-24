@@ -1,18 +1,23 @@
 .container {
     margin-top: -4rem;
+    margin-bottom: 4rem;
+}
+
+.container > h2 {
+    margin-bottom: 2rem;
 }
 
 .contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
-    margin-block: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .map, .info {
     border-radius: 30px;
     overflow: hidden;
-    aspect-ratio: 16/10;
 }
 
 .iframe {
@@ -27,7 +32,6 @@
     align-items: start;
     width: 100%;
     height: 100%;
-    gap: 2rem;
     padding: 1.25rem 1.75rem;
     border: 1px solid #CBCBCB;
 }
@@ -36,13 +40,13 @@
     text-transform: uppercase;
     display: flex;
     align-items: center;
-    gap: 0.25rem;
     color: #5F6368;
 }
 
 .iconHeader {
     width: 20px;
     fill: #5F6368;
+    margin-right: .25rem;
 }
 
 .phoneLink {
@@ -52,14 +56,21 @@
 
 .social {
     display: flex;
-    gap: 1rem;
     fill: #393939;
+}
+
+.social > a {
+    margin-right: 1rem;
 }
 
 .infoItem {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.infoItem > div:first-child {
+    margin-bottom: 1rem;
 }
 
 .addressText {
@@ -70,31 +81,34 @@
 .navigation {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+}
+
+.navigation > div:first-child {
+    margin-bottom: .5rem;
 }
 
 .mapLink {
     display: flex;
-    gap: 1rem;
 }
 
-@media (width <= 1024px) {
+.mapLink > a:first-child {
+    margin-right: 1rem;
+}
+
+@media (max-width: 1024px) {
     .contacts {
         display: flex;
         flex-direction: column-reverse;
-        gap: 1rem;
-    }
-
-    .map, .info {
-        aspect-ratio: inherit;
+        gap: inherit;
     }
 
     .map {
-        height: 300px;
+        height: 350px;
+        margin-top: 1.5rem;
     }
 }
 
-@media (width <= 600px) {
+@media (max-width: 600px) {
     .phoneLink {
         font-size: 24px;
     }

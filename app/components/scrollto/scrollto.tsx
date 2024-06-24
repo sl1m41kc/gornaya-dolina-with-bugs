@@ -5,18 +5,16 @@ import { scroller } from "react-scroll";
 
 const Scrollto = () => {
   useEffect(() => {
-    const hash = window.location.href.split("#")[1];
+    const hash = window.location.hash.slice(1);
 
     if (hash) {
-      window.location.hash = "";
+      window.history.replaceState({}, document.title, window.location.pathname);
       scroller.scrollTo(hash, {
         duration: 0,
         delay: 0,
         smooth: "easeInOutQuart",
+        offset: -70,
       });
-      setTimeout(() => {
-        window.location.hash = `#${hash}`;
-      }, 200);
     }
   }, []);
 

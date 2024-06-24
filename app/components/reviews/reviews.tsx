@@ -6,7 +6,6 @@ import classes from "./reviews.module.css";
 import useScreenWidth from "@/app/utils/useScreenWidth";
 import { data } from "@/data/data";
 
-
 const Reviews = () => {
   const screenWidth = useScreenWidth();
 

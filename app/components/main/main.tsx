@@ -5,11 +5,10 @@ import classes from "./main.module.css";
 import Image from "next/image";
 import BnovoWidget from "./booking/booking";
 import useScreenWidth from "@/app/utils/useScreenWidth";
-import { useEffect, useMemo, useRef } from "react";
 
 import LogoSVG from "@/public/sprites/logo.svg";
-
-
+import platform from "platform";
+import clsx from "clsx";
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
@@ -18,22 +17,22 @@ interface IProps {
   isMain?: boolean;
 }
 
-const Main = ({ imageSrc, imageAlt}: IProps) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const Main = ({ imageSrc, imageAlt }: IProps) => {
   const screenWidth = useScreenWidth();
 
+  const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
+
   return (
-    <main className={classes.main} id="main">
-      
-        {true && screenWidth <= 768 && screenWidth !== 0 && (
-          <div className={classes.logoContainer}>
-            <div className={classes.logoWrapper}>
-              <LogoSVG className={classes.logo} />
-              <h1 className={classes.title}>Горная&nbsp;долина</h1>
-            </div>
+    <main className={clsx(classes.main, legacy && classes.legacy)} id="main">
+      {true && screenWidth <= 768 && screenWidth !== 0 && (
+        <div className={classes.logoContainer}>
+          <div className={classes.logoWrapper}>
+            <LogoSVG className={classes.logo} />
+            <h1 className={classes.title}>Горная&nbsp;долина</h1>
           </div>
-        )}
-      
+        </div>
+      )}
+
       <div className={classes.mask}>
         <Image
           className={classes.image}
@@ -45,8 +44,7 @@ const Main = ({ imageSrc, imageAlt}: IProps) => {
         />
       </div>
 
-
-      <BnovoWidget />
+      {!legacy && <BnovoWidget />}
     </main>
   );
 };

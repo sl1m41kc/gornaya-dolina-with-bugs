@@ -1,13 +1,12 @@
 "use client";
 
-import Swiper from "../swiper/swiper";
 import Image from "next/image";
 
 import classes from "./photo-gallery.module.css";
-import useScreenWidth from "@/app/utils/useScreenWidth";
 import MySwiper from "../swiper/swiper";
 import { useState } from "react";
-import { clsx } from "yet-another-react-lightbox";
+import platform from "platform";
+import clsx from "clsx";
 
 interface IProps {
   // Сделаны гибкие данные для переиспользования компонента
@@ -21,7 +20,10 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
   const [secondSwiper, setSecondSwiper] = useState(null);
 
   return (
-    <section className={clsx("container fullW", classes.container)} id={nameGallery}>
+    <section
+      className={clsx("container fullW", classes.container)}
+      id={nameGallery}
+    >
       <div className="containerText">
         <h2 className="title">{title}</h2>
       </div>
@@ -31,7 +33,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
         nameSwiper={nameGallery + "_mainSwiper"}
         onSwiper={setFirstSwiper}
         controller={{ control: secondSwiper }}
-        slide={(item: any, index: number) => (
+        slide={(item: any, _: number) => (
           <Image
             className={clsx(classes.image, classes.pointer)}
             src={item}
@@ -45,34 +47,42 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
         )}
       />
 
-      <dialog id={nameGallery + "gallery"} className={clsx("modal",  classes.modal)}>
-        <div className={clsx("modal-box", classes.modalBox)}>
-          <MySwiper
-            data={data}
-            isGallery
-            nameSwiper={nameGallery + "_gallerySwiper"}
-            onSwiper={setSecondSwiper}
-            controller={{ control: firstSwiper }}
-            slide={(item: any, index: number) => (
-              <Image className={classes.image} src={item} alt="Фотогалерея" />
-            )}
-          />
-        </div>
-        <form method="dialog" className={classes.closeWrapper}>
-          <button className={classes.closeBtn}>
-            <div className={classes.close}>
-              <span />
-              <span />
-            </div>
-          </button>
-        </form>
-        <form
-          method="dialog"
-          className={clsx(classes.backdrop, "modal-backdrop")}
+      {platform.os?.family === "iOS" &&
+      Number(platform.os.version?.split(".")[0]) < 15 ? (
+        <></>
+      ) : (
+        <dialog
+          id={nameGallery + "gallery"}
+          className={clsx("modal", classes.modal)}
         >
-          <button />
-        </form>
-      </dialog>
+          <div className={clsx("modal-box", classes.modalBox)}>
+            <MySwiper
+              data={data}
+              isGallery
+              nameSwiper={nameGallery + "_gallerySwiper"}
+              onSwiper={setSecondSwiper}
+              controller={{ control: firstSwiper }}
+              slide={(item: any, index: number) => (
+                <Image className={classes.image} src={item} alt="Фотогалерея" />
+              )}
+            />
+          </div>
+          <form method="dialog" className={classes.closeWrapper}>
+            <button className={classes.closeBtn}>
+              <div className={classes.close}>
+                <span />
+                <span />
+              </div>
+            </button>
+          </form>
+          <form
+            method="dialog"
+            className={clsx(classes.backdrop, "modal-backdrop")}
+          >
+            <button />
+          </form>
+        </dialog>
+      )}
     </section>
   );
 };

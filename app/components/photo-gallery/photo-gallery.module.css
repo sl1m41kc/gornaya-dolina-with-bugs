@@ -69,6 +69,7 @@
 @media (orientation: portrait) {
     .image {
       aspect-ratio: 2/3;
+      min-height: 400px;
     }
 }
 

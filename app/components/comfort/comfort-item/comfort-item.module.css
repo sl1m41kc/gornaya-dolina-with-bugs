@@ -15,6 +15,7 @@
     border-radius: 30px;
     overflow: hidden;
     transition: transform .25s;
+    min-height: 200px;
 }
 
 .item:hover {
@@ -47,32 +48,39 @@
     font-size: 20px;
 }
 
-@media (width <= 1280px) {
+@media (max-width: 1280px) {
     .title {
         display: flex;
         flex-direction: column;
     }
 }
 
-@media (width <= 1024px) {
+@media (max-width: 1024px) {
     .item {
         aspect-ratio: 16/9;
+        margin-bottom: 1.5rem;
     }
+
+    .item:last-child {
+        margin-bottom: inherit;
+    }
+
     .item:hover {
         transform: none;
     }
 }
 
-@media (orientation: portrait) and (width <=600px) {
+@media (orientation: portrait) and (max-width: 600px) {
     .item {
         aspect-ratio: 4/3;
     }
 }
 
-@media (width <= 600px) {
+@media (max-width: 600px) {
     .title {
         font-size: 24px;
     }
+
     .item:hover {
         transform: none;
     }

@@ -33,8 +33,10 @@ input {
 .container {
     width: min(100%, 1440px);
     margin-inline: auto;
-    padding-inline: 1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
 }
+
 
 .fullW {
     padding-inline: 0;
@@ -44,12 +46,23 @@ input {
 .containerText {
     width: min(100%, 800px);
     display: flex;
+    padding-left: .5rem;
+    padding-right: .5rem;
     flex-direction: column;
-    gap: 1.5rem;
     margin-inline: auto;
     font-size: 20px;
     color: var(--text-color);
     line-height: 1.4;
+}
+
+.containerText > h2 {
+    margin-bottom: 1.5rem;
+}
+.containerText > p {
+    margin-bottom: 1.5rem;
+}
+.containerText > p:last-child {
+    margin-bottom: 0;
 }
 
 .containerInfo {
@@ -99,7 +112,7 @@ input {
     transform: scale(1);
 }
 
-@media (width <=1024px) {
+@media (max-width: 1024px) {
     .title {
         font-size: 36px;
     }
@@ -109,7 +122,7 @@ input {
     }
 }
 
-@media (width <=600px) {
+@media (max-width: 600px) {
     .title {
         font-size: 32px;
     }
