@@ -78,7 +78,7 @@ export const homesPageData: homesType = {
         icon: <TerraceSVG />,
       },
       {
-        title: <>К&nbsp;нам можно с&nbsp;животными</>,
+        title: <>К&nbsp;нам можно с&nbsp;животными. (меньше 5&nbsp;кг)</>,
         icon: <PetsSVG />,
       },
       {
@@ -151,7 +151,7 @@ export const homesPageData: homesType = {
         icon: <TerraceSVG />,
       },
       {
-        title: <>К&nbsp;нам можно с&nbsp;животными</>,
+        title: <>К&nbsp;нам можно с&nbsp;животными. (меньше 5&nbsp;кг)</>,
         icon: <PetsSVG />,
       },
       {

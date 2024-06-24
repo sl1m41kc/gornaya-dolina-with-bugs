@@ -25,7 +25,7 @@ export const listAdvantagesData: IAdvantages[] = [
     },
     {
       title: <>Можно с&nbsp;животными</>,
-      description: <>Мы&nbsp;всегда рады нашим четвероногим постояльцам.</>,
+      description: <>Мы&nbsp;всегда рады нашим четвероногим постояльцам. (меньше 5&nbsp;кг)</>,
       icon: <PetsSVG />,
     },
     {
