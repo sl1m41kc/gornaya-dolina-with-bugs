@@ -18,7 +18,7 @@ const Contacts = () => {
   const navigation = data.navigation
 
   return (
-    <section className="container" id="contacts">
+    <section className={clsx("container", classes.container)} id="contacts">
       <h2 className="title">Контакты</h2>
 
       <div className={classes.contacts}>
@@ -36,7 +36,7 @@ const Contacts = () => {
                 <PhoneSVG className={classes.iconHeader} />
                 <p>Телефон</p>
               </div>
-              <a className={clsx(classes.phoneLink, 'link')} href={social.phone.link}>
+              <a className={clsx(classes.phoneLink, 'mylink')} href={social.phone.link}>
                 {social.phone.number}
               </a>
             </div>

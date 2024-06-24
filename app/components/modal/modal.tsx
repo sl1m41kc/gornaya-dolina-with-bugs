@@ -1,5 +1,6 @@
 "use client";
 
+import { createPortal } from "react-dom";
 import { useEffect } from "react";
 import classes from "./modal.module.css";
 
@@ -33,7 +34,7 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
 
   document.body.style.overflow = "hidden";
 
-  return (
+  return createPortal(
     <div className={classes.overlay}>
       <div className={classes.backdrop} onClick={closeModal} />
       <div className={classes.modal}>
@@ -45,7 +46,8 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
         </button>
         <div>{children}</div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

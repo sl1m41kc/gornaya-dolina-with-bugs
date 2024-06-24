@@ -1,8 +1,8 @@
 .container {
-    border-radius: 30px;
+    border-radius: 8px;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.1);
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.1);
     bottom: 70px;
     left: 0;
     right: 0;
@@ -14,9 +14,11 @@
     position: absolute;
 }
 
+
+
 @media (width <= 1024px) {
     .container {
-        bottom: 250px;
+        bottom: 115px;
         height: 288px;
     }
 }

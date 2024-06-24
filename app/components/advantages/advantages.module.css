@@ -1,0 +1,97 @@
+.advantages {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    margin-top: 3rem;
+    border: 1px solid var(--secondary-accent);
+    overflow: hidden;
+}
+
+.item {
+    display: grid;
+    align-content: space-between;
+    padding: 1.5rem;
+    width: 100%;
+    fill: var(--text-color);
+    color: var(--text-color);
+    aspect-ratio: 1/1;
+}
+
+.item:nth-child(even) {
+    fill: #fff;
+    background-color: var(--secondary-accent);
+    color: #fff;
+}
+
+.iconWrapper {
+    width: 50px;
+    height: 50px;
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.title {
+    font-family: 'Philosopher';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.3;
+}
+
+.description {
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+@media (width <= 1350px) {
+    .advantages {
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 70%;
+        margin-inline: auto;
+    }
+}
+
+@media (width < 1280px) {
+    .advantages {
+        width: 80%;
+    }
+}
+
+@media (width < 1024px) {
+    .advantages {
+        width: 100%;
+    }
+}
+
+@media (width < 850px) {
+    .swiperWrapper {
+        margin-top: 2rem;
+        width: 70%;
+        margin-inline: auto;
+    }
+
+    .item {
+        color: #fff;
+        fill: #fff;
+        aspect-ratio: 4/3;
+        border-radius: 30px;
+        background-color: var(--secondary-accent);
+    }
+}
+
+@media (width < 768px) {
+    .swiperWrapper {
+        width: 100%;
+    }
+}
+
+@media (width < 520px) {
+    .item {
+        aspect-ratio: 1/1;
+    }
+    .title {
+        font-size: 20px;
+    }
+}

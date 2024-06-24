@@ -1,14 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./burger-menu.module.css";
 import clsx from "clsx";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { data } from "@/data/data";
+import { scroller } from "react-scroll";
 
 const BurgerMenu = () => {
-  const path = usePathname()
+  const path = usePathname();
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,8 +32,8 @@ const BurgerMenu = () => {
       name: "Фотогалерея",
     },
     {
-      id: 'camping',
-      name: 'Активный отдых',
+      id: "camping",
+      name: "Активный отдых",
     },
     {
       id: "reviews",
@@ -45,12 +47,26 @@ const BurgerMenu = () => {
 
   const onClickBurger = () => {
     setIsOpen(!isOpen);
+
+    if (isOpen) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
   };
 
-  const onClickLink = async (id: string) => {
+  const onClickLink = (id: string) => {
     setIsOpen(false);
-    if (path !== '/') {
-      router.push(`/#${id}`)
+    document.body.style.overflow = "auto";
+
+    if (path !== "/") {
+      router.push(`/#${id}`);
+    } else {
+      scroller.scrollTo(id, {
+        duration: 800,
+        delay: 0,
+        smooth: "easeInOutQuart",
+      });
     }
   };
 
@@ -67,21 +83,27 @@ const BurgerMenu = () => {
 
       <div className={clsx(classes.menu, isOpen && classes.active)}>
         {linkItem.map((item) => (
-          <Link
+          <ScrollLink
+            key={item.id}
+            className={classes.link}
             to={item.id}
             spy={true}
             smooth={true}
-            offset={-100}
+            hashSpy={true}
+            spyThrottle={1000}
             activeClass={classes.active}
-            className={classes.link}
-            key={item.id}
             onClick={() => onClickLink(item.id)}
           >
             {item.name}
-          </Link>
+          </ScrollLink>
         ))}
         <div className={classes.phoneWrapper}>
-        <a href={data.socialMedia.phone.link} className={clsx(classes.phone, 'link', 'linkReverse')}>{data.socialMedia.phone.number}</a>
+          <a
+            href={data.socialMedia.phone.link}
+            className={clsx(classes.phone, "mylink", "linkReverse")}
+          >
+            {data.socialMedia.phone.number}
+          </a>
         </div>
       </div>
     </div>

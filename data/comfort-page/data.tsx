@@ -1,8 +1,20 @@
 import KAYAKING_MAIN_PHOTO from "@/public/images/camping/1.png";
 import { comfortPageType } from "./types";
-import KayakingSVG from "@/public/sprites/icons/kayaking.svg";
-import HikingSVG from "@/public/sprites/icons/hiking.svg";
+
 import MotorSportSVG from "@/public/sprites/icons/motorsport.svg";
+import MotorSportSlide1 from '@/public/images/comfort/motorsport/1.jpg'
+import MotorSportSlide2 from '@/public/images/comfort/motorsport/2.jpg'
+import MotorSportSlide3 from '@/public/images/comfort/motorsport/3.jpg'
+
+import KayakingSVG from "@/public/sprites/icons/kayaking.svg";
+import KayakingSlide1 from '@/public/images/comfort/kayaking/1.jpg'
+import KayakingSlide2 from '@/public/images/comfort/kayaking/2.jpg'
+import KayakingSlide3 from '@/public/images/comfort/kayaking/3.jpg'
+
+import HikingSVG from "@/public/sprites/icons/hiking.svg";
+import HikingSlide1 from '@/public/images/comfort/hiking/1.jpg'
+import HikingSlide2 from '@/public/images/comfort/hiking/2.jpg'
+import HikingSlide3 from '@/public/images/comfort/hiking/3.jpg'
 
 export const comfortPageData: comfortPageType = [
   {
@@ -18,11 +30,11 @@ export const comfortPageData: comfortPageType = [
         адреналин и&nbsp;восторг, запоминаясь на&nbsp;всю жизнь.
       </>
     ),
-    imageSrc: "/images/comfort/kayaking.png",
-    slider: [KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO],
+    imageSrc: "/images/comfort/kayaking/main.jpg",
+    slider: [KayakingSlide1, KayakingSlide2, KayakingSlide3],
   },
   {
-    title: <>Прогулки <span>(пешие, вело, конные)</span></>,
+    title: <>Прогулки<br/><span>(пешие, вело, конные)</span></>,
     icon: <HikingSVG />,
     type: "hiking",
     description: (
@@ -38,8 +50,8 @@ export const comfortPageData: comfortPageType = [
         каждая прогулка станет для вас незабываемым приключением.
       </>
     ),
-    imageSrc: "/images/comfort/hiking.png",
-    slider: [KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO],
+    imageSrc: "/images/comfort/hiking/main.jpg",
+    slider: [HikingSlide1, HikingSlide2, HikingSlide3],
   },
   {
     title: "Туры на квадроциклах",
@@ -56,7 +68,7 @@ export const comfortPageData: comfortPageType = [
         и&nbsp;яркими эмоциями.
       </>
     ),
-    imageSrc: "/images/comfort/motorsport.png",
-    slider: [KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO, KAYAKING_MAIN_PHOTO],
+    imageSrc: "/images/comfort/motorsport/main.jpg",
+    slider: [MotorSportSlide1, MotorSportSlide2, MotorSportSlide3],
   },
 ];

@@ -24,7 +24,10 @@ input {
 .wrapper {
     display: flex;
     flex-direction: column;
-    gap: 7rem;
+}
+
+.wrapper > section {
+    padding-top: 7rem;
 }
 
 .container {
@@ -33,9 +36,13 @@ input {
     padding-inline: 1.25rem;
 }
 
+.fullW {
+    padding-inline: 0;
+    width: min(100%, 1440px);
+}
+
 .containerText {
     width: min(100%, 800px);
-    padding-inline: 1.25rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -59,12 +66,12 @@ input {
     color: var(--primary-color);
 }
 
-.link {
+.mylink {
     cursor: pointer;
     position: relative;
 }
 
-.link:after {
+.mylink:after {
     content: '';
     position: absolute;
     top: calc(100% + 3px);
@@ -97,7 +104,17 @@ input {
         font-size: 36px;
     }
 
-    .wrapper {
-        gap: 5rem;
+    .wrapper > section {
+        padding-top: 3.5rem;
+    }
+}
+
+@media (width <=600px) {
+    .title {
+        font-size: 32px;
+    }
+
+    .containerText {
+        font-size: 16px;
     }
 }

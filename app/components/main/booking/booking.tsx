@@ -2,7 +2,9 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import classes from "./booking.module.css";
-import useScreenWidth from "@/app/useScreenWidth";
+import useScreenWidth from "@/app/utils/useScreenWidth";
+import LogoSVG from "@/public/sprites/logo.svg";
+
 
 const BnovoWidget = () => {
   const benovoJsRef = useRef<HTMLScriptElement | null>(null);
@@ -11,14 +13,14 @@ const BnovoWidget = () => {
   const screenWidth = useScreenWidth();
 
   const widgetType = useMemo(() => {
-    if (screenWidth >= 1024) {
+    if (screenWidth > 1024) {
       return "horizontal";
     } else {
       return "vertical";
     }
   }, [screenWidth]);
 
-  const script2InnerHTML = `(function(){
+  const benovoWidgetInnerHTML = `(function(){
     Bnovo_Widget.init(function(){
       Bnovo_Widget.open('_bn_widget_', {
         type: "${widgetType}",
@@ -47,10 +49,10 @@ const BnovoWidget = () => {
         inp_bordhover: "#5c4729",
         inp_bordcolor: "#A88451",
         inp_alpha: "10",
-        btn_background: "#FBF4EA",
-        btn_background_over: "#eddbc2",
-        btn_textcolor: "#A88451",
-        btn_textover: "#A88451",
+        btn_background: "#a88451",
+        btn_background_over: "#a88451",
+        btn_textcolor: "#ffffff",
+        btn_textover: "#ffffff",
         btn_bordcolor: "#ffffff",
         btn_bordhover: "#ffffff",
         min_age: "0",
@@ -67,39 +69,41 @@ const BnovoWidget = () => {
         switch_mobiles_width: "800",
       });
     });
-  })();`
+  })();`;
 
   useEffect(() => {
-    const script1 = document.createElement("script");
-    script1.id = "bnovojs";
-    script1.src = "//widget.reservationsteps.ru/js/bnovo.js";
-    script1.async = true;
+    const benovoJs = document.createElement("script");
+    benovoJs.id = "bnovojs";
+    benovoJs.src = "//widget.reservationsteps.ru/js/bnovo.js";
+    benovoJs.async = true;
 
-    const script2 = document.createElement("script");
-    script2.id = "bnovowidget";
-    script2.type = "text/javascript";
-    script2.innerHTML = script2InnerHTML;
+    const benovoWidget = document.createElement("script");
+    benovoWidget.id = "bnovowidget";
+    benovoWidget.type = "text/javascript";
+    benovoWidget.innerHTML = benovoWidgetInnerHTML;
 
-    benovoJsRef.current = script1;
-    benovoWidgetRef.current = script2;
+    benovoJsRef.current = benovoJs;
+    benovoWidgetRef.current = benovoWidget;
 
-    script1.onload = () => {
-      if (benovoWidgetRef.current) document.body.appendChild(benovoWidgetRef.current);
+    benovoJs.onload = () => {
+      if (benovoWidgetRef.current)
+        document.body.appendChild(benovoWidgetRef.current);
     };
     if (benovoJsRef.current) document.body.appendChild(benovoJsRef.current);
 
     return () => {
       if (benovoJsRef.current) document.body.removeChild(benovoJsRef.current);
-      if (benovoWidgetRef.current) document.body.removeChild(benovoWidgetRef.current);
+      if (benovoWidgetRef.current)
+        document.body.removeChild(benovoWidgetRef.current);
     };
   }, []);
 
   useEffect(() => {
-    const script2 = document.createElement("script");
-    script2.id = "bnovowidget";
-    script2.type = "text/javascript";
-    script2.innerHTML = script2InnerHTML;
-    benovoWidgetRef.current = script2;
+    const benovoWidget = document.createElement("script");
+    benovoWidget.id = "bnovowidget";
+    benovoWidget.type = "text/javascript";
+    benovoWidget.innerHTML = benovoWidgetInnerHTML;
+    benovoWidgetRef.current = benovoWidget;
 
     const script = document.querySelector<HTMLScriptElement>("#bnovowidget");
     if (script) {
@@ -109,7 +113,9 @@ const BnovoWidget = () => {
     }
   }, [widgetType]);
 
-  return <div className={classes.container} ref={containerRef} id="_bn_widget_" />;
+  return (
+    <div className={classes.container} ref={containerRef} id="_bn_widget_"></div>
+  );
 };
 
 export default BnovoWidget;

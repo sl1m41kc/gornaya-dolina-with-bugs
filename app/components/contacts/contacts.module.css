@@ -1,3 +1,7 @@
+.container {
+    margin-top: -4rem;
+}
+
 .contacts {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -48,7 +52,7 @@
 
 .social {
     display: flex;
-    gap: 2.25rem;
+    gap: 1rem;
     fill: #393939;
 }
 
@@ -71,13 +75,13 @@
 
 .mapLink {
     display: flex;
-    gap: 2.25rem;
+    gap: 1rem;
 }
 
 @media (width <= 1024px) {
     .contacts {
         display: flex;
-        flex-direction: column;
+        flex-direction: column-reverse;
         gap: 1rem;
     }
 
@@ -87,5 +91,15 @@
 
     .map {
         height: 300px;
+    }
+}
+
+@media (width <= 600px) {
+    .phoneLink {
+        font-size: 24px;
+    }
+    
+    .addressText {
+        font-size: 16px;
     }
 }

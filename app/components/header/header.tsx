@@ -8,7 +8,7 @@ import clsx from "clsx";
 import LogoSVG from "@/public/sprites/logo.svg";
 import { scroller } from "react-scroll";
 import { usePathname, useRouter } from "next/navigation";
-import useScreenWidth from "@/app/useScreenWidth";
+import useScreenWidth from "@/app/utils/useScreenWidth";
 import { data } from "@/data/data";
 
 const Header = () => {
@@ -21,11 +21,6 @@ const Header = () => {
     if (path !== "/") {
       router.push("/");
     }
-    scroller.scrollTo("main", {
-      duration: 1000,
-      delay: 0,
-      smooth: "easeInOutCubic",
-    });
   };
 
   useEffect(() => {
@@ -71,7 +66,7 @@ const Header = () => {
       <div className={classes.actions}>
         <a href={data.socialMedia.phone.link} className={classes.phoneWrapper}>
           <PhoneSVG className={classes.phone} />
-          <p className="link">{data.socialMedia.phone.number}</p>
+          <p className="mylink">{data.socialMedia.phone.number}</p>
         </a>
         <a className={clsx("button", classes.button)} href="/booking">
           Забронировать

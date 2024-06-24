@@ -1,10 +1,11 @@
 import React from "react";
-import Advantages from "./advantages/advantages";
+import Advantages from "../advantages/advantages";
+import { data } from "@/data/data";
 
 const AboutUs = () => {
   return (
-    <section className="container" id="about-us">
-      <div className="containerText">
+    <section className="container fullW" id="about-us">
+      <div className="container containerText">
         <h2 className="title">О нашей базе</h2>
         <p>
           Для семей с&nbsp;детьми у&nbsp;нас есть детская площадка, где малыши

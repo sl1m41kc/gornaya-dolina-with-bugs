@@ -1,9 +1,10 @@
 .item {
-    padding: 1.25rem 1.75rem;
+    padding: 2rem 1.75rem;
     position: relative;
     aspect-ratio: 16/9;
     border-radius: 30px;
     overflow: hidden;
+    align-content: space-between;
 }
 
 .image {
@@ -22,4 +23,16 @@
     font-weight: 700;
     color: #fff;
     font-size: 32px;
+}
+
+@media (orientation: portrait) and (width<=600px) {
+    .item {
+        aspect-ratio: 2/3;
+    }
+}
+
+@media (width <= 600px) {
+    .subtitle {
+        font-size: 24px;
+    }
 }
