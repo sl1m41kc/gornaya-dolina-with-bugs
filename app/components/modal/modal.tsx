@@ -27,7 +27,6 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
     if (isOpen) {
       // Получение ширины скролла
       const scrollbarWidth = window.innerWidth - document.body.clientWidth;
-      console.log(scrollbarWidth)
       // Применение ширины скролла к body
       document.body.style.marginRight = `${scrollbarWidth}px`;
       document.body.style.overflow = "hidden";

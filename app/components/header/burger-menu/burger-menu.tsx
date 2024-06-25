@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./burger-menu.module.css";
 import clsx from "clsx";
 import { Link as ScrollLink } from "react-scroll";
@@ -44,16 +44,6 @@ const BurgerMenu = () => {
     },
   ];
 
-  const onClickBurger = () => {
-    setIsOpen(!isOpen);
-
-    if (isOpen) {
-      document.body.style.overflow = "auto";
-    } else {
-      document.body.style.overflow = "hidden";
-    }
-  };
-
   const onClickLink = (id: string) => {
     setIsOpen(false);
     document.body.style.overflow = "auto";
@@ -69,11 +59,24 @@ const BurgerMenu = () => {
     }
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      // Получение ширины скролла
+      const scrollbarWidth = window.innerWidth - document.body.clientWidth;
+      // Применение ширины скролла к body
+      document.body.style.marginRight = `${scrollbarWidth}px`;
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.marginRight = "0px";
+      document.body.style.overflow = "auto";
+    }
+  }, [isOpen]);
+
   return (
     <div>
       <div
         className={clsx(classes.burgerMenu, isOpen && classes.active)}
-        onClick={onClickBurger}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <span />
         <span />
