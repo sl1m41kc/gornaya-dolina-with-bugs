@@ -1,15 +1,16 @@
 "use client";
 
-import useScreenWidth from "@/app/utils/use-screen-width";
+import Modal from "@/app/components/modal/modal";
 import classes from "./advantages.module.css";
-import MySwiper from "@/app/components/swiper/swiper";
+import AdditionalInfoSVG from "@/public/sprites/icons/additionalInfo.svg";
+import { useState } from "react";
 
 interface IProps {
   advantages: any;
 }
 
 const Advantages = ({ advantages }: IProps) => {
-  const screenWidth = useScreenWidth();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className={"container"}>
@@ -19,6 +20,26 @@ const Advantages = ({ advantages }: IProps) => {
             className={classes.item}
             key={index + item.title + item.description}
           >
+            {item.additionalInfo && (
+              <>
+                <div
+                  onClick={() => setIsModalOpen(true)}
+                  className={classes.additionalInfoWrapper}
+                >
+                  <div className={classes.additionalInfo}>
+                    <AdditionalInfoSVG className={classes.additionalInfoIcon} />
+                  </div>
+                </div>
+                <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
+                  <div className={classes.modalContent}>
+                    <h2 className={classes.titleModal}>
+                      Дополнительная информация
+                    </h2>
+                    <div className={classes.content}>{item.additionalInfo}</div>
+                  </div>
+                </Modal>
+              </>
+            )}
             <div className={classes.iconWrapper}>{item.icon}</div>
             <div className={classes.textWrapper}>
               <h4 className={classes.title}>{item.title}</h4>

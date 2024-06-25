@@ -1,11 +1,15 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    margin-top: 5rem;
 }
 
 .modal {
     background-color: #000;
+}
+
+.swiperContainer {
+    margin-top: .5rem;
 }
 
 .modalBox {
@@ -79,4 +83,10 @@
 
 .backdrop {
     background-color: rgba(0, 0, 0, 0.85);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin-top: 3rem;
+    }
 }

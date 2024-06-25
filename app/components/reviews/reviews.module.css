@@ -1,3 +1,17 @@
 .container {
+    margin-top: 5rem;
+}
+
+.containerReviews {
     margin-top: 2rem;
+}
+
+@media (max-width: 1024px) {
+    .container {
+        margin-top: 3rem;
+    }
+
+    .containerReviews {
+        margin-top: 1.25rem;
+    }
 }

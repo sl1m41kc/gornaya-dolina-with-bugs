@@ -2,10 +2,11 @@ import React from "react";
 import classes from "./comfort.module.css";
 import { data } from "@/data/data";
 import ComfortItem from "./comfort-item/comfort-item";
+import clsx from "clsx";
 
 const Comfort = () => {
   return (
-    <section className="container" id="camping">
+    <section className={clsx('container', classes.container)} id="camping">
       <div className="containerText">
         <h2 className="title">Активный отдых</h2>
         <p>

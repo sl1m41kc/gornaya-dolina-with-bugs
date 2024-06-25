@@ -7,23 +7,12 @@ import clsx from "clsx";
 import platform from "platform";
 
 const Page = () => {
-  const script1Ref = useRef<HTMLScriptElement | null>(null);
+  const scriptRef = useRef<HTMLScriptElement | null>(null);
 
   useEffect(() => {
-    const loadScript1 = () => {
-      const script1 = document.createElement("script");
-      script1.src =
-        "https://widget.reservationsteps.ru/iframe/library/dist/booking_iframe.js";
-      script1.async = true;
-      script1.onload = loadScript2;
-      script1Ref.current = script1;
-      document.body.appendChild(script1);
-    };
-
-    const loadScript2 = () => {
-      const script2 = document.createElement("script");
-      script2.type = "text/javascript";
-      script2.innerHTML = `(function () {
+    const src =
+      "https://widget.reservationsteps.ru/iframe/library/dist/booking_iframe.js";
+    const initScript = `(function () {
             var BnovoBookFrame = new BookingIframe({
                 html_id: "booking_iframe",
                 uid: "c17878d5-f6c6-48bb-9e2e-cc42aae119ca",
@@ -36,33 +25,45 @@ const Page = () => {
             });
             BnovoBookFrame.init();
         })();`;
-      document.body.appendChild(script2);
+
+    const loadScript = () => {
+      const script = document.createElement("script");
+      script.src = src;
+      script.async = true;
+      script.onload = () => {
+        const script = document.createElement("script");
+        script.type = "text/javascript";
+        script.innerHTML = initScript;
+        document.body.appendChild(script);
+      };
+      scriptRef.current = script;
+      document.body.appendChild(script);
     };
 
-    loadScript1();
+    loadScript();
 
     return () => {
-      document.body.removeChild(script1Ref.current!);
+      document.body.removeChild(scriptRef.current!);
     };
   }, []);
 
-  if (
+  const isOldIos =
     platform.os?.family === "iOS" &&
-    Number(platform.os.version?.split(".")[0]) < 15
-  ) {
-    return (
-      <div className={classes.notWork}>Версия браузера устарела {":("}</div>
-    );
-  } else {
-    return (
-      <div className={clsx(classes.container, "container")}>
+    Number(platform.os.version?.split(".")[0]) < 15;
+
+  return (
+    <div className={clsx(classes.container, "container")}>
+      {isOldIos ? (
+        <div className={classes.notWork}>Версия браузера устарела {":("}</div>
+      ) : (
         <div
           id="booking_iframe"
           style={{ position: "relative", paddingBottom: "30px" }}
         />
-      </div>
-    );
-  }
+      )}
+    </div>
+  );
 };
 
 export default Page;
+

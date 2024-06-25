@@ -5,15 +5,16 @@ import MySwiper from "../swiper/swiper";
 import Review from "./review/review";
 import classes from "./reviews.module.css";
 import { data } from "@/data/data";
+import clsx from "clsx";
 
 const Reviews = () => {
   const screenWidth = useScreenWidth();
 
   return (
-    <section className="container fullW" id="reviews">
+    <section className={clsx('container', 'fullW', classes.container)} id="reviews">
       <h2 className="title">Отзывы</h2>
 
-      <div className={classes.container}>
+      <div className={classes.containerReviews}>
         <MySwiper
           data={data.reviews}
           nameSwiper="swiperReviews"

@@ -1,5 +1,5 @@
 .info {
-    padding-top: 2rem;
+    padding-top: 5rem;
 }
 
 .description {
@@ -17,11 +17,6 @@
     aspect-ratio: 16/9;
 }
 
-.gallery {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
 .title {
     display: flex;
     flex-direction: column;
@@ -31,4 +26,10 @@
     margin-top: -.5rem;
     font-size: 20px;
     font-weight: normal;
+}
+
+@media (max-width: 1024px) {
+    .info {
+        padding-top: 3rem;
+    }
 }

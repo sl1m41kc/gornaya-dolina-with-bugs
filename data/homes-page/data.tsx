@@ -60,6 +60,7 @@ export const homesPageData: homesType = {
       {
         title: <>Одно дополнительное место</>,
         icon: <SingleBedSVG />,
+        additionalInfo: <>+1 место</>
       },
       {
         title: <>Санузел и&nbsp;душ в&nbsp;номере</>,
@@ -78,7 +79,7 @@ export const homesPageData: homesType = {
         icon: <TerraceSVG />,
       },
       {
-        title: <>К&nbsp;нам можно с&nbsp;животными. (меньше 5&nbsp;кг)</>,
+        title: <>К&nbsp;нам можно с&nbsp;животными (меньше&nbsp;5&nbsp;кг)</>,
         icon: <PetsSVG />,
       },
       {
@@ -133,6 +134,7 @@ export const homesPageData: homesType = {
       {
         title: <>Одно дополнительное место</>,
         icon: <SingleBedSVG />,
+        additionalInfo: <>В номере имеется двуспальная кровать + раскладной диван</>
       },
       {
         title: <>Санузел и&nbsp;душ в&nbsp;номере</>,
@@ -151,7 +153,7 @@ export const homesPageData: homesType = {
         icon: <TerraceSVG />,
       },
       {
-        title: <>К&nbsp;нам можно с&nbsp;животными. (меньше 5&nbsp;кг)</>,
+        title: <>К&nbsp;нам можно с&nbsp;животными (меньше 5&nbsp;кг)</>,
         icon: <PetsSVG />,
       },
       {

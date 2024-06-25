@@ -1,7 +1,11 @@
+.container {
+    margin-top: 5rem;
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: .75rem;
     margin-top: 3rem;
 }
 
@@ -9,13 +13,12 @@
     .wrapper {
         display: flex;
         flex-direction: column;
+        gap: inherit;
     }
+}
 
-    .wrapper > a {
-        margin-bottom: 1.5rem;
-    }
-
-    .wrapper > a:last-child {
-        margin-bottom: 0;
+@media (max-width: 600px) {
+    .container {
+        margin-top: 3rem;
     }
 }

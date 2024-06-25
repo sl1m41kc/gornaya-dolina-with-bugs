@@ -12,7 +12,8 @@ const Separator = () => {
   useParallaxYAnimation(imageRef, -500);
 
   return (
-    <div className={classes.mask}>
+    <div className={classes.container}>
+      <div className={classes.mask}>
       <Image
         ref={imageRef}
         className={classes.image}
@@ -21,6 +22,7 @@ const Separator = () => {
         width={1920}
         height={1080}
       />
+    </div>
     </div>
   );
 };

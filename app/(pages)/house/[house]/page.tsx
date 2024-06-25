@@ -18,10 +18,12 @@ const Page = ({ params: { house } }: { params: { house: string } }) => {
         imageAlt={houseData.mainImage.alt}
       />
 
-      <div className={clsx('containerInfo', classes.house)}>
+      <div className={clsx("containerInfo", classes.house)}>
         <h2 className="title">{houseData.title}</h2>
         <div className={classes.info}>
-          <p className={clsx('containerText', classes.description)}>{houseData.description}</p>
+          <p className={clsx("containerText", classes.description)}>
+            {houseData.description}
+          </p>
           <div className={classes.price}>
             <p className={classes.priceValue}>{houseData.price}</p>
             <p className={classes.priceCurrency}>рублей в сутки</p>
@@ -34,13 +36,11 @@ const Page = ({ params: { house } }: { params: { house: string } }) => {
         <Advantages advantages={houseData.advantages} />
       </div>
 
-      <div className={classes.gallery}>
-        <PhotoGallery
-          title={"Фото"}
-          data={houseData.slider}
-          nameGallery="housePhotoGallery"
-        />
-      </div>
+      <PhotoGallery
+        title={"Фото"}
+        data={houseData.slider}
+        nameGallery="housePhotoGallery"
+      />
     </div>
   );
 };

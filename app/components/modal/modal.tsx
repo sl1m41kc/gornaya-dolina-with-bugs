@@ -14,6 +14,7 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
   const closeModal = () => {
     setIsOpen(false);
     document.body.style.overflow = "auto";
+    document.body.style.marginRight = "0px";
   };
 
   useEffect(() => {
@@ -23,16 +24,22 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
       }
     };
 
+    if (isOpen) {
+      // Получение ширины скролла
+      const scrollbarWidth = window.innerWidth - document.body.clientWidth;
+      console.log(scrollbarWidth)
+      // Применение ширины скролла к body
+      document.body.style.marginRight = `${scrollbarWidth}px`;
+      document.body.style.overflow = "hidden";
+    }
+
     document.addEventListener("keydown", handleKeyDown);
 
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  });
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen]);
 
   if (!isOpen) return null;
 
-  document.body.style.overflow = "hidden";
 
   return createPortal(
     <div className={classes.overlay}>
