@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef } from "react";
 import classes from "./booking.module.css";
-import useScreenWidth from "@/app/utils/useScreenWidth";
+import useScreenWidth from "@/app/utils/use-screen-width";
 
 const BnovoWidget = () => {
   const benovoJsRef = useRef<HTMLScriptElement | null>(null);

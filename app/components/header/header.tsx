@@ -7,9 +7,9 @@ import PhoneSVG from "@/public/sprites/icons/phone.svg";
 import clsx from "clsx";
 import LogoSVG from "@/public/sprites/logo.svg";
 import { usePathname, useRouter } from "next/navigation";
-import useScreenWidth from "@/app/utils/useScreenWidth";
 import { data } from "@/data/data";
 import platform from "platform";
+import useScreenWidth from "@/app/utils/use-screen-width";
 
 const Header = () => {
   const screenWidth = useScreenWidth();

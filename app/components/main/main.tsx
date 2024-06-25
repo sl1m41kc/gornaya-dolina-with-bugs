@@ -4,11 +4,11 @@ import React from "react";
 import classes from "./main.module.css";
 import Image from "next/image";
 import BnovoWidget from "./booking/booking";
-import useScreenWidth from "@/app/utils/useScreenWidth";
 
 import LogoSVG from "@/public/sprites/logo.svg";
 import platform from "platform";
 import clsx from "clsx";
+import useScreenWidth from "@/app/utils/use-screen-width";
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
