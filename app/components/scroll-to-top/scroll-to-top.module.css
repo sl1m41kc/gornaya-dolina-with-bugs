@@ -10,7 +10,7 @@
     bottom: 50px;
     right: 50px;
     cursor: pointer;
-    z-index: 999999;
+    z-index: 9999;
 }
 
 .show {
