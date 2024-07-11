@@ -1,9 +1,9 @@
 "use client";
 
+import useScreenWidth from "@/app/utils/use-screen-width";
 import MySwiper from "../swiper/swiper";
 import Review from "./review/review";
 import classes from "./reviews.module.css";
-import useScreenWidth from "@/app/utils/useScreenWidth";
 import { data } from "@/data/data";
 
 const Reviews = () => {

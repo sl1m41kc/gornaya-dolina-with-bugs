@@ -1,8 +1,8 @@
 "use client";
 
+import useScreenWidth from "@/app/utils/use-screen-width";
 import classes from "./advantages.module.css";
 import MySwiper from "@/app/components/swiper/swiper";
-import useScreenWidth from "@/app/utils/useScreenWidth";
 
 interface IProps {
   advantages: any;

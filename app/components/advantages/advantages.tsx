@@ -2,9 +2,9 @@
 
 import classes from "./advantages.module.css";
 import MySwiper from "../swiper/swiper";
-import useScreenWidth from "@/app/utils/useScreenWidth";
 import clsx from "clsx";
 import { data } from "@/data/data";
+import useScreenWidth from "@/app/utils/use-screen-width";
 
 const Advantages = () => {
   const screenWidth = useScreenWidth();
