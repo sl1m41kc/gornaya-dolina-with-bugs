@@ -1,8 +1,12 @@
+.container {
+    margin-top: 4.5rem;
+}
+
 .campingTypes {
-    margin-top: 3rem;
+    margin-top: 2rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
 }
 
 @media (max-width: 1024px) {
@@ -12,5 +16,9 @@
         flex-direction: column;
         gap: inherit;
         width: min(800px, 100%);
+    }
+
+    .container {
+        margin-top: 3rem;
     }
 }

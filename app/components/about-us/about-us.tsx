@@ -1,9 +1,11 @@
 import React from "react";
 import Advantages from "../advantages/advantages";
+import clsx from "clsx";
+import classes from "./about-us.module.css";
 
 const AboutUs = () => {
   return (
-    <section className="container fullW" id="about-us">
+    <section className={clsx('container', 'fullW', classes.container)} id="about-us">
       <div className="container containerText">
         <h2 className="title">О нашей базе</h2>
         <p>

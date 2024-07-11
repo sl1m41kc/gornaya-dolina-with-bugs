@@ -26,10 +26,6 @@ input {
     flex-direction: column;
 }
 
-.wrapper > section {
-    padding-top: 5rem;
-}
-
 .container {
     width: min(100%, 1440px);
     margin-inline: auto;
@@ -56,10 +52,10 @@ input {
 }
 
 .containerText > h2 {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 .containerText > p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 .containerText > p:last-child {
     margin-bottom: 0;
@@ -115,10 +111,6 @@ input {
 @media (max-width: 1024px) {
     .title {
         font-size: 36px;
-    }
-
-    .wrapper > section {
-        padding-top: 3.5rem;
     }
 }
 

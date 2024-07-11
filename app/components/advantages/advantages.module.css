@@ -1,9 +1,9 @@
 .advantages {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    margin-top: 3rem;
     border: 1px solid var(--secondary-accent);
     overflow: hidden;
+    margin-top: 3rem;
 }
 
 .item {
@@ -68,7 +68,7 @@
 
 @media (max-width: 850px) {
     .swiperWrapper {
-        margin-top: 2rem;
+        margin-top: 3rem;
         width: 70%;
         margin-inline: auto;
     }

@@ -16,41 +16,44 @@ interface IProps {
 }
 
 const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
+  // Данные для связывания свайперов
   const [firstSwiper, setFirstSwiper] = useState(null);
   const [secondSwiper, setSecondSwiper] = useState(null);
 
+  // Определяем устаревший iOS
+  const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
+
   return (
     <section
-      className={clsx("container fullW", classes.container)}
+      className={clsx("container", 'fullW', classes.container)}
       id={nameGallery}
     >
       <div className="containerText">
         <h2 className="title">{title}</h2>
       </div>
 
+      <div className={classes.swiperContainer}>
       <MySwiper
         data={data}
         nameSwiper={nameGallery + "_mainSwiper"}
         onSwiper={setFirstSwiper}
         controller={{ control: secondSwiper }}
-        slide={(item: any, _: number) => (
+        slide={(item: any) => (
           <Image
             className={clsx(classes.image, classes.pointer)}
             src={item}
             alt="Фотогалерея"
             onClick={() => {
               const gallery = document.getElementById(nameGallery + "gallery");
-              //@ts-ignore
+              // @ts-ignore
               if (gallery) gallery.showModal();
             }}
           />
         )}
       />
+      </div>
 
-      {platform.os?.family === "iOS" &&
-      Number(platform.os.version?.split(".")[0]) < 15 ? (
-        <></>
-      ) : (
+      {!legacy && (
         <dialog
           id={nameGallery + "gallery"}
           className={clsx("modal", classes.modal)}
@@ -62,7 +65,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
               nameSwiper={nameGallery + "_gallerySwiper"}
               onSwiper={setSecondSwiper}
               controller={{ control: firstSwiper }}
-              slide={(item: any, index: number) => (
+              slide={(item: any) => (
                 <Image className={classes.image} src={item} alt="Фотогалерея" />
               )}
             />

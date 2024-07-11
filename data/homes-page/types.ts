@@ -13,6 +13,7 @@ export interface IHome {
     advantages: {
         title: React.ReactNode;
         icon: React.ReactNode;
+        additionalInfo?: React.ReactNode | string;
     }[];
     slider: StaticImageData[];
 }

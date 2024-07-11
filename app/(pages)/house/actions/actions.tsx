@@ -53,24 +53,22 @@ const Actions = () => {
   };
 
   return (
-    <div className={classes.actions}>
-      <div className={classes.buttons}>
-        <button
-          type="button"
-          className={clsx("button", classes.button)}
-          onClick={() => openModal("booking")}
-        >
-          Условия бронирования
-        </button>
-        <button
-          type="button"
-          className={clsx("button", classes.button)}
-          onClick={() => openModal("living")}
-        >
-          Правила проживания
-        </button>
-      </div>
-
+    <div className={classes.buttons}>
+      <button
+        type="button"
+        className={clsx("button", classes.button)}
+        onClick={() => openModal("booking")}
+      >
+        Условия бронирования
+      </button>
+      <button
+        type="button"
+        className={clsx("button", classes.button)}
+        onClick={() => openModal("living")}
+      >
+        Правила проживания
+      </button>
+      
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
         <div className={classes.modalContent}>
           <h2 className={classes.title}>{modalContent.title}</h2>
