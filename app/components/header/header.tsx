@@ -10,16 +10,13 @@ import { usePathname, useRouter } from "next/navigation";
 import { data } from "@/data/data";
 import platform from "platform";
 import useScreenWidth from "@/app/utils/use-screen-width";
+import { isLegacyDevice } from "@/app/utils/isLegacyDevice/isLegacyDevice";
 
 const Header = () => {
   const screenWidth = useScreenWidth();
   const [scrollOnTop, setScrollOnTop] = useState(true);
   const router = useRouter();
   const path = usePathname();
-
-  const legacy =
-    platform.os?.family === "iOS" &&
-    Number(platform.os.version?.split(".")[0]) < 13;
 
   const onClick = () => {
     if (path !== "/") {
@@ -71,7 +68,7 @@ const Header = () => {
           <PhoneSVG className={classes.phone} />
           <p className="mylink">{data.socialMedia.phone.number}</p>
         </a>
-        {!legacy && (
+        {!isLegacyDevice && (
           <a className={clsx("button", classes.button)} href="/booking">
             Забронировать
           </a>

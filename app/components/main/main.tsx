@@ -1,14 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
-import classes from "./main.module.css";
-import Image from "next/image";
-import BnovoWidget from "./booking/booking";
+import React from 'react';
+import classes from './main.module.css';
+import Image from 'next/image';
+import BnovoWidget from './booking/booking';
 
-import LogoSVG from "@/public/sprites/logo.svg";
-import platform from "platform";
-import clsx from "clsx";
-import useScreenWidth from "@/app/utils/use-screen-width";
+import LogoSVG from '@/public/sprites/logo.svg';
+import platform from 'platform';
+import clsx from 'clsx';
+import useScreenWidth from '@/app/utils/use-screen-width';
+import { isLegacyDevice } from '@/app/utils/isLegacyDevice/isLegacyDevice';
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
@@ -20,10 +21,8 @@ interface IProps {
 const Main = ({ imageSrc, imageAlt }: IProps) => {
   const screenWidth = useScreenWidth();
 
-  const legacy = platform.os?.family === "iOS" && Number(platform.os.version?.split(".")[0]) < 13
-
   return (
-    <main className={clsx(classes.main, legacy && classes.legacy)} id="main">
+    <main className={clsx(classes.main, isLegacyDevice && classes.legacy)} id="main">
       {true && screenWidth <= 768 && screenWidth !== 0 && (
         <div className={classes.logoContainer}>
           <div className={classes.logoWrapper}>
@@ -44,7 +43,7 @@ const Main = ({ imageSrc, imageAlt }: IProps) => {
         />
       </div>
 
-      {!legacy && <BnovoWidget />}
+      {!isLegacyDevice && <BnovoWidget />}
     </main>
   );
 };
