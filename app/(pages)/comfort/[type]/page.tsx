@@ -7,6 +7,7 @@ import { data } from "@/data/data";
 import clsx from "clsx";
 import PhotoGallery from "@/app/components/photo-gallery/photo-gallery";
 import { comfortPageItemName } from "@/data/comfort-page/types";
+import { Title } from "@/app/components/UI/Title/Title";
 
 const Page = ({
   params: { type },
@@ -29,7 +30,7 @@ const Page = ({
     <div className={classes.page}>
       <Main imageSrc={pageData.imageSrc} imageAlt={pageData.title as string} />
       <div className={clsx("containerInfo", classes.info)}>
-        <h2 className={clsx("title", classes.title)}>{pageData.title}</h2>
+        <Title>{pageData.title}</Title>
         <p className={classes.description}>{pageData.description}</p>
       </div>
       <div className={classes.gallery}>

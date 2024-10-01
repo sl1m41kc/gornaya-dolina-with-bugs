@@ -13,7 +13,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'PTSans';
 }
 
 button,
@@ -67,14 +66,6 @@ input {
     padding-inline: 1.25rem;
 }
 
-.title {
-    text-align: center;
-    font-family: 'Philosopher';
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--primary-color);
-}
-
 .mylink {
     cursor: pointer;
     position: relative;
@@ -108,17 +99,7 @@ input {
     transform: scale(1);
 }
 
-@media (max-width: 1024px) {
-    .title {
-        font-size: 36px;
-    }
-}
-
 @media (max-width: 600px) {
-    .title {
-        font-size: 32px;
-    }
-
     .containerText {
         font-size: 16px;
     }

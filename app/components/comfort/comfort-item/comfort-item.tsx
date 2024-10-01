@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import classes from "./comfort-item.module.css";
 import Image from "next/image";
 import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
+import clsx from "clsx";
+import { Philosopher } from "@/app/fonts/fonts";
 
 interface IProps {
   type: string;
@@ -23,7 +25,7 @@ const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
   return (
     <a className={classes.item} href={`/comfort/${type}`}>
       <div className={classes.icon}>{icon}</div>
-      <h3 className={classes.title}>{title}</h3>
+      <h3 className={clsx(classes.title, Philosopher.className)}>{title}</h3>
       <Image
         ref={imageRef}
         onLoad={() => setIsImageLoaded(true)}

@@ -12,6 +12,7 @@ import GISSVG from "@/public/sprites/social/2gis.svg";
 
 import { data } from "@/data/data";
 import clsx from "clsx";
+import { Title } from "../UI/Title/Title";
 
 const Contacts = () => {
   const social = data.socialMedia
@@ -19,7 +20,7 @@ const Contacts = () => {
 
   return (
     <section className={clsx("container", classes.container)} id="contacts">
-      <h2 className="title">Контакты</h2>
+      <Title>Контакты</Title>
 
       <div className={classes.contacts}>
         <div className={classes.map}>

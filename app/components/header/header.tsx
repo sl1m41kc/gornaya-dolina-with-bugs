@@ -11,6 +11,7 @@ import { data } from "@/data/data";
 import platform from "platform";
 import useScreenWidth from "@/app/utils/use-screen-width";
 import { isLegacyDevice } from "@/app/utils/isLegacyDevice/isLegacyDevice";
+import { Philosopher } from "@/app/fonts/fonts";
 
 const Header = () => {
   const screenWidth = useScreenWidth();
@@ -57,7 +58,7 @@ const Header = () => {
           className={clsx(classes.logo, !scrollOnTop && classes.logoCorrect)}
         />
         <h1
-          className={clsx(classes.title, !scrollOnTop && classes.titleCorrect)}
+          className={clsx(classes.title, !scrollOnTop && classes.titleCorrect, Philosopher.className)}
         >
           Горная долина
         </h1>

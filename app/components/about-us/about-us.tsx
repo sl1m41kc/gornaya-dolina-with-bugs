@@ -1,13 +1,17 @@
-import React from "react";
-import Advantages from "../advantages/advantages";
-import clsx from "clsx";
-import classes from "./about-us.module.css";
+import React from 'react';
+import Advantages from '../advantages/advantages';
+import clsx from 'clsx';
+import classes from './about-us.module.css';
+import { Title } from '../UI/Title/Title';
 
 const AboutUs = () => {
   return (
-    <section className={clsx('container', 'fullW', classes.container)} id="about-us">
+    <section
+      className={clsx('container', 'fullW', classes.container)}
+      id="about-us"
+    >
       <div className="container containerText">
-        <h2 className="title">О нашей базе</h2>
+        <Title>О&nbsp;нашей базе</Title>
         <p>
           Для семей с&nbsp;детьми у&nbsp;нас есть детская площадка, где малыши
           смогут вдоволь порезвиться на&nbsp;свежем воздухе. Взрослые

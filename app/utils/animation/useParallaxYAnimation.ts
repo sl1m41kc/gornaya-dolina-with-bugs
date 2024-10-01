@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const useParallaxYAnimation = (ref: any, offset: number = -400, contentLoaded: boolean = true) => {
-  gsap.registerPlugin(ScrollTrigger);
   useGSAP(
     () => {
       if (contentLoaded && ref.current) {

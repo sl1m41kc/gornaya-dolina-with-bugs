@@ -3,12 +3,13 @@ import classes from "./houses.module.css";
 import HouseItem from "./house-item/house-item";
 import { data } from "@/data/data";
 import clsx from "clsx";
+import { Title } from "../UI/Title/Title";
 
 const Houses = () => {
   return (
     <section className={clsx("container", classes.container)} id="houses">
       <div className="containerText">
-        <h2 className="title">Размещение</h2>
+        <Title>Размещение</Title>
         <p>
           Добро пожаловать в&nbsp;Горную долину, где природа и&nbsp;комфорт
           встречаются в&nbsp;идеальной гармонии. Представьте себе утро, когда

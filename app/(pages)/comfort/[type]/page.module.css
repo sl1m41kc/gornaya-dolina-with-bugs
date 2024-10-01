@@ -17,17 +17,6 @@
     aspect-ratio: 16/9;
 }
 
-.title {
-    display: flex;
-    flex-direction: column;
-}
-
-.title > span {
-    margin-top: -.5rem;
-    font-size: 20px;
-    font-weight: normal;
-}
-
 @media (max-width: 1024px) {
     .info {
         padding-top: 3rem;

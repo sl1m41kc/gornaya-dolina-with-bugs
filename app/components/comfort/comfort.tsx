@@ -1,14 +1,15 @@
-import React from "react";
-import classes from "./comfort.module.css";
-import { data } from "@/data/data";
-import ComfortItem from "./comfort-item/comfort-item";
-import clsx from "clsx";
+import React from 'react';
+import classes from './comfort.module.css';
+import { data } from '@/data/data';
+import ComfortItem from './comfort-item/comfort-item';
+import clsx from 'clsx';
+import { Title } from '../UI/Title/Title';
 
 const Comfort = () => {
   return (
     <section className={clsx('container', classes.container)} id="camping">
       <div className="containerText">
-        <h2 className="title">Активный отдых</h2>
+        <Title>Активный отдых</Title>
         <p>
           Мы&nbsp;с&nbsp;радостью поможем вам организовать увлекательный
           активный отдых: сплавы по&nbsp;живописным рекам, пешие и&nbsp;конные

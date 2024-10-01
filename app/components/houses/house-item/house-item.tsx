@@ -4,6 +4,8 @@ import React, { useRef, useState } from "react";
 import classes from "./house-item.module.css";
 import Image from "next/image";
 import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
+import clsx from "clsx";
+import { Philosopher } from "@/app/fonts/fonts";
 
 interface IProps {
   subtitle: string;
@@ -20,7 +22,7 @@ const HouseItem = ({ subtitle, imageSrc, href }: IProps) => {
 
   return (
     <a className={classes.item} href={href}>
-      <h3 className={classes.subtitle}>{subtitle}</h3>
+      <h3 className={clsx(classes.subtitle, Philosopher.className)}>{subtitle}</h3>
       <Image
         ref={imageRef}
         onLoad={() => setIsImageLoaded(true)}

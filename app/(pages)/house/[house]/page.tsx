@@ -7,6 +7,7 @@ import PhotoGallery from "@/app/components/photo-gallery/photo-gallery";
 import clsx from "clsx";
 import Actions from "../actions/actions";
 import { homeItemName } from "@/data/homes-page/types";
+import { Title } from "@/app/components/UI/Title/Title";
 
 const Page = ({ params: { house } }: { params: { house: string } }) => {
   const houseData = data.housesPage[house as homeItemName];
@@ -19,7 +20,7 @@ const Page = ({ params: { house } }: { params: { house: string } }) => {
       />
 
       <div className={clsx("containerInfo", classes.house)}>
-        <h2 className="title">{houseData.title}</h2>
+        <Title>{houseData.title}</Title>
         <div className={classes.info}>
           <p className={clsx("containerText", classes.description)}>
             {houseData.description}

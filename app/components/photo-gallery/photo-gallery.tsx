@@ -5,9 +5,9 @@ import Image from 'next/image';
 import classes from './photo-gallery.module.css';
 import MySwiper from '../swiper/swiper';
 import { useState } from 'react';
-import platform from 'platform';
 import clsx from 'clsx';
 import { isLegacyDevice } from '@/app/utils/isLegacyDevice/isLegacyDevice';
+import { Title } from '../UI/Title/Title';
 
 interface IProps {
   // Сделаны гибкие данные для переиспользования компонента
@@ -27,7 +27,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
       id={nameGallery}
     >
       <div className="containerText">
-        <h2 className="title">{title}</h2>
+        <Title>{title}</Title>
       </div>
 
       <div className={classes.swiperContainer}>

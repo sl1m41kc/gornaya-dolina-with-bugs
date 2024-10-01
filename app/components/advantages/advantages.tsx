@@ -5,6 +5,7 @@ import MySwiper from "../swiper/swiper";
 import clsx from "clsx";
 import { data } from "@/data/data";
 import useScreenWidth from "@/app/utils/use-screen-width";
+import { Philosopher } from "@/app/fonts/fonts";
 
 const Advantages = () => {
   const screenWidth = useScreenWidth();
@@ -25,7 +26,7 @@ const Advantages = () => {
           >
             <div className={classes.iconWrapper}>{item.icon}</div>
             <div className={classes.textWrapper}>
-              <h3 className={classes.title}>{item.title}</h3>
+              <h3 className={clsx(classes.title, Philosopher.className)}>{item.title}</h3>
               <p className={classes.description}>{item.description}</p>
             </div>
           </div>
@@ -43,7 +44,7 @@ const Advantages = () => {
             >
               <div className={classes.iconWrapper}>{item.icon}</div>
               <div className={classes.textWrapper}>
-                <h3 className={classes.title}>{item.title}</h3>
+                <h3 className={clsx(classes.title, Philosopher.className)}>{item.title}</h3>
                 <p className={classes.description}>{item.description}</p>
               </div>
             </div>

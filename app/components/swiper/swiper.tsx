@@ -1,21 +1,17 @@
 'use client';
-
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Controller, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import ChevronRightSVG from '@/public/sprites/icons/chevron_right.svg';
+import classes from './swiper.module.css';
+import clsx from 'clsx';
+import useScreenWidth from '@/app/utils/use-screen-width';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
 // В этом файле можно менять стили уже заданные в swiper
 import './correct-swiper.css';
-
-import ChevronRightSVG from '@/public/sprites/icons/chevron_right.svg';
-import classes from './swiper.module.css';
-
-import clsx from 'clsx';
-import platform from 'platform';
 
 interface IProps {
   data: any;
@@ -52,9 +48,9 @@ const MySwiper = ({
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+  const screenWidth = useScreenWidth()
 
-  const isMobile =
-    platform.os?.family === 'iOS' || platform.os?.family === 'Android';
+  const isMobile = screenWidth <= 768;
 
   return (
     <div className={classes.container}>
