@@ -2,18 +2,18 @@
 
 import React, { useRef, useState } from "react";
 import classes from "./house-item.module.css";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
 import clsx from "clsx";
 import { Philosopher } from "@/app/fonts/fonts";
 
 interface IProps {
   subtitle: string;
-  imageSrc: string;
+  image: StaticImageData;
   href: string;
 }
 
-const HouseItem = ({ subtitle, imageSrc, href }: IProps) => {
+const HouseItem = ({ subtitle, image, href }: IProps) => {
   const imageRef = useRef(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -27,10 +27,9 @@ const HouseItem = ({ subtitle, imageSrc, href }: IProps) => {
         ref={imageRef}
         onLoad={() => setIsImageLoaded(true)}
         className={classes.image}
-        src={imageSrc}
+        src={image}
         alt={subtitle}
-        width={1920}
-        height={1080}
+        placeholder="blur"
       />
     </a>
   );

@@ -5,7 +5,7 @@ export interface comfortPageItemType {
   icon: React.ReactNode;
   type: comfortPageItemName;
   description: React.ReactNode;
-  imageSrc: string;
+  image: StaticImageData;
   slider: StaticImageData[];
 }
 

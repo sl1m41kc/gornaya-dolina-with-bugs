@@ -1,17 +1,20 @@
-'use client';
-import React, { useRef } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Controller, Navigation, Pagination, Thumbs } from 'swiper/modules';
-import ChevronRightSVG from '@/public/sprites/icons/chevron_right.svg';
-import classes from './swiper.module.css';
-import clsx from 'clsx';
-import useScreenWidth from '@/app/utils/use-screen-width';
+"use client";
 
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import React, { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Controller, Navigation, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 // В этом файле можно менять стили уже заданные в swiper
-import './correct-swiper.css';
+import "./correct-swiper.css";
+
+import ChevronRightSVG from "@/public/sprites/icons/chevron_right.svg";
+import classes from "./swiper.module.css";
+
+import clsx from "clsx";
 
 interface IProps {
   data: any;
@@ -48,9 +51,6 @@ const MySwiper = ({
   const swiperRef = useRef(null);
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-  const screenWidth = useScreenWidth()
-
-  const isMobile = screenWidth <= 768;
 
   return (
     <div className={classes.container}>
@@ -72,22 +72,12 @@ const MySwiper = ({
           el: `.${classes.pagination}${nameSwiper}`,
         }}
       >
-        <div
-          className={clsx(
-            classes.transparentLeft,
-            isGallery && classes.gallery
-          )}
-        />
-        <div
-          className={clsx(
-            classes.transparentRight,
-            isGallery && classes.gallery
-          )}
-        />
+        <div className={clsx(classes.transparentLeft, isGallery && classes.gallery)} />
+        <div className={clsx(classes.transparentRight, isGallery && classes.gallery)} />
 
         {data.map((item: any, index: number) => (
           <SwiperSlide
-            key={index + Object.keys(item).join('')}
+            key={index + Object.keys(item).join("")}
             className={classes.slide}
           >
             {slide(item, index)}
@@ -96,35 +86,31 @@ const MySwiper = ({
       </Swiper>
 
       {/* стелка назад */}
-      {!isMobile && (
-        <div
-          className={clsx(
-            classes.navigationPrev + nameSwiper,
-            classes.prevArrowWrapper,
-            isGallery && classes.prevArrowWrapperGallery
-          )}
-          ref={prevRef}
-        >
-          <div className={classes.prevArrow}>
-            <ChevronRightSVG />
-          </div>
+      <div
+        className={clsx(
+          classes.navigationPrev + nameSwiper,
+          classes.prevArrowWrapper,
+          isGallery && classes.prevArrowWrapperGallery
+        )}
+        ref={prevRef}
+      >
+        <div className={classes.prevArrow}>
+          <ChevronRightSVG />
         </div>
-      )}
+      </div>
       {/* стелка вперед */}
-      {!isMobile && (
-        <div
-          className={clsx(
-            classes.navigationNext + nameSwiper,
-            classes.nextArrowWrapper,
-            isGallery && classes.nextArrowWrapperGallery
-          )}
-          ref={nextRef}
-        >
-          <div className={classes.nextArrow}>
-            <ChevronRightSVG />
-          </div>
+      <div
+        className={clsx(
+          classes.navigationNext + nameSwiper,
+          classes.nextArrowWrapper,
+          isGallery && classes.nextArrowWrapperGallery
+        )}
+        ref={nextRef}
+      >
+        <div className={classes.nextArrow}>
+          <ChevronRightSVG />
         </div>
-      )}
+      </div>
 
       <div
         className={clsx(

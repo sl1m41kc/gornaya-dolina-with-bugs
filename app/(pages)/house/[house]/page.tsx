@@ -15,7 +15,7 @@ const Page = ({ params: { house } }: { params: { house: string } }) => {
   return (
     <div className={classes.page}>
       <Main
-        imageSrc={houseData.mainImage.src as string}
+        image={houseData.mainImage.src}
         imageAlt={houseData.mainImage.alt}
       />
 

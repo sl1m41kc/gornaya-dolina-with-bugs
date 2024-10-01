@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Script from 'next/script';
 import classes from './page.module.css';
 import clsx from 'clsx';
-import platform from 'platform';
 import { Loading } from '@/app/components/Loading/Loading';
 import { isLegacyDevice } from '@/app/utils/isLegacyDevice/isLegacyDevice';
 

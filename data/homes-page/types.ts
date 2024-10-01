@@ -5,7 +5,7 @@ export interface IHome {
     title: string;
     href: string;
     mainImage: {
-        src: string;
+        src: StaticImageData;
         alt: string;
     };
     description: React.ReactNode;

@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect, useMemo, useRef, useState } from "react";
-import classes from "./booking.module.css";
-import useScreenWidth from "@/app/utils/use-screen-width";
-import Script from "next/script";
+import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import classes from './booking.module.css';
+import useScreenWidth from '@/app/utils/use-screen-width';
+import Script from 'next/script';
 
 const BnovoWidget = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,7 +11,7 @@ const BnovoWidget = () => {
   const screenWidth = useScreenWidth();
 
   const widgetType = useMemo(() => {
-    return screenWidth > 1024 ? "horizontal" : "vertical";
+    return screenWidth > 1024 ? 'horizontal' : 'vertical';
   }, [screenWidth]);
 
   const benovoWidgetInnerHTML = useMemo(() => {
@@ -64,24 +64,24 @@ const BnovoWidget = () => {
         switch_mobiles_width: "800",
       });
     });
-  })();`
+  })();`;
   }, [widgetType]);
 
   useEffect(() => {
     if (isBnovoLoaded && containerRef.current) {
       // Очистка предыдущего виджета
-      containerRef.current.innerHTML = "";
+      containerRef.current.innerHTML = '';
 
-      const benovoWidget = document.createElement("script");
-      benovoWidget.id = "bnovowidget";
-      benovoWidget.type = "text/javascript";
+      const benovoWidget = document.createElement('script');
+      benovoWidget.id = 'bnovowidget';
+      benovoWidget.type = 'text/javascript';
       benovoWidget.innerHTML = benovoWidgetInnerHTML;
 
       document.body.appendChild(benovoWidget);
 
       // Удалить скрипт после его выполнения, если это необходимо
       return () => {
-        const existingWidget = document.getElementById("bnovowidget");
+        const existingWidget = document.getElementById('bnovowidget');
         if (existingWidget) {
           document.body.removeChild(existingWidget);
         }
@@ -102,4 +102,3 @@ const BnovoWidget = () => {
 };
 
 export default BnovoWidget;
-

@@ -40,12 +40,12 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
             <Image
               className={clsx(classes.image, classes.pointer)}
               src={item}
+              placeholder='blur'
               alt="Фотогалерея"
               onClick={() => {
-                const gallery = document.getElementById(
+                const gallery: any = document.getElementById(
                   nameGallery + 'gallery'
                 );
-                // @ts-ignore
                 if (gallery) gallery.showModal();
               }}
             />
@@ -66,7 +66,7 @@ const PhotoGallery = ({ title, data, nameGallery }: IProps) => {
               onSwiper={setSecondSwiper}
               controller={{ control: firstSwiper }}
               slide={(item: any) => (
-                <Image className={classes.image} src={item} alt="Фотогалерея" />
+                <Image className={classes.image} src={item} placeholder='blur' alt="Фотогалерея" />
               )}
             />
           </div>

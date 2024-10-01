@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useRef, useState } from "react";
 import classes from "./separator.module.css";
 import useParallaxYAnimation from "@/app/utils/animation/useParallaxYAnimation";
+import HorseIMG from "@/public/images/horse.jpg";
 
 const Separator = () => {
   const imageRef = useRef(null);
@@ -19,10 +20,9 @@ const Separator = () => {
         ref={imageRef}
         onLoad={() => setIsImageLoaded(true)}
         className={classes.image}
-        src="/images/horse.jpg"
+        src={HorseIMG}
         alt="Лошади в поле"
-        width={1920}
-        height={1080}
+        placeholder="blur"
       />
     </div>
     </div>

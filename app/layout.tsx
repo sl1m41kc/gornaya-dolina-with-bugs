@@ -2,10 +2,10 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import { YandexMetrika } from './components/yandex-metrika/yandex-metrika';
 import { Suspense } from 'react';
 import { PTSAns } from '@/app/fonts/fonts';
 import { InitGSAP } from './utils/initGSAP';
+import { YandexMetrika } from './components/YandexMetrika/YandexMetrika';
 
 export const metadata: Metadata = {
   title: 'Горная долина',

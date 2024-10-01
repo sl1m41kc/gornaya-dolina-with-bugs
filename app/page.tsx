@@ -10,11 +10,12 @@ import { data } from "@/data/data";
 import Separator from "./components/separator/separator";
 import AnchorScrollLogic from "./utils/anchor-scroll-logic/anchor-scroll-logic";
 import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
+import MainIMG from '@/public/images/main.jpg'
 
 export default function Home() {
   return (
     <div className="wrapper">
-      <Main imageAlt="Горная Долина" imageSrc="/images/main.jpg" isMain />
+      <Main imageAlt="Горная Долина" image={MainIMG} isMain />
       <Houses />
       <AboutUs />
       <PhotoGallery title={'Фотогалерея'} data={data.gallery} nameGallery="photoGallery" />

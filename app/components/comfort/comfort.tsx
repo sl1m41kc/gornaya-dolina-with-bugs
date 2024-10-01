@@ -28,7 +28,7 @@ const Comfort = () => {
             key={String(index) + item.title}
             icon={item.icon}
             title={item.title}
-            imageSrc={item.imageSrc}
+            image={item.image}
           />
         ))}
       </div>

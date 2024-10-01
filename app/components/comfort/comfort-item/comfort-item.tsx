@@ -2,7 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import classes from "./comfort-item.module.css";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import useScaleAnimation from "@/app/utils/animation/useScaleAnimation";
 import clsx from "clsx";
 import { Philosopher } from "@/app/fonts/fonts";
@@ -10,11 +10,11 @@ import { Philosopher } from "@/app/fonts/fonts";
 interface IProps {
   type: string;
   title: string | React.ReactNode;
-  imageSrc: string;
+  image: StaticImageData;
   icon: React.ReactNode;
 }
 
-const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
+const ComfortItem = ({ title, image, icon, type }: IProps) => {
   const alt = title as string;
   const imageRef = useRef(null);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -30,10 +30,9 @@ const ComfortItem = ({ title, imageSrc, icon, type }: IProps) => {
         ref={imageRef}
         onLoad={() => setIsImageLoaded(true)}
         className={classes.image}
-        src={imageSrc}
+        placeholder="blur"
+        src={image}
         alt={alt}
-        width={1920}
-        height={1080}
       />
     </a>
   );

@@ -31,7 +31,7 @@ const Houses = () => {
           <HouseItem
             key={house.title + house.mainImage.alt}
             subtitle={house.title}
-            imageSrc={house.mainImage.src}
+            image={house.mainImage.src}
             href={house.href}
           />
         ))}

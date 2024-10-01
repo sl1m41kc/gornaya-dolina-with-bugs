@@ -2,7 +2,7 @@
 
 import React from 'react';
 import classes from './main.module.css';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import BnovoWidget from './booking/booking';
 
 import LogoSVG from '@/public/sprites/logo.svg';
@@ -14,12 +14,12 @@ import { Philosopher } from '@/app/fonts/fonts';
 
 interface IProps {
   // Сделаны гибкие данные фото чтобы переиспользовать блок
-  imageSrc: string;
+  image: StaticImageData;
   imageAlt: string;
   isMain?: boolean;
 }
 
-const Main = ({ imageSrc, imageAlt }: IProps) => {
+const Main = ({ image, imageAlt }: IProps) => {
   const screenWidth = useScreenWidth();
   const isSeason = getIsSeasonNow();
 
@@ -40,10 +40,9 @@ const Main = ({ imageSrc, imageAlt }: IProps) => {
       <div className={classes.mask}>
         <Image
           className={classes.image}
-          src={imageSrc}
+          placeholder='blur'
+          src={image}
           alt={imageAlt}
-          width={1920}
-          height={1080}
           priority
         />
       </div>

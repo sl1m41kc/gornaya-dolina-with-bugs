@@ -35,7 +35,7 @@ export const homesPageData: homesType = {
     title: "2-местный номер",
     href: "/house/double",
     mainImage: {
-      src: "/images/houses/double/1.jpg",
+      src: houseDoublePhotoGallery1,
       alt: "2-местный номер основное фото",
     },
     description: (
@@ -106,7 +106,7 @@ export const homesPageData: homesType = {
     title: "3-местный номер",
     href: "/house/triple",
     mainImage: {
-      src: "/images/houses/triple/1.jpg",
+      src: houseTriplePhotoGallery1,
       alt: "3-местный номер основное фото",
     },
     description: (

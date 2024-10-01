@@ -1,4 +1,3 @@
-import KAYAKING_MAIN_PHOTO from "@/public/images/camping/1.png";
 import { comfortPageType } from "./types";
 
 import MotorSportSVG from "@/public/sprites/icons/motorsport.svg";
@@ -16,6 +15,10 @@ import HikingSlide1 from '@/public/images/comfort/hiking/1.jpg'
 import HikingSlide2 from '@/public/images/comfort/hiking/2.jpg'
 import HikingSlide3 from '@/public/images/comfort/hiking/3.jpg'
 
+import KayakingMain from '@/public/images/comfort/kayaking/main.jpg'
+import HikingMain from '@/public/images/comfort/hiking/main.jpg'
+import MotorSportMain from '@/public/images/comfort/motorsport/main.jpg'
+
 export const comfortPageData: comfortPageType = [
   {
     type: "kayaking",
@@ -30,7 +33,7 @@ export const comfortPageData: comfortPageType = [
         адреналин и&nbsp;восторг, запоминаясь на&nbsp;всю жизнь.
       </>
     ),
-    imageSrc: "/images/comfort/kayaking/main.jpg",
+    image: KayakingMain,
     slider: [KayakingSlide1, KayakingSlide2, KayakingSlide3],
   },
   {
@@ -50,7 +53,7 @@ export const comfortPageData: comfortPageType = [
         каждая прогулка станет для вас незабываемым приключением.
       </>
     ),
-    imageSrc: "/images/comfort/hiking/main.jpg",
+    image: HikingMain,
     slider: [HikingSlide1, HikingSlide2, HikingSlide3],
   },
   {
@@ -68,7 +71,7 @@ export const comfortPageData: comfortPageType = [
         и&nbsp;яркими эмоциями.
       </>
     ),
-    imageSrc: "/images/comfort/motorsport/main.jpg",
+    image: MotorSportMain,
     slider: [MotorSportSlide1, MotorSportSlide2, MotorSportSlide3],
   },
 ];
