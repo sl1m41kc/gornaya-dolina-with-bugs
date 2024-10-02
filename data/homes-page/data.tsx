@@ -134,7 +134,7 @@ export const homesPageData: homesType = {
       {
         title: <>Одно дополнительное место</>,
         icon: <SingleBedSVG />,
-        additionalInfo: <>В&nbsp;номере имеется двуспальная кровать + раскладной диван.</>
+        additionalInfo: <>Каркасная раскладная кровать.</>
       },
       {
         title: <>Санузел и&nbsp;душ в&nbsp;номере</>,
