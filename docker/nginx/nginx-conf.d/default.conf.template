@@ -8,7 +8,7 @@ server {
     # Redirect HTTP requests to HTTPS.
     listen 80;
     listen [::]:80;
-    server_name горная-долина.рф;
+    server_name ${DOMAIN};
     location /.well-known/acme-challenge {
         allow all;
         root /var/www/html;
@@ -19,10 +19,10 @@ server {
 server {
   listen 443 ssl http2;
   listen [::]:443 ssl http2;
-  server_name горная-долина.рф;
+  server_name ${DOMAIN};
 
-  ssl_certificate /etc/letsencrypt/live/www.xn----7sbbjhyumfdet1r.xn--p1ai/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/www.xn----7sbbjhyumfdet1r.xn--p1ai/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/www.${DOMAIN}/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/www.${DOMAIN}/privkey.pem;
 
   location / {
     proxy_pass http://app;
