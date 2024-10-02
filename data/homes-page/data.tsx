@@ -60,7 +60,7 @@ export const homesPageData: homesType = {
       {
         title: <>Одно дополнительное место</>,
         icon: <SingleBedSVG />,
-        additionalInfo: <>+1 место</>
+        additionalInfo: <>Каркасная раскладная кровать.</>
       },
       {
         title: <>Санузел и&nbsp;душ в&nbsp;номере</>,
@@ -134,7 +134,7 @@ export const homesPageData: homesType = {
       {
         title: <>Одно дополнительное место</>,
         icon: <SingleBedSVG />,
-        additionalInfo: <>В номере имеется двуспальная кровать + раскладной диван</>
+        additionalInfo: <>В&nbsp;номере имеется двуспальная кровать + раскладной диван.</>
       },
       {
         title: <>Санузел и&nbsp;душ в&nbsp;номере</>,

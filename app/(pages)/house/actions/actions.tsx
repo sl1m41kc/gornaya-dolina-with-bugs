@@ -1,36 +1,44 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import classes from "./actions.module.css";
-import Modal from "@/app/components/modal/modal";
-import clsx from "clsx";
+import { useState } from 'react';
+import classes from './actions.module.css';
+import Modal from '@/app/components/modal/modal';
+import clsx from 'clsx';
 
-type Action = "booking" | "living";
+type Action = 'booking' | 'living';
 
 const Actions = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({
-    title: "title",
+    title: 'title',
     content: <>content</>,
   });
 
   const openModal = (action: Action) => {
-    if (action === "booking") {
+    if (action === 'booking') {
       setModalContent({
-        title: "Условия бронирования",
+        title: 'Условия бронирования',
         content: (
           <>
-            Бронирование осуществляется по&nbsp;предоплате в&nbsp;размере одних
-            суток проживания. Отмена бронирования с&nbsp;возвратом 100%
-            предоплаты возможна за&nbsp;10&nbsp;дней, менее чем
-            за&nbsp;10&nbsp;дней &minus;50%, менее чем за&nbsp;5&nbsp;дней
-            предоплата не&nbsp;возвращается.
+            <p>
+              Бронирование осуществляется по&nbsp;предоплате в&nbsp;размере
+              одних суток проживания.
+            </p>
+            <p>
+              Отмена бронирования с&nbsp;возвратом 100% предоплаты возможна
+              за&nbsp;10&nbsp;дней, менее чем за&nbsp;10&nbsp;дней &minus;50%,
+              менее чем за&nbsp;5&nbsp;дней предоплата не&nbsp;возвращается.
+            </p>
+            <p>
+              Возможность бронирования на&nbsp;одни сутки уточняйте
+              по&nbsp;телефону.
+            </p>
           </>
         ),
       });
-    } else if (action === "living") {
+    } else if (action === 'living') {
       setModalContent({
-        title: "Правила проживания",
+        title: 'Правила проживания',
         content: (
           <>
             <ol className={classes.numberList}>
@@ -56,19 +64,19 @@ const Actions = () => {
     <div className={classes.buttons}>
       <button
         type="button"
-        className={clsx("button", classes.button)}
-        onClick={() => openModal("booking")}
+        className={clsx('button', classes.button)}
+        onClick={() => openModal('booking')}
       >
         Условия бронирования
       </button>
       <button
         type="button"
-        className={clsx("button", classes.button)}
-        onClick={() => openModal("living")}
+        className={clsx('button', classes.button)}
+        onClick={() => openModal('living')}
       >
         Правила проживания
       </button>
-      
+
       <Modal isOpen={isModalOpen} setIsOpen={setIsModalOpen}>
         <div className={classes.modalContent}>
           <h2 className={classes.title}>{modalContent.title}</h2>
