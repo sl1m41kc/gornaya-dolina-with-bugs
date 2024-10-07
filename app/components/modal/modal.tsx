@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { createPortal } from "react-dom";
-import { useEffect } from "react";
-import classes from "./modal.module.css";
+import { createPortal } from 'react-dom';
+import { useCallback, useEffect } from 'react';
+import classes from './modal.module.css';
 
 interface IProps {
   children: React.ReactNode;
@@ -11,15 +11,15 @@ interface IProps {
 }
 
 const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
-  const closeModal = () => {
+  const closeModal = useCallback(() => {
     setIsOpen(false);
-    document.body.style.overflow = "auto";
-    document.body.style.marginRight = "0px";
-  };
+    document.body.style.overflow = 'auto';
+    document.body.style.marginRight = '0px';
+  }, [setIsOpen]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === 'Escape') {
         closeModal();
       }
     };
@@ -29,16 +29,15 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
       const scrollbarWidth = window.innerWidth - document.body.clientWidth;
       // Применение ширины скролла к body
       document.body.style.marginRight = `${scrollbarWidth}px`;
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     }
 
-    document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener('keydown', handleKeyDown);
 
-    return () => document.removeEventListener("keydown", handleKeyDown);
-  }, [isOpen]);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen, closeModal]);
 
   if (!isOpen) return null;
-
 
   return createPortal(
     <div className={classes.overlay}>
