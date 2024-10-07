@@ -5,7 +5,7 @@ import Footer from './components/footer/footer';
 import { Suspense } from 'react';
 import { PTSAns } from '@/app/fonts/fonts';
 import { InitGSAP } from './utils/initGSAP';
-import { YandexMetrika } from './components/YandexMetrika/YandexMetrika';
+import YandexMetrika from '@/app/components/YandexMetrika/YandexMetrika';
 
 export const metadata: Metadata = {
   title: 'Горная долина',
@@ -33,9 +33,7 @@ export default function RootLayout({
         </div>
         <Header />
 
-        <Suspense>
-          <YandexMetrika />
-        </Suspense>
+        <YandexMetrika yid={97550081} />
         <InitGSAP />
       </body>
     </html>
