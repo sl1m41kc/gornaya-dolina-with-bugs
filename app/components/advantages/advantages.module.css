@@ -66,7 +66,7 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 768px) {
     .swiperWrapper {
         margin-top: 3rem;
         width: 70%;

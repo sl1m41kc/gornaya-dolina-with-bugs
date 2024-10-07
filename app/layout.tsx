@@ -2,10 +2,11 @@ import './globals.css';
 import type { Metadata } from 'next';
 import Header from './components/header/header';
 import Footer from './components/footer/footer';
-import { Suspense } from 'react';
 import { PTSAns } from '@/app/fonts/fonts';
 import { InitGSAP } from './utils/initGSAP';
 import YandexMetrika from '@/app/components/YandexMetrika/YandexMetrika';
+import { MobileProvider } from './utils/adaptive/MobileContext';
+import { isMobileSSR } from './utils/adaptive/isMobileSSR';
 
 export const metadata: Metadata = {
   title: 'Горная долина',
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body className={PTSAns.className}>
         <div id="#smooth-wrapper">
           <div id="#smooth-content">
-            {children}
+            <MobileProvider initialIsMobile={isMobileSSR()}>
+              {children}
+            </MobileProvider>
             <Footer />
           </div>
         </div>
@@ -35,7 +38,7 @@ export default function RootLayout({
 
         <YandexMetrika yid={97550081} />
       </body>
-        <InitGSAP />
+      <InitGSAP />
     </html>
   );
 }

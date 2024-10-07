@@ -1,18 +1,17 @@
 'use client';
-
-import { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import classes from './booking.module.css';
-import useScreenWidth from '@/app/utils/use-screen-width';
 import Script from 'next/script';
+import { useMobileContext } from '@/app/utils/adaptive/MobileContext';
 
 const BnovoWidget = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isBnovoLoaded, setIsBnovoLoaded] = useState<boolean>(false);
-  const screenWidth = useScreenWidth();
+  const { isMobile } = useMobileContext();
 
   const widgetType = useMemo(() => {
-    return screenWidth > 1024 ? 'horizontal' : 'vertical';
-  }, [screenWidth]);
+    return isMobile ? 'vertical' : 'horizontal';
+  }, [isMobile]);
 
   const benovoWidgetInnerHTML = useMemo(() => {
     return `(function(){
@@ -60,7 +59,7 @@ const BnovoWidget = () => {
         dto_nextday: "on",
         dto_value: "2",
         cancel_color: "#1875F0",
-        url: "https://xn----7sbbjhyumfdet1r.xn--p1ai/booking",
+        url: "${process.env.NEXT_PUBLIC_DOMAIN}/booking",
         switch_mobiles_width: "800",
       });
     });

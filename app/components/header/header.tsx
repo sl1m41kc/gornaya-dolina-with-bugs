@@ -1,27 +1,25 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import BurgerMenu from "./burger-menu/burger-menu";
-import classes from "./header.module.css";
-import PhoneSVG from "@/public/sprites/icons/phone.svg";
-import clsx from "clsx";
-import LogoSVG from "@/public/sprites/logo.svg";
-import { usePathname, useRouter } from "next/navigation";
-import { data } from "@/data/data";
-import platform from "platform";
-import useScreenWidth from "@/app/utils/use-screen-width";
-import { isLegacyDevice } from "@/app/utils/isLegacyDevice/isLegacyDevice";
-import { Philosopher } from "@/app/fonts/fonts";
+'use client';
+import React, { useEffect, useState } from 'react';
+import BurgerMenu from './burger-menu/burger-menu';
+import classes from './header.module.css';
+import PhoneSVG from '@/public/sprites/icons/phone.svg';
+import clsx from 'clsx';
+import LogoSVG from '@/public/sprites/logo.svg';
+import { usePathname, useRouter } from 'next/navigation';
+import { data } from '@/data/data';
+import { Philosopher } from '@/app/fonts/fonts';
+import { useMobileContext } from '@/app/utils/adaptive/MobileContext';
+import { isBooking } from '@/app/utils/isBooking';
 
 const Header = () => {
-  const screenWidth = useScreenWidth();
+  const { isMobile } = useMobileContext();
   const [scrollOnTop, setScrollOnTop] = useState(true);
   const router = useRouter();
   const path = usePathname();
 
   const onClick = () => {
-    if (path !== "/") {
-      router.push("/");
+    if (path !== '/') {
+      router.push('/');
     }
   };
 
@@ -34,18 +32,18 @@ const Header = () => {
       }
     };
 
-    if (typeof window !== "undefined") {
-      if (screenWidth >= 1024) {
-        window.addEventListener("scroll", handleScroll);
+    if (typeof window !== 'undefined') {
+      if (!isMobile) {
+        window.addEventListener('scroll', handleScroll);
       } else {
-        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener('scroll', handleScroll);
       }
 
       return () => {
-        window.removeEventListener("scroll", handleScroll);
+        window.removeEventListener('scroll', handleScroll);
       };
     }
-  }, [screenWidth]);
+  }, [isMobile]);
 
   return (
     <header
@@ -58,7 +56,11 @@ const Header = () => {
           className={clsx(classes.logo, !scrollOnTop && classes.logoCorrect)}
         />
         <h1
-          className={clsx(classes.title, !scrollOnTop && classes.titleCorrect, Philosopher.className)}
+          className={clsx(
+            classes.title,
+            !scrollOnTop && classes.titleCorrect,
+            Philosopher.className
+          )}
         >
           Горная долина
         </h1>
@@ -69,8 +71,8 @@ const Header = () => {
           <PhoneSVG className={classes.phone} />
           <p className="mylink">{data.socialMedia.phone.number}</p>
         </a>
-        {!isLegacyDevice && (
-          <a className={clsx("button", classes.button)} href="/booking">
+        {isBooking && (
+          <a className={clsx('button', classes.button)} href="/booking">
             Забронировать
           </a>
         )}
