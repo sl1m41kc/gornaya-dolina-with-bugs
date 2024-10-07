@@ -34,8 +34,8 @@ export default function RootLayout({
         <Header />
 
         <YandexMetrika yid={97550081} />
-        <InitGSAP />
       </body>
+        <InitGSAP />
     </html>
   );
 }
