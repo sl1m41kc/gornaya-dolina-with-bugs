@@ -27,22 +27,7 @@ const nextConfig = {
 
     return config;
   },
-  output: 'standalone',
-  reactStrictMode: false,
-  async headers() {
-    return [
-      {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Content-Security-Policy',
-            value:
-              "script-src 'self' 'unsafe-eval' 'unsafe-inline' yastatic.net *.yandex.net *.yandex.ru *.yandex.com widget.reservationsteps.ru;",
-          },
-        ],
-      },
-    ];
-  },
+  reactStrictMode: false
 };
 
 export default nextConfig;

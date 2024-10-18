@@ -4,9 +4,9 @@ import Header from './components/header/header';
 import Footer from './components/footer/footer';
 import { PTSAns } from '@/app/fonts/fonts';
 import { InitGSAP } from './utils/initGSAP';
-import YandexMetrika from '@/app/components/YandexMetrika/YandexMetrika';
 import { MobileProvider } from './utils/adaptive/MobileContext';
 import { isMobileSSR } from './utils/adaptive/isMobileSSR';
+import { YandexMetrika } from './components/YandexMetrika/YandexMetrika';
 
 export const metadata: Metadata = {
   title: 'Горная долина',
