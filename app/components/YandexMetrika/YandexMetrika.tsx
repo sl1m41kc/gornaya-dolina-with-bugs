@@ -6,7 +6,7 @@ import Script from 'next/script';
 
 declare const ym: any;
 
-export function YandexMetrika({ yid }: { yid: number }) {
+export function YandexMetrika({ yid }: { yid: string }) {
   const pathName = usePathname();
   const searchParams = useSearchParams();
 

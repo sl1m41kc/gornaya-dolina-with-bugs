@@ -26,7 +26,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" />
       </head>
       <body className={PTSAns.className}>
-        <YandexMetrika yid={97550081} />
+        <YandexMetrika yid={process.env.YID!} />
         <div id="#smooth-wrapper">
           <div id="#smooth-content">
             <MobileProvider initialIsMobile={isMobileSSR()}>
