@@ -25,7 +25,7 @@ const Main = ({ image, imageAlt }: IProps) => {
 
   return (
     <main
-      className={clsx(classes.main, isLegacyDevice && classes.legacy)}
+      className={clsx(classes.main, isLegacyDevice && classes.legacy, !isSeason && classes.unseason)}
       id="main"
     >
       {isMobile && (
