@@ -1,6 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const useScaleAnimation = (ref: any, scale: number = 1.15, contentLoaded: boolean = true) => {
   useGSAP(
@@ -12,7 +11,7 @@ const useScaleAnimation = (ref: any, scale: number = 1.15, contentLoaded: boolea
             trigger: ref.current,
             start: "30% bottom",
             end: "30% center",
-            scrub: true,
+            scrub: 1.25,
           },
         });
       }
