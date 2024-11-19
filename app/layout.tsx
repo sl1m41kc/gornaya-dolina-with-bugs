@@ -27,8 +27,8 @@ export default function RootLayout({
       </head>
       <body className={PTSAns.className}>
         <YandexMetrika yid={process.env.YID!} />
-        <div id="#smooth-wrapper">
-          <div id="#smooth-content">
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
             <MobileProvider initialIsMobile={isMobileSSR()}>
               {children}
             </MobileProvider>
