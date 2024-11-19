@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import classes from "./burger-menu.module.css";
-import clsx from "clsx";
-import { Link as ScrollLink } from "react-scroll";
-import { usePathname, useRouter } from "next/navigation";
-import { data } from "@/data/data";
-import { scroller } from "react-scroll";
+import React, { useEffect, useState } from 'react';
+import classes from './burger-menu.module.css';
+import clsx from 'clsx';
+import { Link as ScrollLink } from 'react-scroll';
+import { usePathname, useRouter } from 'next/navigation';
+import { data } from '@/data/data';
+import { scroller } from 'react-scroll';
 
 const BurgerMenu = () => {
   const path = usePathname();
@@ -15,46 +15,46 @@ const BurgerMenu = () => {
 
   const linkItem = [
     {
-      id: "main",
-      name: "Главная",
+      id: 'main',
+      name: 'Главная',
     },
     {
-      id: "houses",
-      name: "Размещение",
+      id: 'houses',
+      name: 'Размещение',
     },
     {
-      id: "about-us",
-      name: "О нас",
+      id: 'about-us',
+      name: 'О нас',
     },
     {
-      id: "photoGallery",
-      name: "Фотогалерея",
+      id: 'photoGallery',
+      name: 'Фотогалерея',
     },
     {
-      id: "camping",
-      name: "Активный отдых",
+      id: 'camping',
+      name: 'Активный отдых',
     },
     {
-      id: "reviews",
-      name: "Отзывы",
+      id: 'reviews',
+      name: 'Отзывы',
     },
     {
-      id: "contacts",
-      name: "Контакты",
+      id: 'contacts',
+      name: 'Контакты',
     },
   ];
 
   const onClickLink = (id: string) => {
     setIsOpen(false);
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = 'auto';
 
-    if (path !== "/") {
+    if (path !== '/') {
       router.push(`/#${id}`);
     } else {
       scroller.scrollTo(id, {
         duration: 800,
         delay: 0,
-        smooth: "easeInOutQuart",
+        smooth: 'easeInOutQuart',
       });
     }
   };
@@ -65,10 +65,10 @@ const BurgerMenu = () => {
       const scrollbarWidth = window.innerWidth - document.body.clientWidth;
       // Применение ширины скролла к body
       document.body.style.marginRight = `${scrollbarWidth}px`;
-      document.body.style.overflow = "hidden";
+      document.body.style.overflow = 'hidden';
     } else {
-      document.body.style.marginRight = "0px";
-      document.body.style.overflow = "auto";
+      document.body.style.marginRight = '0px';
+      document.body.style.overflow = 'auto';
     }
   }, [isOpen]);
 
@@ -88,9 +88,8 @@ const BurgerMenu = () => {
           <ScrollLink
             key={item.id}
             className={classes.link}
-            to={item.id}
-            smooth={true}
-            offset={-80}
+            to={'main'}
+            smooth={false}
             activeClass={classes.active}
             onClick={() => onClickLink(item.id)}
           >
@@ -100,7 +99,7 @@ const BurgerMenu = () => {
         <div className={classes.phoneWrapper}>
           <a
             href={data.socialMedia.phone.link}
-            className={clsx(classes.phone, "mylink", "linkReverse")}
+            className={clsx(classes.phone, 'mylink', 'linkReverse')}
           >
             {data.socialMedia.phone.number}
           </a>

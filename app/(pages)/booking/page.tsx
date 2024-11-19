@@ -43,7 +43,6 @@ const Page = () => {
                 inlineScript.type = 'text/javascript';
                 inlineScript.innerHTML = initScript;
                 scriptContainer.appendChild(inlineScript);
-                console.log('finish loader');
               }
               setLoading(false); // Отключаем лоадер после загрузки скрипта
             }}
