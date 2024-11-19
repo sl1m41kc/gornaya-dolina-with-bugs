@@ -1,17 +1,26 @@
 .footer {
-    display: flex;
-    padding-inline: 1.25rem;
-    height: 75px;
-    margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-inline: 1.25rem;
+  height: 75px;
+  margin-top: 4rem;
 }
 
 .text {
-    font-size: 20px;
-    color: #5F6368;
+  font-size: 20px;
+  color: #5f6368;
+}
+
+.link {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: rgba(0,0, 0, 0.15);
+  text-underline-offset: 0.4em;
 }
 
 @media (max-width: 1024px) {
-    .footer {
-        margin-top: 2rem;
-    }
+  .footer {
+    margin-top: 2rem;
+  }
 }
