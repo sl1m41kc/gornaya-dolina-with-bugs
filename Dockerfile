@@ -1,4 +1,8 @@
-FROM node:18-alpine AS base
+# DockerHub repo
+# FROM node:18-alpine AS base
+
+# AWS repo
+FROM public.ecr.aws/docker/library/node:18-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -6,6 +10,8 @@ FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
+# For GSAP license
+COPY .npmrc .npmrc
 
 # Install dependencies based on the preferred package manager
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
@@ -16,6 +22,8 @@ elif [ -f pnpm-lock.yaml ]; then corepack enable pnpm && pnpm i --frozen-lockfil
 else echo "Lockfile not found." && exit 1; \
 fi
 
+# For GSAP license
+RUN rm -f .npmrc
 
 # Rebuild the source code only when needed
 FROM base AS builder
