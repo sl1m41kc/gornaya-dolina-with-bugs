@@ -7,6 +7,7 @@ import { InitGSAP } from './utils/initGSAP';
 import { MobileProvider } from './utils/adaptive/MobileContext';
 import { isMobileSSR } from './utils/adaptive/isMobileSSR';
 import { YandexMetrika } from './components/YandexMetrika/YandexMetrika';
+import ScrollToTop from './components/scroll-to-top/scroll-to-top';
 
 export const metadata: Metadata = {
   title: 'Горная долина',
@@ -36,6 +37,7 @@ export default function RootLayout({
           </div>
         </div>
         <Header />
+        <ScrollToTop />
       </body>
       <InitGSAP />
     </html>

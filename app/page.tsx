@@ -9,7 +9,6 @@ import Contacts from "./components/contacts/contacts";
 import { data } from "@/data/data";
 import Separator from "./components/separator/separator";
 import AnchorScrollLogic from "./utils/anchor-scroll-logic/anchor-scroll-logic";
-import ScrollToTop from "./components/scroll-to-top/scroll-to-top";
 import MainIMG from '@/public/images/main.jpg'
 
 export default function Home() {
@@ -23,9 +22,7 @@ export default function Home() {
       <Reviews />
       <Separator />
       <Contacts />
-
-      {/* Кнопка наверх */}
-      <ScrollToTop />
+      
       {/* Логика прокрутки по якорной ссылке */}
       <AnchorScrollLogic />
     </div>
