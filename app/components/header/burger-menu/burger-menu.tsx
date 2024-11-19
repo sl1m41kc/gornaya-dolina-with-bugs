@@ -54,6 +54,7 @@ const BurgerMenu = () => {
       scroller.scrollTo(id, {
         duration: 800,
         delay: 0,
+        offset: -80,
         smooth: 'easeInOutQuart',
       });
     }
@@ -88,7 +89,7 @@ const BurgerMenu = () => {
           <ScrollLink
             key={item.id}
             className={classes.link}
-            to={'main'}
+            to={item.id}
             smooth={false}
             activeClass={classes.active}
             onClick={() => onClickLink(item.id)}
