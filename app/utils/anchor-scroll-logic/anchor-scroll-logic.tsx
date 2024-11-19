@@ -25,7 +25,7 @@ const AnchorScrollLogic = () => {
             smooth: "easeInOutQuart",
             offset: -80,
           });
-        }, 0)
+        }, 100)
       }
     }
   }, []);
