@@ -67,7 +67,7 @@ const Header = () => {
       </div>
 
       <div className={classes.actions}>
-        <a href={data.socialMedia.phone.link} className={classes.phoneWrapper}>
+        <a href='/' className={classes.phoneWrapper}>
           <PhoneSVG className={classes.phone} />
           <p className="mylink">{data.socialMedia.phone.number}</p>
         </a>

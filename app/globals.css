@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-    --primary-color: #A88451;
-    --secondary-accent: #899254;
+    --primary-color: #ffc97e;
+    --secondary-accent: #a8bd31;
     --secondary-color: #5F6368;
     --text-color: #393939;
 }
@@ -52,9 +52,11 @@ input {
 
 .containerText > h2 {
     margin-bottom: 1rem;
+    font-size: 60px;
 }
 .containerText > p {
     margin-bottom: 1.25rem;
+    line-height: 36px;
 }
 .containerText > p:last-child {
     margin-bottom: 0;
@@ -67,7 +69,6 @@ input {
 }
 
 .mylink {
-    cursor: pointer;
     position: relative;
 }
 

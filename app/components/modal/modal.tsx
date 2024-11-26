@@ -43,7 +43,7 @@ const Modal = ({ isOpen, setIsOpen, children }: IProps) => {
     <div className={classes.overlay}>
       <div className={classes.backdrop} onClick={closeModal} />
       <div className={classes.modal}>
-        <button onClick={closeModal} type="button" className={classes.close}>
+        <button type="button" className={classes.close}>
           <span className={classes.closeIcon}>
             <span className={classes.closeBefore}></span>
             <span className={classes.closeAfter}></span>

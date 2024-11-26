@@ -31,7 +31,7 @@ import { reviewsData } from "./reviews/data";
 
 export const data = {
   listAdvantages: listAdvantagesData,
-  gallery: [gallery1, gallery8, gallery3, gallery2, gallery4, gallery5, gallery6, gallery7, gallery9, gallery10, gallery11, gallery12, gallery13, gallery14, gallery15, gallery16, gallery17, gallery18, gallery19, gallery20, gallery21, gallery22, gallery23],
+  gallery: [gallery8, gallery15, gallery16, gallery17, gallery18, gallery19, gallery20, gallery21, gallery22, gallery23],
   reviews: reviewsData,
   housesPage: homesPageData,
   socialMedia: socialMediaData,

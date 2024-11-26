@@ -15,7 +15,7 @@ export const reviewsData: IReview[] = [
         далины.
       </>
     ),
-    date: "6 сентября 2023",
+    date: "",
   },
   {
     name: "Сергей Мельников",

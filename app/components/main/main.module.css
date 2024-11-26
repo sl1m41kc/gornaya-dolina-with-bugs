@@ -13,9 +13,7 @@
     color: var(--secondary-accent);
 }
 
-.billetContainer p span {
-    font-weight: bold;
-}
+
 
 .main {
     position: relative;

@@ -27,7 +27,7 @@ const BurgerMenu = () => {
       name: 'О нас',
     },
     {
-      id: 'photoGallery',
+      id: 'photoGalle',
       name: 'Фотогалерея',
     },
     {
@@ -35,13 +35,10 @@ const BurgerMenu = () => {
       name: 'Активный отдых',
     },
     {
-      id: 'reviews',
+      id: 'revews',
       name: 'Отзывы',
     },
-    {
-      id: 'contacts',
-      name: 'Контакты',
-    },
+    
   ];
 
   const onClickLink = (id: string) => {

@@ -34,7 +34,6 @@ const Contacts = () => {
           <div className={classes.infoItem}>
             <div className={classes.phone}>
               <div className={classes.infoHeader}>
-                <PhoneSVG className={classes.iconHeader} />
                 <p>Телефон</p>
               </div>
               <a className={clsx(classes.phoneLink, 'mylink')} href={social.phone.link}>
@@ -56,7 +55,6 @@ const Contacts = () => {
           <div className={classes.infoItem}>
             <div className={classes.address}>
               <div className={classes.infoHeader}>
-                <LocationSVG className={classes.iconHeader} />
                 <p>Адрес</p>
               </div>
               <p className={classes.addressText}>
